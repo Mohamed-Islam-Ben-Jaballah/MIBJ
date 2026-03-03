@@ -234,6 +234,16 @@
     btn.addEventListener('click', () => openLightbox(btn));
   });
 
+  // Clicking the PDF preview thumbnail also opens the lightbox
+  document.querySelectorAll('.pdf-preview-thumb').forEach(thumb => {
+    thumb.classList.add('clickable');
+    thumb.addEventListener('click', () => {
+      const trigger = thumb.closest('.doc-card__inner, .doc-card')
+                           .querySelector('.pdf-trigger');
+      if (trigger) openLightbox(trigger);
+    });
+  });
+
   // Close handlers
   closeBtn.addEventListener('click', closeLightbox);
   overlay.addEventListener('click', (e) => {
