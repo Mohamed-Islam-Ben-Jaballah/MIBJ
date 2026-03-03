@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIBJ — Technical Project Manager & Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles"></canvas>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">&lt;MIBJ /&gt;</a>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="cta-btn">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <p class="greeting mono">Hi, my name is</p>
+      <h1>Mohamed Islam<br/>Ben Jeballah</h1>
+      <h2>I build immersive digital experiences.</h2>
+      <p>Technical Project Manager &amp; Software Engineer with <strong class="accent">7 years of experience</strong> crafting 3D solutions, VR simulations, AI-powered interfaces, and interactive web experiences that captivate and deliver results.</p>
+      <a href="#services" class="hero-cta">Explore My Services</a>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">01 About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Over the past <strong>seven years</strong>, I have specialized in <strong>3D technologies, virtual reality, artificial intelligence,</strong> and <strong>interactive web development</strong> delivering solutions that are both technically robust and genuinely engaging. I began my career as a developer, progressed into full project leadership, and have consistently maintained a hands-on role in architecture and implementation.</p>
+          <p>My experience spans immersive <strong>VR training simulations</strong> for security units, multilingual <strong>AI avatars</strong> designed to enhance customer engagement, and advanced <strong>Three.js web experiences</strong> that combine technical sophistication with strong visual impact. I am driven by projects that push creative and technical boundaries while delivering measurable value.</p>
+          <p>I remain actively involved throughout the <strong>entire lifecycle</strong> from initial concept to final deployment. I assemble and guide high-performing teams, ensure alignment across stakeholders, and uphold rigorous quality standards to deliver outcomes that clients are <strong>confident and proud to present</strong>.</p>
+          <ul class="tech-list">
+            <li>Unity 3D / C#</li>
+            <li>Three.js / WebGL</li>
+            <li>VR/AR (Quest, Vive)</li>
+            <li>AI / NLP / LLMs</li>
+            <li>JavaScript / TypeScript</li>
+            <li>Python</li>
+            <li>React / Next.js</li>
+            <li>Custom 3D Pipelines</li>
+            <li>Git / CI/CD</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <div class="number">7+</div>
+            <div class="label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">15+</div>
+            <div class="label">Projects Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">1–5</div>
+
+            <div class="label">Flexible Team Size</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">99%</div>
+            <div class="label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section" id="services" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">02 Services</span>
+        <h2 class="section-title">What I Deliver</h2>
+      </div>
+      <div class="services-grid">
+
+        <!-- Service 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>3D Unity Solutions</h3>
+          <p>Custom-built interactive 3D applications powered by Unity. From real-time product configurators to architectural visualizations and gamified experiences that engage your audience like nothing else.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Interactive Websites (Three.js)</h3>
+          <p>Immersive, GPU-accelerated web experiences built with Three.js and WebGL. I create websites that don't just inform — they captivate, giving your brand a visual identity that stands out in any market.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>AI Avatars & Multilingual Assistants</h3>
+          <p>Smart, conversational AI avatars your clients can talk to — ask questions, get answers, in any language. Automatic multilingual detection ensures zero friction for a global audience.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <h3>VR Training Simulations</h3>
+          <p>High-fidelity virtual reality training for industries, police, military, and security forces. Realistic scenarios, measurable outcomes, and safe environments to build critical skills.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Custom VR Entertainment</h3>
+          <p>End-to-end VR entertainment solutions — hardware selection, software development, and content creation. From VR arcades to bespoke immersive experiences tailored to your vision.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Captivating Visual Branding</h3>
+          <p>I help clients amplify their market presence through stunning 3D visuals, motion graphics, and interactive media that grabs attention and communicates value instantly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS / BUSINESS MODEL ===================== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">03 Process</span>
+        <h2 class="section-title">How We Work Together</h2>
+      </div>
+      <div class="process-timeline reveal">
+
+        <div class="process-step" data-step="1">
+          <h3>Discovery & Problem Mapping</h3>
+          <p>We start with a deep conversation. I listen to understand your challenge, your audience, and your goals. No jargon, no assumptions — just clarity.</p>
+        </div>
+
+        <div class="process-step" data-step="2">
+          <h3>Solution Design</h3>
+          <p>I prepare a curated set of solutions tailored to your needs — from lightweight to comprehensive. We discuss each option together and land on the approach that fits your vision, timeline, and budget.</p>
+        </div>
+
+        <div class="process-step" data-step="3">
+          <h3>Team Assembly</h3>
+          <p>I recruit the ideal team from my trusted network of freelance developers, 3D artists, and designers — all former colleagues and long-time collaborators. Team sizes range from just myself to 5–6 specialists, depending on scope.</p>
+        </div>
+
+        <div class="process-step" data-step="4">
+          <h3>MVP Delivery (1–3 Months)</h3>
+          <p>We align on a clear MVP, timeline, and budget. The POC/MVP phase is where we test the solution in the real world, gather feedback, iterate, and adapt until it perfectly matches your needs and market demands.</p>
+        </div>
+
+        <div class="process-step" data-step="5">
+          <h3>Full Development & Iteration</h3>
+          <p>After validation, we scale the project — adding features, polishing the experience, and delivering the final product. Our goal isn't just to meet expectations; it's to exceed them. We make our clients <strong class="accent">satisfied and amazed</strong>.</p>
+        </div>
+
+      </div>
+
+      <!-- Team Banner -->
+      <div class="team-banner reveal" style="margin-top: 40px;">
+        <div class="team-text">
+          <h3>A Trusted, Battle-Tested Team</h3>
+          <p>Every project is managed by me and executed by a handpicked team from my personal network — experienced freelance professionals I've worked with for years. Former colleagues, trusted collaborators, and friends who consistently deliver excellence.</p>
+        </div>
+        <div class="team-numbers">
+          <div class="tn">
+            <div class="val">1–6</div>
+            <div class="desc">Team Members</div>
+          </div>
+          <div class="tn">
+            <div class="val">7+</div>
+            <div class="desc">Years Together</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PORTFOLIO / SHOWCASE ===================== -->
+  <section class="section" id="portfolio" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">04 Portfolio</span>
+        <h2 class="section-title">Featured Work</h2>
+      </div>
+      <div class="portfolio-grid">
+
+        <!-- Project 1: VR Training -->
+        <div class="portfolio-card reveal" data-media-type="video" data-media-src="training.mp4" data-media-title="Immersive Security Training Simulation">
+          <div class="portfolio-media">
+            <video src="training.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">VR Training</span>
+            <h3>Immersive Security Training Simulation</h3>
+            <p>High-fidelity VR training environment designed for law enforcement and military units. Realistic tactical scenarios with performance analytics and adaptive difficulty.</p>
+            <ul class="portfolio-tech">
+              <li>Unity</li>
+              <li>C#</li>
+              <li>Oculus SDK</li>
+              <li>SteamVR</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 2: AI Avatar -->
+        <div class="portfolio-card reveal" data-media-type="video" data-media-src="AI-Avatar.mp4" data-media-title="Multilingual AI Customer Avatar">
+          <div class="portfolio-media">
+            <video src="AI-Avatar.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">AI / NLP</span>
+            <h3>Multilingual AI Customer Avatar</h3>
+            <p>Smart conversational AI avatar with automatic language detection. Customers speak naturally in any language and receive instant, accurate responses — no buttons, no menus.</p>
+            <ul class="portfolio-tech">
+              <li>Python</li>
+              <li>LLM / NLP</li>
+              <li>WebRTC</li>
+              <li>Three.js</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 3: Three.js Website -->
+        <div class="portfolio-card reveal" data-media-type="video" data-media-src="website.mp4" data-media-title="3D Interactive Brand Experience">
+          <div class="portfolio-media">
+            <video src="website.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">Web / Three.js</span>
+            <h3>3D Interactive Brand Experience</h3>
+            <p>GPU-accelerated website featuring real-time 3D product visualization, particle effects, and smooth camera transitions that elevate client branding to the next level.</p>
+            <ul class="portfolio-tech">
+              <li>Three.js</li>
+              <li>WebGL</li>
+              <li>GSAP</li>
+              <li>React</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 4: VR Entertainment -->
+        <div class="portfolio-card reveal" data-media-type="video" data-media-src="entertainment.mp4" data-media-title="Custom VR Arcade Experience">
+          <div class="portfolio-media">
+            <video src="entertainment.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">VR Entertainment</span>
+            <h3>Custom VR Arcade Experience</h3>
+            <p>Full-stack VR entertainment solution — custom hardware integration, multiplayer experiences, and content pipeline. Built to delight players and maximize venue throughput.</p>
+            <ul class="portfolio-tech">
+              <li>Unity</li>
+              <li>SteamVR</li>
+              <li>Custom Hardware</li>
+              <li>Photon</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 5: 3D Unity App -->
+        <div class="portfolio-card reveal" data-media-type="image" data-media-src="assets/unity-3d.jpg" data-media-title="Industrial 3D Visualization Platform">
+          <div class="portfolio-media">
+            <!-- REPLACE: Add your image/video here -->
+            <!-- <img src="assets/unity-3d.jpg" alt="Unity 3D Application" /> -->
+            <div class="placeholder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <span>3D Application Preview</span>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">3D / Unity</span>
+            <h3>Industrial 3D Visualization Platform</h3>
+            <p>Real-time 3D application for industrial equipment visualization — interactive exploded views, assembly animations, and maintenance training modules.</p>
+            <ul class="portfolio-tech">
+              <li>Unity</li>
+              <li>C#</li>
+              <li>Blender</li>
+              <li>REST API</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 6: Captivating Visuals -->
+        <div class="portfolio-card reveal" data-media-type="video" data-media-src="assets/visual-branding.mp4" data-media-title="3D Motion Branding Campaign">
+          <div class="portfolio-media">
+            <!-- REPLACE: Add your image/video here -->
+            <!-- <img src="assets/visual-branding.jpg" alt="Visual Branding" /> -->
+            <div class="placeholder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Visual Branding Reel</span>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <span class="tag">Branding</span>
+            <h3>3D Motion Branding Campaign</h3>
+            <p>Eye-catching 3D motion graphics and interactive media created to supercharge client market exposure. Designed to stop the scroll and communicate value in seconds.</p>
+            <ul class="portfolio-tech">
+              <li>Blender</li>
+              <li>After Effects</li>
+              <li>Three.js</li>
+              <li>GSAP</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Embed Section for Documents -->
+      <div class="reveal" style="margin-top: 60px;">
+        <h3 style="color: var(--white); font-size: 1.2rem; margin-bottom: 20px;">
+          <span class="accent mono">// </span>Documents & Resources
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+          <!-- PDF Embed -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(100,255,218,.06); border-radius: var(--radius); padding: 20px;">
+            <p class="mono" style="color: var(--accent); font-size: .8rem; margin-bottom: 12px;">📄 Resume / CV</p>
+            <!-- REPLACE: Update the src to your hosted PDF URL or local path -->
+            <embed src="MIBJResumeVR (11).pdf" type="application/pdf" width="100%" height="400px" style="border-radius: var(--radius); border: 1px solid rgba(100,255,218,.06);" />
+          </div>
+          <!-- Additional embed slot -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(100,255,218,.06); border-radius: var(--radius); padding: 20px;">
+            <p class="mono" style="color: var(--accent); font-size: .8rem; margin-bottom: 12px;">📎 Project Documentation</p>
+            <div style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(100,255,218,.15); border-radius: var(--radius); color: var(--text-dim); font-family: var(--mono); font-size: .82rem;">
+              Add document embed here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">05 Contact</span>
+        <h2 class="section-title">Let's Build Something Great</h2>
+        <p>Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.</p>
+        <a href="mailto:medislambenjaballah@gmail.com" class="contact-btn">Say Hello</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MIBJ. Crafted with precision.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX MODAL ===================== -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle"></h4>
+        <p id="lightboxType"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script src="main.js"></script>
+
+</body>
+</html>
