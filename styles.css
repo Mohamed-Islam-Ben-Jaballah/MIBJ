@@ -46,6 +46,7 @@ img, video, iframe { max-width: 100%; border-radius: var(--radius); }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .section { padding: 100px 0; }
+.section--alt { background: var(--bg-light); }
 .accent { color: var(--accent); }
 .mono { font-family: var(--mono); font-size: .85rem; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
@@ -296,6 +297,7 @@ img, video, iframe { max-width: 100%; border-radius: var(--radius); }
   background: linear-gradient(135deg, var(--bg-light), var(--bg-card));
   border: 1px solid rgba(100,255,218,.08); border-radius: var(--radius);
   padding: 48px; display: flex; align-items: center; gap: 48px;
+  margin-top: 40px;
 }
 .team-banner .team-text { flex: 1; }
 .team-banner .team-text h3 {
@@ -402,11 +404,20 @@ img, video, iframe { max-width: 100%; border-radius: var(--radius); }
 .pdf-preview-thumb iframe {
   width: 100%; height: 500px; border: none; pointer-events: none; display: block;
 }
+.pdf-preview-thumb.resume-preview { height: 390px; }
+.pdf-preview-thumb.resume-preview iframe { height: 600px; }
+.pdf-preview-thumb.doc-preview iframe { height: 160px; }
 
 /* Make portfolio cards look clickable */
 .portfolio-card[data-media-src] { cursor: pointer; }
 
 /* PDF trigger buttons */
+.pdf-trigger {
+  cursor: pointer; border: none; display: inline-block; padding: 3px 10px;
+  background: var(--accent-dim); color: var(--accent); border-radius: 50px;
+  font-family: var(--mono); font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .5px; transition: opacity .2s;
+}
 .pdf-trigger:hover { opacity: .75; }
 .portfolio-card[data-media-src] .portfolio-media::after {
   content: ''; position: absolute; inset: 0;
@@ -423,6 +434,73 @@ img, video, iframe { max-width: 100%; border-radius: var(--radius); }
   transition: opacity var(--transition);
 }
 .portfolio-card[data-media-src]:hover .portfolio-media::before { opacity: 1; }
+
+
+/* ========== VIDEO EMBED (LAZY LOAD) ========== */
+
+.video-embed {
+  position: relative; width: 100%; padding-top: 56.25%;
+  overflow: hidden; background: #000; border-radius: var(--radius);
+}
+.video-embed iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+}
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border: 0; padding: 0; margin: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.video-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-placeholder .play-icon {
+  position: absolute; width: 76px; height: 76px; border-radius: 50%;
+  background: rgba(0, 0, 0, .6); display: flex; align-items: center; justify-content: center;
+}
+.video-placeholder .play-icon::after {
+  content: ''; display: block; width: 0; height: 0;
+  border-left: 18px solid #fff; border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent; margin-left: 6px;
+}
+
+
+/* ========== DOCUMENTS & RESOURCES ========== */
+
+.docs-section { margin-top: 60px; }
+.docs-heading { color: var(--white); font-size: 1.2rem; margin-bottom: 20px; }
+.docs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+}
+.doc-card {
+  background: var(--bg-card); border: 1px solid rgba(100,255,218,.06);
+  border-radius: var(--radius); padding: 20px;
+}
+.doc-card__inner {
+  background: rgba(100,255,218,.03); border: 1px solid rgba(100,255,218,.1);
+  border-radius: var(--radius); padding: 16px;
+}
+.doc-card__label { color: var(--accent); font-size: .8rem; margin-bottom: 16px; }
+.doc-card__title { margin: 0 0 6px; font-size: 1rem; font-weight: 600; color: var(--white); }
+.doc-card__desc { margin: 0 0 12px; font-size: .88rem; color: var(--text-dim); }
+.doc-list { display: grid; gap: 16px; }
+
+
+/* ========== CONTACT ACTIONS ========== */
+
+.contact-actions {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  justify-content: center; align-items: flex-start;
+}
+.contact-action {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; max-width: 220px;
+}
+.contact-action .contact-btn { width: 100%; text-align: center; }
+.contact-action__label {
+  font-size: .78rem; color: var(--text-dim);
+  text-align: center; word-break: break-all;
+}
+.contact-btn--outline {
+  background: transparent; border: 2px solid var(--accent); color: var(--accent);
+}
 
 
 /* ========== ANIMATIONS ========== */
