@@ -348,6 +348,7 @@ iframe { max-width: 100%; }
   display: flex; align-items: center; justify-content: center;
   opacity: 0; visibility: hidden;
   transition: opacity .3s ease, visibility .3s ease;
+  padding: 0;
 }
 .lightbox-overlay.active { opacity: 1; visibility: visible; }
 
@@ -358,6 +359,9 @@ iframe { max-width: 100%; }
   border-radius: var(--radius); overflow: hidden;
   transform: scale(.93) translateY(24px);
   transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+}
+@supports (height: 100dvh) {
+  .lightbox-container { height: 92dvh; max-height: 92dvh; }
 }
 .lightbox-overlay.active .lightbox-container { transform: scale(1) translateY(0); }
 
@@ -585,6 +589,16 @@ iframe { max-width: 100%; }
   .lightbox-container { width: 95vw; max-width: none; }
   .lightbox-caption { padding: 12px 16px; }
   .lightbox-caption h4 { font-size: .9rem; }
+
+  /* Full-screen lightbox on mobile for video */
+  .lightbox-overlay.active { align-items: stretch; }
+  .lightbox-container {
+    width: 100vw; max-width: 100vw;
+    height: 100vh; max-height: 100vh;
+    height: 100dvh; max-height: 100dvh;
+    border-radius: 0;
+    transform: none !important;
+  }
 }
 
 /* ---- Small phones (480px and below) ---- */
@@ -635,6 +649,6 @@ iframe { max-width: 100%; }
 
   .footer p { font-size: .7rem; }
 
-  .lightbox-container { width: 98vw; }
+  .lightbox-container { width: 100vw; max-width: 100vw; border-radius: 0; }
   .lightbox-close { top: 8px; right: 8px; width: 34px; height: 34px; font-size: 1.2rem; }
 }
