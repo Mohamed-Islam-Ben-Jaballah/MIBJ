@@ -210,6 +210,11 @@
     card.addEventListener('click', () => openLightbox(card));
   });
 
+  // Click handlers on PDF trigger buttons (resume & docs)
+  document.querySelectorAll('.pdf-trigger').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn));
+  });
+
   // Close handlers
   closeBtn.addEventListener('click', closeLightbox);
   overlay.addEventListener('click', (e) => {
