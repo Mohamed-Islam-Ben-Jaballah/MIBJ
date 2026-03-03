@@ -170,7 +170,7 @@
         const ytId = getYouTubeId(src);
         if (ytId) {
           el = document.createElement('iframe');
-          el.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+          el.src = `https://www.youtube-nocookie.com/embed/${ytId}?rel=0&modestbranding=1&playsinline=1`;
           el.title = title;
           el.allowFullscreen = true;
           el.setAttribute('frameborder', '0');
