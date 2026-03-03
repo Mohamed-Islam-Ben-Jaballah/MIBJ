@@ -157,15 +157,35 @@
     titleEl.textContent = title;
     typeEl.textContent = typeLabels[type] || type;
 
+    // Helper: convert YouTube share/watch URLs → embed URL
+    function toYouTubeEmbed(url) {
+      const shortMatch = url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+      const longMatch  = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+      const id = (shortMatch && shortMatch[1]) || (longMatch && longMatch[1]);
+      return id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` : null;
+    }
+
     let el;
     switch (type) {
-      case 'video':
-        el = document.createElement('video');
-        el.src = src;
-        el.controls = true;
-        el.autoplay = true;
-        el.playsInline = true;
+      case 'video': {
+        const embedUrl = toYouTubeEmbed(src);
+        if (embedUrl) {
+          // YouTube URL → use an iframe
+          el = document.createElement('iframe');
+          el.src = embedUrl;
+          el.allowFullscreen = true;
+          el.setAttribute('frameborder', '0');
+          el.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+        } else {
+          // Local / direct video file
+          el = document.createElement('video');
+          el.src = src;
+          el.controls = true;
+          el.autoplay = true;
+          el.playsInline = true;
+        }
         break;
+      }
 
       case 'image':
         el = document.createElement('img');
