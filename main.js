@@ -192,11 +192,17 @@
         el.alt = title;
         break;
 
-      case 'pdf':
+      case 'pdf': {
+        const isMobile = window.innerWidth <= 768;
+        const base = 'https://mohamed-islam-ben-jaballah.github.io/MIBJ/';
+        const absUrl = src.startsWith('http') ? src : base + encodeURIComponent(src).replace(/%2F/g, '/');
         el = document.createElement('iframe');
-        el.src = src + '#toolbar=0&navpanes=0&scrollbar=0';
+        el.src = isMobile
+          ? `https://docs.google.com/viewer?url=${encodeURIComponent(absUrl)}&embedded=true`
+          : src + '#toolbar=0&navpanes=0&scrollbar=0';
         el.setAttribute('frameborder', '0');
         break;
+      }
 
       case 'presentation':
       case 'iframe':
