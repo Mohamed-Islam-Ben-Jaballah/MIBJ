@@ -174,9 +174,9 @@
         break;
 
       case 'pdf':
-        el = document.createElement('embed');
-        el.src = src;
-        el.type = 'application/pdf';
+        el = document.createElement('iframe');
+        el.src = src + '#toolbar=0&navpanes=0&scrollbar=0';
+        el.setAttribute('frameborder', '0');
         break;
 
       case 'presentation':

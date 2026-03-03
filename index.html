@@ -350,7 +350,10 @@
           <div style="background: var(--bg-card); border: 1px solid rgba(100,255,218,.06); border-radius: var(--radius); padding: 20px;">
             <p class="mono" style="color: var(--accent); font-size: .8rem; margin-bottom: 16px;">📄 Resume / CV</p>
             <div style="background: rgba(100,255,218,.03); border: 1px solid rgba(100,255,218,.1); border-radius: var(--radius); padding: 16px;">
-              <h4 style="margin: 0 0 8px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">Mohamed Islam Ben Jaballah</h4>
+              <div class="pdf-preview-thumb">
+                <iframe src="MIBJResumeVR.pdf#toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
+              </div>
+              <h4 style="margin: 0 0 6px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">Mohamed Islam Ben Jaballah</h4>
               <p style="margin: 0 0 12px 0; font-size: .88rem; font-family: var(--font); color: var(--text-dim);">Technical Project Manager &amp; Software Engineer — Full CV</p>
               <button class="pdf-trigger" data-media-type="pdf" data-media-src="MIBJResumeVR.pdf" data-media-title="Resume / CV — MIBJ" style="cursor: pointer; border: none; display: inline-block; padding: 3px 10px; background: var(--accent-dim); color: var(--accent); border-radius: 50px; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .5px; transition: opacity .2s;">
                 View Resume
@@ -363,7 +366,10 @@
             <div style="display: grid; gap: 16px;">
               <!-- BikeVR Project -->
               <div style="background: rgba(100,255,218,.03); border: 1px solid rgba(100,255,218,.1); border-radius: var(--radius); padding: 16px;">
-                <h4 style="margin: 0 0 8px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">BikeVR Project</h4>
+                <div class="pdf-preview-thumb">
+                  <iframe src="BikeVR.pdf#toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
+                </div>
+                <h4 style="margin: 0 0 6px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">BikeVR Project</h4>
                 <p style="margin: 0 0 12px 0; font-size: .88rem; font-family: var(--font); color: var(--text-dim);">Virtual Reality cycling training simulation</p>
                 <button class="pdf-trigger" data-media-type="pdf" data-media-src="BikeVR.pdf" data-media-title="BikeVR — Project Documentation" style="cursor: pointer; border: none; display: inline-block; padding: 3px 10px; background: var(--accent-dim); color: var(--accent); border-radius: 50px; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .5px; transition: opacity .2s;">
                   View Documentation
@@ -371,7 +377,10 @@
               </div>
               <!-- Cthulhu Invocation Project -->
               <div style="background: rgba(100,255,218,.03); border: 1px solid rgba(100,255,218,.1); border-radius: var(--radius); padding: 16px;">
-                <h4 style="margin: 0 0 8px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">Cthulhu Invocation</h4>
+                <div class="pdf-preview-thumb">
+                  <iframe src="Chtulhu invocation.pptx.pdf#toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
+                </div>
+                <h4 style="margin: 0 0 6px 0; font-size: 1rem; font-family: var(--font); font-weight: 600; color: var(--white);">Cthulhu Invocation</h4>
                 <p style="margin: 0 0 12px 0; font-size: .88rem; font-family: var(--font); color: var(--text-dim);">Interactive horror experience presentation</p>
                 <button class="pdf-trigger" data-media-type="pdf" data-media-src="Chtulhu invocation.pptx.pdf" data-media-title="Cthulhu Invocation — Project Documentation" style="cursor: pointer; border: none; display: inline-block; padding: 3px 10px; background: var(--accent-dim); color: var(--accent); border-radius: 50px; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .5px; transition: opacity .2s;">
                   View Documentation
@@ -406,12 +415,14 @@
   <!-- ===================== LIGHTBOX MODAL ===================== -->
   <div class="lightbox-overlay" id="lightbox">
     <div class="lightbox-container">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-      <div class="lightbox-content" id="lightboxContent"></div>
-      <div class="lightbox-caption">
-        <h4 id="lightboxTitle"></h4>
-        <p id="lightboxType"></p>
+      <div class="lightbox-header">
+        <div class="lightbox-header-info">
+          <span id="lightboxType"></span>
+          <h4 id="lightboxTitle"></h4>
+        </div>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
       </div>
+      <div class="lightbox-content" id="lightboxContent"></div>
     </div>
   </div>
 
