@@ -718,6 +718,12 @@ iframe { max-width: 100%; }
 
 [dir="rtl"] .doc-card, [dir="rtl"] .doc-card__inner { text-align: right; }
 
+/* Float lang pill — always top-right regardless of RTL */
+[dir="rtl"] .float-lang {
+  right: 20px; left: auto;
+  direction: ltr; align-items: flex-end;
+}
+
 [dir="rtl"] .service-card { text-align: right; }
 
 [dir="rtl"] .stat-card { direction: rtl; }
