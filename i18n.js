@@ -106,17 +106,17 @@ const TRANSLATIONS = {
     'testimonial.hamami.name': 'Dr. Mohamed Ali Hamami',
     'testimonial.hamami.role': 'AI & XR Strategy and Research Specialist',
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
-    'testimonial.hamami.text': 'Working with Mohamed Islam was an outstanding experience. Across three collaborative projects spanning hardware and software, he demonstrated a rare combination of deep technical mastery and genuine creative vision. His understanding of AI and XR technologies is exceptional — he delivered solutions perfectly aligned with our research demands at Weill Cornell Medicine. Mohamed doesn\'t just execute; he thinks ahead, anticipates challenges, and brings ideas that elevate the entire project. I would recommend him without hesitation to anyone seeking a partner at the intersection of cutting-edge technology and research.',
+    'testimonial.hamami.text': 'Mohamed Islam started as a brilliant student under my supervision — and watching him grow into a sharp, dependable business partner has been genuinely rewarding. Across three hardware and software projects, he delivered outstanding results with deep technical mastery and real creative initiative. His grasp of AI and XR is exceptional. I recommend him without hesitation.',
 
-    'testimonial.farzaneh.name': 'Farzaneh Shiti',
+    'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Chief Operating Officer',
     'testimonial.farzaneh.org':  'SSC Abu Dhabi',
-    'testimonial.farzaneh.text': 'Mohamed Islam is the kind of technical partner every organization hopes to find. He delivered exceptional results for SSC — on time, on scope, and with a level of polish that exceeded every expectation we set. His ability to understand business needs and translate them into flawlessly executed technical solutions is truly remarkable. He managed complexity with composure, communicated clearly at every stage, and ensured our team always felt confident and informed. The projects he led for us have made a lasting impact on our operations, and we would work with him again without a second thought.',
+    'testimonial.farzaneh.text': 'What set Mohamed Islam apart was his ability to perform under real pressure. Deadlines were tight, requirements shifted, and expectations changed constantly — yet he iterated fast, adapted without fuss, and never compromised on quality. He absorbed every curveball and kept delivering. SSC couldn\'t have asked for a more resilient and dependable technical partner.',
 
     'testimonial.jose.name': 'Jose Vargas',
     'testimonial.jose.role': 'Project Manager',
-    'testimonial.jose.org':  'Pompiers Sans Frontières, France',
-    'testimonial.jose.text': 'Beyond his exceptional technical skills, what truly stands out about Mohamed Islam is the kind of person he is. From the first conversation to the final delivery, he was present, engaged, and genuinely invested in the success of our mission at Pompiers Sans Frontières. He brought energy and warmth to every team meeting, was always ready to go the extra mile, and made the entire experience feel collaborative and human. Working alongside him wasn\'t just productive — it was a genuine pleasure. He is not just a talented professional; he is an incredible person to have on your team.',
+    'testimonial.jose.org':  'ICONIK',
+    'testimonial.jose.text': 'Working with Mohamed Islam at ICONIK was a genuine highlight. Beyond his sharp technical skills, he\'s the kind of person who lifts the whole team — warm, fully present, and always ready to go the extra mile. Every meeting was better with him in it. I\'d work with him again without hesitation.',
 
     'contact.label': '06 Contact',
     'contact.title': "Let's Build Something Great",
@@ -235,7 +235,7 @@ const TRANSLATIONS = {
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
     'testimonial.hamami.text': 'Travailler avec Mohamed Islam a été une expérience remarquable. À travers trois projets collaboratifs couvrant matériel et logiciel, il a démontré une combinaison rare de maîtrise technique approfondie et de vision créative authentique. Sa compréhension des technologies IA et XR est exceptionnelle — il a livré des solutions parfaitement alignées avec nos exigences de recherche à Weill Cornell Medicine. Mohamed ne se contente pas d\'exécuter ; il anticipe, identifie les défis à l\'avance et apporte des idées qui élèvent l\'ensemble du projet. Je le recommande sans réserve à quiconque cherche un partenaire à l\'intersection de la technologie de pointe et de la recherche.',
 
-    'testimonial.farzaneh.name': 'Farzaneh Shiti',
+    'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Directrice des Opérations',
     'testimonial.farzaneh.org':  'SSC Abou Dhabi',
     'testimonial.farzaneh.text': 'Mohamed Islam est le type de partenaire technique que toute organisation espère trouver. Il a livré des résultats exceptionnels pour SSC — dans les délais, dans le périmètre, avec un niveau de qualité qui a dépassé toutes nos attentes. Sa capacité à comprendre les enjeux métier et à les transformer en solutions techniques impeccables est vraiment remarquable. Il a géré la complexité avec sang-froid, communiqué clairement à chaque étape et veillé à ce que notre équipe se sente toujours en confiance. Les projets qu\'il a dirigés pour nous ont eu un impact durable sur nos opérations, et nous travaillerions de nouveau avec lui sans hésitation.',
@@ -362,7 +362,7 @@ const TRANSLATIONS = {
     'testimonial.hamami.org':  'جامعة ويل كورنيل للطب',
     'testimonial.hamami.text': 'كانت التجربة مع محمد إسلام استثنائية بكل المقاييس. عبر ثلاثة مشاريع تعاونية تجمع بين الأجهزة والبرمجيات، أثبت أنه يمزج بشكل نادر بين الإتقان التقني العميق والرؤية الإبداعية الحقيقية. إدراكه لتقنيات الذكاء الاصطناعي والواقع الموسع استثنائي — قدّم حلولاً تتوافق تماماً مع متطلبات أبحاثنا في جامعة ويل كورنيل للطب. محمد لا يكتفي بالتنفيذ؛ بل يفكر مسبقاً ويتوقع التحديات ويطرح أفكاراً ترتقي بالمشروع بأكمله. أوصي به دون تردد لكل من يبحث عن شريك في ملتقى التقنية المتقدمة والبحث العلمي.',
 
-    'testimonial.farzaneh.name': 'فرزانة شيتي',
+    'testimonial.farzaneh.name': 'فرزانة شيري',
     'testimonial.farzaneh.role': 'الرئيسة التنفيذية للعمليات',
     'testimonial.farzaneh.org':  'SSC أبوظبي',
     'testimonial.farzaneh.text': 'محمد إسلام هو نوع الشريك التقني الذي تتمنى كل مؤسسة أن تجده. قدّم لـ SSC نتائج استثنائية — في الوقت المحدد، ضمن النطاق المتفق عليه، وبمستوى من الإتقان فاق كل توقعاتنا. قدرته على فهم الاحتياجات التشغيلية وترجمتها إلى حلول تقنية منفّذة بلا عيوب تبهرني حقاً. أدار التعقيدات بهدوء واتزان، وتواصل بوضوح في كل مرحلة، وضمن أن فريقنا يشعر دائماً بالثقة والاطمئنان. المشاريع التي قادها لنا تركت أثراً دائماً في عملياتنا، وسنتعاون معه مجدداً دون تردد.',
@@ -489,7 +489,7 @@ const TRANSLATIONS = {
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
     'testimonial.hamami.text': 'Trabajar con Mohamed Islam fue una experiencia sobresaliente. A lo largo de tres proyectos colaborativos que abarcaron hardware y software, demostró una combinación poco común de profundo dominio técnico y visión creativa genuina. Su comprensión de las tecnologías de IA y XR es excepcional — entregó soluciones perfectamente alineadas con las exigencias de investigación de Weill Cornell Medicine. Mohamed no solo ejecuta; anticipa, identifica desafíos con antelación y aporta ideas que elevan todo el proyecto. Lo recomiendo sin reservas a cualquiera que busque un socio en la intersección de la tecnología de vanguardia y la investigación.',
 
-    'testimonial.farzaneh.name': 'Farzaneh Shiti',
+    'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Directora de Operaciones',
     'testimonial.farzaneh.org':  'SSC Abu Dhabi',
     'testimonial.farzaneh.text': 'Mohamed Islam es el tipo de socio técnico que toda organización espera encontrar. Entregó resultados excepcionales para SSC — a tiempo, dentro del alcance acordado, con un nivel de calidad que superó todas nuestras expectativas. Su capacidad para comprender las necesidades del negocio y traducirlas en soluciones técnicas impecables es verdaderamente notable. Gestionó la complejidad con compostura, se comunicó con claridad en cada etapa y se aseguró de que nuestro equipo siempre se sintiera seguro e informado. Los proyectos que lideró para nosotros han tenido un impacto duradero en nuestras operaciones, y trabajaríamos con él nuevamente sin dudarlo.',
@@ -616,7 +616,7 @@ const TRANSLATIONS = {
     'testimonial.hamami.org':  '威尔康奈尔医学院',
     'testimonial.hamami.text': '与Mohamed Islam合作是一次卓越的体验。在三个涵盖硬件和软件的协作项目中，他展示出罕见的深度技术掌控力与真正的创意视野。他对AI和XR技术的理解令人叹服——他交付的解决方案与威尔康奈尔医学院的研究要求完美契合。Mohamed不只是执行任务；他超前思考、预判挑战，并提出能够提升整个项目的想法。我毫不犹豫地向任何寻求站在前沿技术与研究交叉点上的合作伙伴推荐他。',
 
-    'testimonial.farzaneh.name': 'Farzaneh Shiti',
+    'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': '首席运营官',
     'testimonial.farzaneh.org':  'SSC 阿布扎比',
     'testimonial.farzaneh.text': 'Mohamed Islam是每个组织都渴望找到的技术合作伙伴。他为SSC交付了卓越的成果——按时、在范围内，并以超出我们所有期望的精良品质完成。他理解业务需求并将其转化为完美技术解决方案的能力令人叹为观止。他从容应对复杂挑战，在每个阶段清晰沟通，始终确保我们团队充满信心。他为我们主导的项目对我们的运营产生了持久影响，我们会毫不犹豫地再次与他合作。',
@@ -743,7 +743,7 @@ const TRANSLATIONS = {
     'testimonial.hamami.org':  'Университет Вейлл Корнелл',
     'testimonial.hamami.text': 'Работать с Мохамедом Исламом — это выдающийся опыт. В ходе трёх совместных проектов, охватывающих как аппаратную, так и программную часть, он продемонстрировал редкое сочетание глубокого технического мастерства и подлинного творческого видения. Его понимание технологий ИИ и XR исключительно — он реализовывал решения, идеально соответствующие нашим исследовательским требованиям в Университете Вейлл Корнелл. Мохамед не просто исполняет — он думает наперёд, предвидит сложности и предлагает идеи, которые поднимают весь проект на новый уровень. Я рекомендую его без колебаний всем, кто ищет партнёра на стыке передовых технологий и науки.',
 
-    'testimonial.farzaneh.name': 'Фарзане Шити',
+    'testimonial.farzaneh.name': 'Фарзане Шири',
     'testimonial.farzaneh.role': 'Главный Операционный Директор',
     'testimonial.farzaneh.org':  'SSC Абу-Даби',
     'testimonial.farzaneh.text': 'Мохамед Ислам — именно тот технический партнёр, которого мечтает найти каждая организация. Он добился исключительных результатов для SSC — в срок, в рамках согласованного объёма, с уровнем качества, превысившим все наши ожидания. Его способность понять потребности бизнеса и воплотить их в безупречно реализованных технических решениях поистине впечатляет. Он управлял сложностью с хладнокровием, чётко общался на каждом этапе и обеспечивал уверенность и информированность нашей команды. Проекты, которые он возглавил для нас, оказали долгосрочное влияние на нашу деятельность, и мы без промедления снова поработаем с ним.',
