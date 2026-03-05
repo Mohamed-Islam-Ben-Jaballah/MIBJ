@@ -77,7 +77,8 @@ iframe { max-width: 100%; }
 
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center;
   padding: 0 40px; z-index: 1000;
   background: rgba(10, 25, 47, .88); backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(100,255,218,.06);
@@ -88,7 +89,7 @@ iframe { max-width: 100%; }
   font-weight: 800; font-size: 1.35rem; color: var(--accent);
   letter-spacing: 2px; font-family: var(--mono);
 }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
 .nav-links a {
   font-size: .88rem; font-weight: 500; color: var(--text-dim);
   transition: color var(--transition);
@@ -101,7 +102,10 @@ iframe { max-width: 100%; }
 }
 .nav-links .cta-btn:hover { background: var(--accent-dim); }
 
-/* Hamburger */
+/* Right slot: inline lang-switcher + hamburger */
+.navbar-right { display: flex; align-items: center; gap: 12px; justify-content: flex-end; }
+
+/* Hamburger (desktop fallback — hidden on mobile, we use the logo instead) */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1100; }
 .hamburger span {
   display: block; width: 26px; height: 2px; background: var(--accent);
@@ -112,7 +116,26 @@ iframe { max-width: 100%; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
+  /* Hamburger hidden — logo acts as menu toggle */
+  .hamburger { display: none !important; }
+  /* On mobile the inline lang-switcher is hidden — float-lang handles language switch */
+  .navbar .lang-switcher { display: none; }
+
+  /* Logo becomes the tap target for the mobile menu */
+  .navbar .logo {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin: -5px -10px;
+    transition: background var(--transition), color var(--transition);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .navbar .logo:hover,
+  .navbar .logo.nav-open {
+    background: var(--accent-dim);
+    opacity: 1;
+  }
+
   .nav-links {
     position: fixed; top: 0; right: -100%; width: 70vw; max-width: 320px;
     height: 100vh; flex-direction: column; justify-content: center;
@@ -534,7 +557,197 @@ iframe { max-width: 100%; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 
-/* ========== SCROLLBAR ========== */
+/* ========== LANGUAGE SWITCHER (inline navbar) ========== */
+
+.lang-switcher {
+  display: flex; align-items: center; gap: 4px;
+}
+.lang-btn {
+  background: transparent; border: 1px solid rgba(100,255,218,.2);
+  color: var(--text-dim); font-family: var(--mono); font-size: .72rem;
+  font-weight: 600; padding: 4px 9px; border-radius: 4px; cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  letter-spacing: .5px; line-height: 1;
+}
+.lang-btn:hover { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
+.lang-btn.active { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
+
+
+/* ========== FLOATING LANGUAGE SELECTOR ========== */
+
+.float-lang {
+  position: fixed; top: 12px; right: 20px; z-index: 1500;
+  display: flex; flex-direction: column; align-items: flex-end;
+  /* Hidden on desktop until navbar scrolls away; always visible on mobile */
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.float-lang.visible {
+  opacity: 1; visibility: visible; pointer-events: all;
+}
+
+/* Main pill button */
+.float-lang__pill {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--bg-light); border: 1px solid rgba(100,255,218,.3);
+  color: var(--accent); font-family: var(--mono); font-size: .82rem;
+  font-weight: 700; padding: 9px 16px; border-radius: 50px; cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,.5); letter-spacing: .5px;
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid rgba(100,255,218,.3);
+}
+.float-lang__pill svg {
+  width: 11px; height: 11px; flex-shrink: 0; transition: transform .25s ease;
+}
+
+/* Language options popup — sits BELOW the pill */
+.float-lang__menu {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  background: var(--bg-light); border: 1px solid rgba(100,255,218,.15);
+  border-radius: 10px; padding: 6px; box-shadow: 0 8px 36px rgba(0,0,0,.55);
+  display: flex; flex-direction: column; gap: 3px; min-width: 72px;
+  opacity: 0; visibility: hidden;
+  transform: translateY(-8px) scale(.95); transform-origin: top right;
+  transition: opacity .22s ease, visibility .22s ease, transform .22s ease;
+  pointer-events: none;
+}
+/* Transparent bridge so mouse can travel from pill to menu without triggering mouseout */
+.float-lang::after {
+  content: ''; position: absolute;
+  top: 100%; left: -10px; right: -10px;
+  height: 12px; pointer-events: all;
+}
+.float-lang__menu .lang-btn {
+  font-size: .76rem; padding: 6px 12px; border-radius: 6px;
+  text-align: center; width: 100%;
+}
+
+/* Desktop hover (fine pointer devices only) */
+@media (hover: hover) and (pointer: fine) {
+  .float-lang:hover .float-lang__pill {
+    background: var(--accent-dim); border-color: var(--accent);
+    box-shadow: 0 4px 28px rgba(100,255,218,.15);
+  }
+  .float-lang:hover .float-lang__menu {
+    opacity: 1; visibility: visible;
+    transform: translateY(0) scale(1); pointer-events: all;
+  }
+}
+
+/* .open class — handles touch / mobile tap */
+.float-lang.open .float-lang__pill {
+  background: var(--accent-dim); border-color: var(--accent);
+  box-shadow: 0 4px 28px rgba(100,255,218,.15);
+}
+.float-lang.open .float-lang__pill svg { transform: rotate(180deg); }
+.float-lang.open .float-lang__menu {
+  opacity: 1; visibility: visible;
+  transform: translateY(0) scale(1); pointer-events: all;
+}
+
+/* Mobile: always show float-lang (navbar lang-switcher is hidden) */
+@media (max-width: 768px) {
+  .float-lang {
+    opacity: 1; visibility: visible; pointer-events: all;
+    top: 12px; right: 16px;
+  }
+  .float-lang__pill { font-size: .88rem; padding: 10px 18px; }
+}
+@media (max-width: 480px) {
+  .float-lang { top: 10px; right: 12px; }
+  .float-lang__pill { font-size: .84rem; padding: 9px 16px; }
+}
+
+
+
+
+/* ========== RTL SUPPORT (Arabic) ========== */
+
+[dir="rtl"] {
+  --font: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Grid navbar: navbar always stays LTR (logo left, links center, lang right).
+   Only text content inside links is flipped for RTL. */
+[dir="rtl"] .navbar { direction: ltr; }
+[dir="rtl"] .logo { letter-spacing: 0; direction: rtl; }
+[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links a { direction: rtl; }
+
+[dir="rtl"] .section-label { flex-direction: row-reverse; }
+[dir="rtl"] .section-label::before { display: none; }
+[dir="rtl"] .section-label::after {
+  content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
+}
+
+[dir="rtl"] .hero-inner { text-align: right; }
+[dir="rtl"] .hero p { margin-left: 0; margin-right: 0; }
+
+[dir="rtl"] .about-grid { direction: rtl; }
+[dir="rtl"] .about-text p { text-align: right; }
+[dir="rtl"] .tech-list { direction: rtl; }
+[dir="rtl"] .tech-list li { padding-left: 0; padding-right: 18px; }
+[dir="rtl"] .tech-list li::before { left: auto; right: 0; }
+
+[dir="rtl"] .process-timeline { padding-left: 0; padding-right: 40px; }
+[dir="rtl"] .process-timeline::before {
+  left: auto; right: 0px; transform: translateX(50%);
+}
+[dir="rtl"] .process-step { padding-left: 0; padding-right: 32px; }
+[dir="rtl"] .process-step::before {
+  left: auto; right: -56px;
+  content: attr(data-step);
+}
+[dir="rtl"] .process-step p { text-align: right; }
+
+[dir="rtl"] .team-banner { flex-direction: row-reverse; text-align: right; }
+[dir="rtl"] .team-numbers { flex-direction: row-reverse; }
+
+[dir="rtl"] .portfolio-body { text-align: right; }
+[dir="rtl"] .portfolio-tech { flex-direction: row-reverse; }
+
+[dir="rtl"] .contact-section { text-align: center; }
+
+[dir="rtl"] .lightbox-header { flex-direction: row-reverse; }
+[dir="rtl"] .lightbox-header-info { flex-direction: row-reverse; }
+
+[dir="rtl"] .doc-card, [dir="rtl"] .doc-card__inner { text-align: right; }
+
+[dir="rtl"] .service-card { text-align: right; }
+
+[dir="rtl"] .stat-card { direction: rtl; }
+
+/* Float-lang: stays top-right in both LTR and RTL to match the navbar lang position */
+[dir="rtl"] .float-lang {
+  right: 20px; left: auto; align-items: flex-end;
+}
+[dir="rtl"] .float-lang__menu {
+  right: 0; left: auto; transform-origin: top right;
+}
+@media (max-width: 768px) {
+  [dir="rtl"] .float-lang { right: 16px; left: auto; }
+  [dir="rtl"] .nav-links {
+    right: auto; left: -100%;
+    box-shadow: 10px 0 40px rgba(0,0,0,.5);
+  }
+  [dir="rtl"] .nav-links.open { left: 0; right: auto; }
+  [dir="rtl"] .process-timeline { padding-left: 0; padding-right: 52px; }
+  [dir="rtl"] .process-timeline::before { left: auto; right: 18px; transform: translateX(50%); }
+  [dir="rtl"] .process-step { padding-left: 0; padding-right: 24px; }
+  [dir="rtl"] .process-step::before { left: auto; right: -48px; }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .float-lang { left: 16px; }
+  [dir="rtl"] .process-timeline { padding-right: 48px; }
+  [dir="rtl"] .process-timeline::before { right: 18px; }
+  [dir="rtl"] .process-step { padding-right: 20px; }
+  [dir="rtl"] .process-step::before { right: -42px; }
+}
+
+
+
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

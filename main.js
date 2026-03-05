@@ -67,35 +67,115 @@
 })();
 
 
-// ---- Navbar Hide/Show on Scroll ----
+// ---- Navbar Hide/Show on Scroll + Float-Lang Visibility ----
 (function () {
   let lastScroll = 0;
   const nav = document.getElementById('navbar');
+  const floatLang = document.getElementById('floatLang');
+  const FLOAT_THRESHOLD = 150;
+
   window.addEventListener('scroll', () => {
     const curr = window.scrollY;
+
+    // Navbar hide on scroll-down
     if (curr > lastScroll && curr > 80) {
       nav.classList.add('hidden');
     } else {
       nav.classList.remove('hidden');
     }
+
+    // Float-lang pill: visible after threshold (CSS keeps it always-on for mobile)
+    if (floatLang) {
+      if (curr > FLOAT_THRESHOLD) {
+        floatLang.classList.add('visible');
+      } else {
+        floatLang.classList.remove('visible');
+        floatLang.classList.remove('open');
+      }
+    }
+
     lastScroll = curr;
+  }, { passive: true });
+})();
+
+
+// ---- Floating Language Button ----
+(function () {
+  const floatLang = document.getElementById('floatLang');
+  const floatPill = document.getElementById('floatLangPill');
+  if (!floatLang || !floatPill) return;
+
+  // Pill click: toggle .open (primary mechanism on touch / mobile)
+  floatPill.addEventListener('click', function (e) {
+    e.stopPropagation();
+    floatLang.classList.toggle('open');
+  });
+
+  // Close after selecting a language
+  floatLang.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setTimeout(function () { floatLang.classList.remove('open'); }, 180);
+    });
+  });
+
+  // Close when tapping/clicking outside
+  document.addEventListener('click', function (e) {
+    if (!floatLang.contains(e.target)) floatLang.classList.remove('open');
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') floatLang.classList.remove('open');
   });
 })();
 
 
-// ---- Mobile Menu ----
+// ---- Mobile Menu (logo tap = hamburger) ----
 (function () {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
+  const logo = document.querySelector('.navbar .logo');
+
+  function openNav() {
+    navLinks.classList.add('open');
+    if (logo) logo.classList.add('nav-open');
+    if (hamburger) hamburger.classList.add('open');
+  }
+  function closeNav() {
+    navLinks.classList.remove('open');
+    if (logo) logo.classList.remove('nav-open');
+    if (hamburger) hamburger.classList.remove('open');
+  }
+  function toggleNav() {
+    navLinks.classList.contains('open') ? closeNav() : openNav();
+  }
+
+  // Hamburger (kept in HTML for accessibility, hidden via CSS on mobile)
+  if (hamburger) hamburger.addEventListener('click', toggleNav);
+
+  // Logo acts as the toggle on mobile screens
+  if (logo) {
+    logo.addEventListener('click', function (e) {
+      // Only intercept on mobile (hamburger hidden via CSS)
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleNav();
+      }
     });
+  }
+
+  // Close when any nav link is tapped
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeNav);
+  });
+
+  // Close when clicking outside the drawer
+  document.addEventListener('click', function (e) {
+    if (
+      navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      e.target !== logo
+    ) closeNav();
   });
 })();
 
@@ -140,7 +220,8 @@
   const typeEl  = document.getElementById('lightboxType');
   const closeBtn = document.getElementById('lightboxClose');
 
-  const typeLabels = {
+  // Exposed globally so i18n.js can update labels on language change
+  const typeLabels = window.__i18nTypeLabels = {
     video: '▶  Video',
     image: '🖼  Image',
     pdf: '📄  PDF Document',
