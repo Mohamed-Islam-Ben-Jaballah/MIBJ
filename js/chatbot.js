@@ -398,9 +398,10 @@
         hideTyping();
         appendMessage(reply, 'bot');
       })
-      .catch(function () {
+      .catch(function (err) {
         hideTyping();
         conversationHistory.pop(); // roll back user message
+        console.error('[Chatbot] API error:', err && err.message);
         appendMessage(getLangUI().error, 'bot');
       })
       .then(function () {
