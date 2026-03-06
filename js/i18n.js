@@ -357,7 +357,7 @@ const TRANSLATIONS = {
     'testimonials.title':    'ماذا يقول عملائي',
     'testimonials.subtitle': 'كلمات حقيقية من أشخاص شرفت بالبناء معهم.',
 
-    'testimonial.hamami.name': 'د. محمد علي حمامي',
+    'testimonial.hamami.name': 'د. محمد علي هـمامي',
     'testimonial.hamami.role': 'متخصص في استراتيجية وبحث الذكاء الاصطناعي والواقع الموسع',
     'testimonial.hamami.org':  'جامعة ويل كورنيل للطب',
     'testimonial.hamami.text': 'كانت التجربة مع محمد إسلام استثنائية بكل المقاييس. عبر ثلاثة مشاريع تعاونية تجمع بين الأجهزة والبرمجيات، أثبت أنه يمزج بشكل نادر بين الإتقان التقني العميق والرؤية الإبداعية الحقيقية. إدراكه لتقنيات الذكاء الاصطناعي والواقع الموسع استثنائي — قدّم حلولاً تتوافق تماماً مع متطلبات أبحاثنا في جامعة ويل كورنيل للطب. محمد لا يكتفي بالتنفيذ؛ بل يفكر مسبقاً ويتوقع التحديات ويطرح أفكاراً ترتقي بالمشروع بأكمله. أوصي به دون تردد لكل من يبحث عن شريك في ملتقى التقنية المتقدمة والبحث العلمي.',
@@ -845,11 +845,9 @@ const TRANSLATIONS = {
     });
   }
 
-  // Boot: apply stored / browser lang
+  // Boot: always start in English
   function boot() {
     let lang = DEFAULT_LANG;
-    try { lang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG; } catch (_) {}
-    if (!TRANSLATIONS[lang]) lang = DEFAULT_LANG;
     applyLang(lang);
     wireButtons();
   }

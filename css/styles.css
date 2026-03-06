@@ -1256,6 +1256,16 @@ iframe { max-width: 100%; }
 @media (max-width: 480px) {
   .chat-fab   { bottom: 20px; right: 18px; width: 56px; height: 56px; }
   .chat-fab__icon--bot { width: 30px; height: 30px; }
+  /* Hide FAB when panel is open — close via the header X button instead */
+  .chat-fab.active { opacity: 0; pointer-events: none; }
+  /* Make the close button more prominent on mobile */
+  .chat-header__close {
+    width: 36px; height: 36px;
+    background: rgba(100,255,218,.15);
+    color: var(--accent);
+    font-size: 1.5rem;
+    border: 1px solid rgba(100,255,218,.3);
+  }
   .chat-panel {
     bottom: 0; right: 0; left: 0; width: 100%;
     border-radius: 20px 20px 0 0; max-height: 78vh;
