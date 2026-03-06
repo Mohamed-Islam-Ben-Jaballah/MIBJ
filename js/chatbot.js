@@ -11,7 +11,7 @@
 
   // ── Configuration ────────────────────────────────────────────────────
   var CONFIG = {
-    apiKey: 'AIzaSyBhN1JIMmOQR5Fl5_Xi4ZIAJ2ce4JxaDQE',
+    apiKey: 'AIzaSyDLzla7RpEPscTiddeexUkSq1kh5ir9-wA',
     model:  'gemini-2.5-flash',
   };
 
