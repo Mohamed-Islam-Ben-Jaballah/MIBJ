@@ -1,0 +1,149 @@
+# MIBJ Knowledge Base — Mohamed Islam Ben Jeballah
+
+## Who Is MIBJ?
+Mohamed Islam Ben Jeballah (MIBJ) is a Technical Project Manager & Software Engineer with 7+ years of experience. He specializes in 3D, VR, AI, and interactive web development. He started as a developer and grew into full project leadership while staying hands-on in architecture and implementation. He is based in Abu Dhabi, UAE.
+
+## Key Stats
+- 7+ Years of Experience
+- 15+ Projects Delivered
+- Team size: 1 to 6 specialists (flexible based on project scope)
+- 99% Client Satisfaction Rate
+
+## Services Offered
+
+### 1. 3D Unity Solutions
+Custom-built interactive 3D applications powered by Unity. Includes real-time product configurators, architectural visualizations, and gamified experiences that engage audiences. Technologies: Unity 3D, C#, HLSL/GLSL.
+
+### 2. Interactive Websites (Three.js)
+Immersive, GPU-accelerated web experiences built with Three.js and WebGL. Creates websites with visual identities that captivate and stand out in any market. Technologies: Three.js, WebGL, GLSL, JavaScript, TypeScript.
+
+### 3. AI Avatars & Multilingual Assistants
+Smart, conversational AI avatars with automatic language detection. Clients can ask questions in any language and receive instant, accurate responses — no buttons, no menus. Technologies: Python, NLP, LLMs, TTS/STT.
+
+### 4. VR Training Simulations
+High-fidelity virtual reality training for industries, law enforcement, police, military, and security forces. Realistic scenarios, measurable outcomes, safe training environments. Technologies: Unity 3D, C#, Meta Quest, HTC Vive, custom AI scoring.
+
+### 5. VR Education Platform
+A full immersive learning platform combining a web solution for schools and teachers with a VR environment for students. Students learn through curriculum-aligned VR experiences while educators and institutions track progress in real time. Technologies: Unity 3D, C#, React, Node.js, MongoDB.
+
+### 6. Captivating Visual Branding
+Stunning 3D visuals, motion graphics, and interactive media that amplify market presence and communicate value instantly. Technologies: Blender, After Effects, Three.js, Cinema 4D.
+
+## Portfolio Projects
+
+### Project 1: Immersive Security Training Simulation
+Tag: VR Training
+High-fidelity VR training environment designed for law enforcement and military units. Features realistic tactical scenarios, performance analytics, and adaptive difficulty systems.
+Technologies: Unity 3D, C#, VR (Meta Quest / HTC Vive), Custom AI Scoring
+Video: https://youtu.be/mEy9YaW1MMA
+
+### Project 2: Multilingual AI Customer Avatar
+Tag: AI / NLP
+Smart conversational AI avatar with automatic language detection. Customers speak naturally in any language and instantly receive accurate responses — no buttons, no menus required.
+Technologies: Python, NLP/LLMs, WebGL, Three.js
+Video: https://youtu.be/oHsXkvvwNqw
+
+### Project 3: 3D Interactive Brand Experience
+Tag: Web / Three.js
+GPU-accelerated website featuring real-time 3D product visualization, particle effects, and smooth camera transitions that elevate client branding to the next level.
+Technologies: Three.js, WebGL, GLSL, JavaScript/TypeScript
+Video: https://youtu.be/6Yq9m0ck5rM
+
+### Project 4: VR Education Platform — Immersive Learning for Kids
+Tag: VR Education
+End-to-end immersive learning platform — students explore curriculum-aligned lessons inside a rich VR environment while teachers manage content and track each student's progress through a dedicated web dashboard.
+Technologies: Unity 3D, C#, React, Node.js, MongoDB
+Video: https://youtu.be/qJeUCrqOUoU
+
+### Project 5: Industrial 3D Visualization Platform
+Tag: 3D / Unity
+Real-time 3D application for industrial equipment visualization with interactive exploded views, assembly animations, and maintenance training modules.
+Technologies: Unity 3D, C#, Custom 3D Pipeline, HLSL
+Video: https://youtu.be/6H3F8WV3qdI
+
+### Project 6: 3D Motion Branding Campaign
+Tag: Branding
+Eye-catching 3D motion graphics and interactive media created to supercharge client market exposure. Designed to stop the scroll and communicate value in seconds.
+Technologies: Blender, After Effects, Three.js, Cinema 4D
+Video: https://youtu.be/uDZFmhTOqzA
+
+## Work Process
+
+### Step 1: Discovery & Problem Mapping
+A deep conversation to understand the client's challenge, audience, and goals. No jargon, no assumptions — just clarity.
+
+### Step 2: Solution Design
+A curated set of solutions tailored to the client's needs — from lightweight to comprehensive. Options are discussed together to find the best fit for vision, timeline, and budget.
+
+### Step 3: Team Assembly
+The ideal mix of freelance developers, 3D artists, and designers is assembled — senior specialists who have delivered together repeatedly. Team size scales from solo to 5–6 experts.
+
+### Step 4: MVP Delivery (1–3 Months)
+A clear MVP, timeline, and budget are set. The POC/MVP phase tests the solution in the real world, gathers feedback, and iterates until it perfectly matches client needs and market demands.
+
+### Step 5: Full Development & Iteration
+After MVP validation, the project scales — adding features, polishing the experience, and delivering the final product. The goal is not just to meet expectations, but to exceed them.
+
+## The Team
+Every project is managed personally by Mohamed Islam and executed by a handpicked team of proven freelance professionals he has shipped with for years. They are highly skilled, reliable under pressure, and efficient by design. Team size ranges from 1 to 6 members depending on project scope.
+
+## Technology Stack
+- Unity 3D / C#
+- Three.js / WebGL / GLSL
+- VR/AR: Meta Quest, HTC Vive
+- AI / NLP / LLMs (Large Language Models)
+- JavaScript / TypeScript
+- Python
+- React / Next.js
+- Custom 3D Pipelines
+- Blender / After Effects / Cinema 4D
+- Git / CI/CD
+- Project Management (Agile/Scrum)
+
+## Client Testimonials
+
+### Dr. Mohamed Ali Hamami — AI & XR Strategy and Research Specialist, Weill Cornell Medicine University
+"Mohamed Islam started as a brilliant student under my supervision — and watching him grow into a sharp, dependable business partner has been genuinely rewarding. Across three hardware and software projects, he delivered outstanding results with deep technical mastery and real creative initiative. His grasp of AI and XR is exceptional. I recommend him without hesitation."
+
+### Farzaneh Shiri — Chief Operating Officer, SSC Abu Dhabi
+"What set Mohamed Islam apart was his ability to perform under real pressure. Deadlines were tight, requirements shifted, and expectations changed constantly — yet he iterated fast, adapted without fuss, and never compromised on quality. He absorbed every curveball and kept delivering. SSC couldn't have asked for a more resilient and dependable technical partner."
+
+### Jose Vargas — Project Manager, ICONIK
+"Working with Mohamed Islam at ICONIK was a genuine highlight. Beyond his sharp technical skills, he's the kind of person who lifts the whole team — warm, fully present, and always ready to go the extra mile. Every meeting was better with him in it. I'd work with him again without hesitation."
+
+## Contact & Availability
+- Email: medislambenjaballah@gmail.com
+- Phone / WhatsApp: +971 54 327 5998 (UAE)
+- GitHub: https://github.com/Mohamed-Islam-Ben-Jaballah
+- Portfolio website: https://mohamed-islam-ben-jaballah.github.io/MIBJ/
+- Available for new projects, freelance contracts, consulting, and long-term partnerships
+- To discuss a project, send an email or call directly — response time is typically within 24 hours
+
+## Pricing & Timelines
+Pricing is discussed during the Discovery phase and depends on project scope, team size, and complexity. MVP delivery typically takes 1–3 months. Full production development timelines vary based on features and scope. Both fixed-price and time-and-materials engagements are available.
+
+## FAQ
+
+Q: What types of projects do you take on?
+A: 3D Unity applications, interactive Three.js/WebGL websites, VR training simulations, VR education platforms, AI avatars and multilingual assistants, and captivating visual branding.
+
+Q: Do you work with international clients?
+A: Yes. Mohamed Islam has worked with clients in the UAE, Europe, and beyond. The team is fully remote-capable and the AI avatar systems natively support multilingual interactions.
+
+Q: What is the minimum engagement size?
+A: Projects can be handled solo by Mohamed Islam or with a full team of up to 6 specialists depending on the scope. There's no strict minimum — even small proof-of-concept projects are considered.
+
+Q: How long does a typical project take?
+A: The MVP/POC phase takes 1–3 months. Full production delivery varies by scope. A detailed timeline is provided during the Solution Design step.
+
+Q: Can I see more work samples?
+A: The portfolio section features 6 key projects with video demonstrations. Additional work samples, case studies, and documentation (including the BikeVR VR training simulator and other projects) are available on request.
+
+Q: What industries have you worked with?
+A: Law enforcement, military/defense, education, industrial manufacturing, retail/e-commerce branding, and technology companies.
+
+Q: Are you available for urgent or fast-turnaround projects?
+A: Yes, depending on current availability. Reach out directly to discuss timelines.
+
+Q: Can you handle the whole project from design to delivery?
+A: Yes. Mohamed Islam manages from concept and architecture through to deployment, including assembling and managing the specialist team.
