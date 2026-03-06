@@ -290,6 +290,7 @@
     return fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      referrerPolicy: 'origin',
       body: JSON.stringify(body)
     })
     .then(function (res) {
