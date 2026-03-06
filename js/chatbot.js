@@ -11,8 +11,8 @@
 
   // ── Configuration ────────────────────────────────────────────────────
   var CONFIG = {
-    apiKey: 'AIzaSyDLzla7RpEPscTiddeexUkSq1kh5ir9-wA',
-    model:  'gemini-2.5-flash',
+    proxyUrl: 'https://mibj-proxy.medislambenjaballah2.workers.dev',
+    model:    'gemini-2.5-flash',
   };
 
   // ── Base system prompt (language instruction prepended per request) ──
@@ -270,6 +270,7 @@
     conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
     var body = {
+      model: CONFIG.model, // proxy extracts this to build the Gemini URL
       systemInstruction: { parts: [{ text: cachedSystemText[lang] }] },
       contents: conversationHistory.slice(-8), // cap at last 4 exchanges to keep tokens low
       generationConfig: {
@@ -284,13 +285,9 @@
       ]
     };
 
-    var url = 'https://generativelanguage.googleapis.com/v1beta/models/'
-      + CONFIG.model + ':generateContent?key=' + CONFIG.apiKey;
-
-    return fetch(url, {
+    return fetch(CONFIG.proxyUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      referrerPolicy: 'origin',
       body: JSON.stringify(body)
     })
     .then(function (res) {
