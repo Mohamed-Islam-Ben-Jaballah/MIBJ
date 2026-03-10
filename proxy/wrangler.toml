@@ -1,0 +1,12 @@
+name = "mibj-proxy"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[placement]
+mode = "smart"
+
+# After deploying, your worker URL will be:
+# https://mibj-proxy.YOUR_SUBDOMAIN.workers.dev
+#
+# Set your API key as a secret (never committed to git):
+#   wrangler secret put GEMINI_API_KEY
