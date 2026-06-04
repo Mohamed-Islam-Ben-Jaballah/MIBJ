@@ -11,7 +11,7 @@
 
   // ── Configuration ────────────────────────────────────────────────────
   var CONFIG = {
-    proxyUrl: 'https://mibj-proxy.medislambenjaballah2.workers.dev',
+    proxyUrl: 'https://mibj-proxy.mibj.workers.dev',
     model:    'gemini-2.5-flash',
   };
 

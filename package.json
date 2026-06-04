@@ -1,0 +1,12 @@
+{
+  "name": "mibj-portfolio",
+  "version": "1.0.0",
+  "description": "MIBJ Portfolio with Gemini Chatbot",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
+  }
+}
