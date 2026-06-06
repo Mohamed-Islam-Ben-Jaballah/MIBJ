@@ -3,3 +3,9 @@
 *.mov
 *.avi
 *.mkv
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
