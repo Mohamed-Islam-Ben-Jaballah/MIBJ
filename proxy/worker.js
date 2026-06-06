@@ -37,7 +37,7 @@ export default {
     }
 
     // Extract model from body (client sends it), then remove before forwarding
-    const model = body.model || 'gemini-pro';
+    const model = body.model || 'gemini-1.5-flash-latest';
     delete body.model;
 
     const geminiUrl = `${GEMINI_BASE}${model}:generateContent?key=${env.mibj}`;
