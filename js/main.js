@@ -232,10 +232,14 @@
 })();
 
 
-// ---- Contact Form ----
+// ---- Contact Modal ----
 (function () {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
+  const overlay   = document.getElementById('contactOverlay');
+  const closeBtn  = document.getElementById('contactModalClose');
+  const form      = document.getElementById('contactForm');
+  const triggers  = document.querySelectorAll('.contact-trigger');
+
+  if (!overlay || !form) return;
 
   const nameEl     = document.getElementById('formName');
   const emailEl    = document.getElementById('formEmail');
@@ -247,10 +251,55 @@
 
   const timelineLabels = ['1–3 months', '3–6 months', '6–12 months', '12+ months'];
 
+  function openModal() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { if (nameEl) nameEl.focus(); }, 400);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Triggers: nav "Get In Touch", contact section button
+  triggers.forEach(function (t) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Close handlers
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+  });
+
+  // Close on successful submit, reset form
+  function resetForm() {
+    form.reset();
+    if (charCount) charCount.textContent = '0';
+    if (valEl) valEl.textContent = '3–6 months';
+    document.querySelectorAll('.timeline-labels span').forEach(function (s) {
+      s.classList.toggle('active', s.dataset.val === '2');
+    });
+    // Clear errors
+    form.querySelectorAll('.form-error-msg').forEach(function (e) { e.remove(); });
+    form.querySelectorAll('.error').forEach(function (e) { e.classList.remove('error'); });
+    submitBtn.classList.remove('success');
+    submitBtn.disabled = false;
+  }
+
+  // --- Form logic ---
+
   // Timeline slider
   if (timelineEl && valEl) {
     function updateTimeline() {
-      const idx = parseInt(timelineEl.value, 10) - 1;
+      var idx = parseInt(timelineEl.value, 10) - 1;
       valEl.textContent = timelineLabels[idx] || '';
       document.querySelectorAll('.timeline-labels span').forEach(function (s) {
         s.classList.toggle('active', parseInt(s.dataset.val, 10) === parseInt(timelineEl.value, 10));
@@ -267,7 +316,6 @@
     });
   }
 
-  // Validation helper
   function setError(el, msg) {
     el.classList.add('error');
     var existing = el.parentNode.querySelector('.form-error-msg');
@@ -286,7 +334,7 @@
   }
 
   function validateField(el) {
-    if (el.hasAttribute('required')) {
+    if (el.hasAttribute('required') && el.required) {
       if (!el.value.trim()) {
         setError(el, 'This field is required');
         return false;
@@ -315,7 +363,6 @@
     });
     if (!valid) return;
 
-    // Gather data
     var projectType = form.querySelector('input[name="projectType"]:checked');
     var industry = document.getElementById('formIndustry');
     var budget = document.getElementById('formBudget');
@@ -333,11 +380,9 @@
       msgEl.value.trim()
     ].join('\n');
 
-    // Show sending state
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    // Attempt mailto with a small delay for UX
     setTimeout(function () {
       var mailto = 'mailto:medislambenjaballah1@gmail.com?subject=' +
         encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
@@ -347,16 +392,10 @@
       submitBtn.classList.add('success');
       submitBtn.disabled = false;
 
-      // Reset after delay
       setTimeout(function () {
-        submitBtn.classList.remove('success');
-        form.reset();
-        if (charCount) charCount.textContent = '0';
-        if (valEl) valEl.textContent = '3–6 months';
-        document.querySelectorAll('.timeline-labels span').forEach(function (s) {
-          s.classList.toggle('active', s.dataset.val === '2');
-        });
-      }, 3000);
+        resetForm();
+        closeModal();
+      }, 2000);
     }, 600);
   });
 })();

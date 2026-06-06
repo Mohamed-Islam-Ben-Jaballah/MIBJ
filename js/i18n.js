@@ -122,6 +122,7 @@ const TRANSLATIONS = {
     'contact.title': "Let's Build Something Great",
     'contact.desc':  "Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.",
     'contact.send':  'Send Message',
+    'contact.cta':   'Start Your Project',
 
     'footer.text': '© 2026 MIBJ. Crafted with precision.',
 
@@ -248,6 +249,7 @@ const TRANSLATIONS = {
     'contact.title': 'Construisons Quelque Chose de Grand',
     'contact.desc':  "Vous avez un projet en tête ? Vous cherchez un partenaire technique fiable qui livre des résultats ? Je serais ravi d'entendre parler de votre défi et d'explorer comment nous pourrions le résoudre ensemble.",
     'contact.send':  'Envoyer le Message',
+    'contact.cta':   'Lancez Votre Projet',
 
     'footer.text': '© 2026 MIBJ. Conçu avec précision.',
 
@@ -374,6 +376,7 @@ const TRANSLATIONS = {
     'contact.title': 'لنبنِ شيئاً عظيماً',
     'contact.desc':  'هل لديك مشروع في ذهنك؟ هل تبحث عن شريك تقني موثوق يحقق النتائج؟ يسعدني سماع تحديك واستكشاف كيف يمكننا حله معاً.',
     'contact.send':  'أرسل الرسالة',
+    'contact.cta':   'ابدأ مشروعك',
 
     'footer.text': '© 2026 MIBJ. صُنع بإتقان.',
 
@@ -500,6 +503,7 @@ const TRANSLATIONS = {
     'contact.title': 'Construyamos Algo Grande',
     'contact.desc':  '¿Tienes un proyecto en mente? ¿Buscas un socio técnico confiable que entregue resultados? Me encantaría escuchar sobre tu desafío y explorar cómo podemos resolverlo juntos.',
     'contact.send':  'Enviar Mensaje',
+    'contact.cta':   'Inicia Tu Proyecto',
 
     'footer.text': '© 2026 MIBJ. Elaborado con precisión.',
 
@@ -626,6 +630,7 @@ const TRANSLATIONS = {
     'contact.title': '让我们共同创造精彩',
     'contact.desc':  '有项目想法？正在寻找可靠的技术合作伙伴？我很乐意了解您的挑战，探索我们如何共同解决它。',
     'contact.send':  '发送消息',
+    'contact.cta':   '开始您的项目',
 
     'footer.text': '© 2026 MIBJ. 精心打造。',
 
@@ -752,6 +757,7 @@ const TRANSLATIONS = {
     'contact.title': 'Давайте Создадим Что-то Великое',
     'contact.desc':  'Есть проект на уме? Ищете надёжного технического партнёра, который добивается результатов? Я был бы рад услышать о вашем вызове и изучить, как мы можем решить его вместе.',
     'contact.send':  'Отправить Сообщение',
+    'contact.cta':   'Начать Проект',
 
     'footer.text': '© 2026 MIBJ. Создано с точностью.',
 

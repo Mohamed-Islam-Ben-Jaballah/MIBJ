@@ -45,7 +45,7 @@
       <li><a href="#process" data-i18n="nav.process">Process</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
       <li><a href="#testimonials" data-i18n="nav.reviews">Reviews</a></li>
-      <li><a href="#contact" class="cta-btn" data-i18n="nav.contact">Get In Touch</a></li>
+      <li><a href="#contact" class="cta-btn contact-trigger" data-i18n="nav.contact">Get In Touch</a></li>
     </ul>
     <div class="navbar-right">
       <div class="lang-switcher" id="navLangSwitcher">
@@ -508,110 +508,11 @@
       <div class="reveal">
         <span class="section-label" data-i18n="contact.label">06 Contact</span>
         <h2 class="section-title" data-i18n="contact.title">Let's Build Something Great</h2>
-        <p class="contact-desc reveal" data-i18n="contact.desc">Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.</p>
-
-        <div class="contact-grid reveal">
-          <!-- Form -->
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="formName" class="form-label">Your Name *</label>
-                <input type="text" id="formName" class="form-input" required placeholder="John Doe" maxlength="100" autocomplete="name" />
-              </div>
-              <div class="form-group">
-                <label for="formEmail" class="form-label">Your Email *</label>
-                <input type="email" id="formEmail" class="form-input" required placeholder="john@example.com" maxlength="200" autocomplete="email" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Project Type *</label>
-              <div class="pill-group" id="formProjectType" role="radiogroup" aria-label="Project type">
-                <label class="pill-option"><input type="radio" name="projectType" value="Web" checked /><span>Web</span></label>
-                <label class="pill-option"><input type="radio" name="projectType" value="Mobile" /><span>Mobile</span></label>
-                <label class="pill-option"><input type="radio" name="projectType" value="Desktop" /><span>Desktop</span></label>
-                <label class="pill-option"><input type="radio" name="projectType" value="Multi-Platform" /><span>Multi-Platform</span></label>
-                <label class="pill-option"><input type="radio" name="projectType" value="VR / AR" /><span>VR / AR</span></label>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="formIndustry" class="form-label">Industry</label>
-                <select id="formIndustry" class="form-input form-select">
-                  <option value="">Select your industry…</option>
-                  <option value="Entertainment / Gaming">Entertainment / Gaming</option>
-                  <option value="Medical / Healthcare">Medical / Healthcare</option>
-                  <option value="Education / Training">Education / Training</option>
-                  <option value="Industrial / Manufacturing">Industrial / Manufacturing</option>
-                  <option value="Retail / E-commerce">Retail / E-commerce</option>
-                  <option value="Military / Defense">Military / Defense</option>
-                  <option value="Real Estate / Architecture">Real Estate / Architecture</option>
-                  <option value="Tech / SaaS">Tech / SaaS</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="formBudget" class="form-label">Budget Range</label>
-                <select id="formBudget" class="form-input form-select">
-                  <option value="">Prefer not to say</option>
-                  <option value="under-5k">Under $5k</option>
-                  <option value="5k-15k">$5k – $15k</option>
-                  <option value="15k-50k">$15k – $50k</option>
-                  <option value="50k-100k">$50k – $100k</option>
-                  <option value="over-100k">$100k+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Desired Timeline</label>
-              <div class="timeline-slider-wrap">
-                <input type="range" id="formTimeline" class="timeline-slider" min="1" max="4" value="2" step="1" aria-label="Desired timeline" />
-                <div class="timeline-labels">
-                  <span data-val="1">1–3 mo</span>
-                  <span data-val="2">3–6 mo</span>
-                  <span data-val="3">6–12 mo</span>
-                  <span data-val="4">12+ mo</span>
-                </div>
-                <div class="timeline-value" id="formTimelineVal">3–6 months</div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="formMessage" class="form-label">Tell me about your project *</label>
-              <textarea id="formMessage" class="form-input form-textarea" required placeholder="Describe your idea, goals, and any specifics…" maxlength="2000" rows="4"></textarea>
-              <div class="form-charcount"><span id="formCharCount">0</span> / 2000</div>
-            </div>
-
-            <div class="form-group form-group--submit">
-              <button type="submit" class="form-submit" id="formSubmit">
-                <span class="form-submit__text" data-i18n="contact.send">Send Message</span>
-                <span class="form-submit__spinner" aria-hidden="true"></span>
-              </button>
-              <p class="form-note">I'll respond within 24 hours. Your info stays private.</p>
-            </div>
-          </form>
-
-          <!-- Sidebar -->
-          <aside class="contact-sidebar">
-            <div class="contact-sidebar-card">
-              <h4>📧 Email</h4>
-              <a href="mailto:medislambenjaballah1@gmail.com">medislambenjaballah1@gmail.com</a>
-            </div>
-            <div class="contact-sidebar-card">
-              <h4>📞 Phone / WhatsApp</h4>
-              <a href="tel:+971543275998">+971 54 327 5998</a>
-            </div>
-            <div class="contact-sidebar-card">
-              <h4>🌐 GitHub</h4>
-              <a href="https://github.com/Mohamed-Islam-Ben-Jaballah" target="_blank" rel="noopener">Mohamed-Islam-Ben-Jaballah</a>
-            </div>
-            <div class="contact-sidebar-card">
-              <h4>⏱ Response Time</h4>
-              <p>Typically within 24 hours</p>
-            </div>
-          </aside>
+        <p data-i18n="contact.desc">Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.</p>
+        <button class="contact-btn contact-trigger" data-i18n="contact.cta">Start Your Project</button>
+        <div class="contact-strip">
+          <span>✉ medislambenjaballah1@gmail.com</span>
+          <span>📞 +971 54 327 5998</span>
         </div>
       </div>
     </div>
@@ -635,6 +536,105 @@
         <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
       </div>
       <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+  </div>
+
+  <!-- ===================== CONTACT MODAL ===================== -->
+  <div class="contact-overlay" id="contactOverlay" role="dialog" aria-modal="true" aria-label="Project inquiry form">
+    <div class="contact-modal">
+      <div class="contact-modal-header">
+        <div>
+          <span class="contact-modal-badge">📋 New Project</span>
+          <h3 class="contact-modal-title">Tell Me About Your Project</h3>
+        </div>
+        <button class="contact-modal-close" id="contactModalClose" aria-label="Close contact form">&times;</button>
+      </div>
+      <div class="contact-modal-body">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formName" class="form-label">Your Name *</label>
+              <input type="text" id="formName" class="form-input" required placeholder="John Doe" maxlength="100" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Your Email *</label>
+              <input type="email" id="formEmail" class="form-input" required placeholder="john@example.com" maxlength="200" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Project Type *</label>
+            <div class="pill-group" id="formProjectType" role="radiogroup" aria-label="Project type">
+              <label class="pill-option"><input type="radio" name="projectType" value="Web" checked /><span>Web</span></label>
+              <label class="pill-option"><input type="radio" name="projectType" value="Mobile" /><span>Mobile</span></label>
+              <label class="pill-option"><input type="radio" name="projectType" value="Desktop" /><span>Desktop</span></label>
+              <label class="pill-option"><input type="radio" name="projectType" value="Multi-Platform" /><span>Multi-Platform</span></label>
+              <label class="pill-option"><input type="radio" name="projectType" value="VR / AR" /><span>VR / AR</span></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formIndustry" class="form-label">Industry</label>
+              <select id="formIndustry" class="form-input form-select">
+                <option value="">Select your industry…</option>
+                <option value="Entertainment / Gaming">Entertainment / Gaming</option>
+                <option value="Medical / Healthcare">Medical / Healthcare</option>
+                <option value="Education / Training">Education / Training</option>
+                <option value="Industrial / Manufacturing">Industrial / Manufacturing</option>
+                <option value="Retail / E-commerce">Retail / E-commerce</option>
+                <option value="Military / Defense">Military / Defense</option>
+                <option value="Real Estate / Architecture">Real Estate / Architecture</option>
+                <option value="Tech / SaaS">Tech / SaaS</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formBudget" class="form-label">Budget Range</label>
+              <select id="formBudget" class="form-input form-select">
+                <option value="">Prefer not to say</option>
+                <option value="under-5k">Under $5k</option>
+                <option value="5k-15k">$5k – $15k</option>
+                <option value="15k-50k">$15k – $50k</option>
+                <option value="50k-100k">$50k – $100k</option>
+                <option value="over-100k">$100k+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Desired Timeline</label>
+            <div class="timeline-slider-wrap">
+              <input type="range" id="formTimeline" class="timeline-slider" min="1" max="4" value="2" step="1" aria-label="Desired timeline" />
+              <div class="timeline-labels">
+                <span data-val="1">1–3 mo</span>
+                <span data-val="2">3–6 mo</span>
+                <span data-val="3">6–12 mo</span>
+                <span data-val="4">12+ mo</span>
+              </div>
+              <div class="timeline-value" id="formTimelineVal">3–6 months</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formMessage" class="form-label">Tell me about your project *</label>
+            <textarea id="formMessage" class="form-input form-textarea" required placeholder="Describe your idea, goals, and any specifics…" maxlength="2000" rows="4"></textarea>
+            <div class="form-charcount"><span id="formCharCount">0</span> / 2000</div>
+          </div>
+
+          <div class="form-group form-group--submit">
+            <button type="submit" class="form-submit" id="formSubmit">
+              <span class="form-submit__text" data-i18n="contact.send">Send Message</span>
+              <span class="form-submit__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-note">I'll respond within 24 hours. Your info stays private.</p>
+          </div>
+        </form>
+      </div>
+      <div class="contact-modal-footer">
+        <span>✉ <a href="mailto:medislambenjaballah1@gmail.com">medislambenjaballah1@gmail.com</a></span>
+        <span>📞 <a href="tel:+971543275998">+971 54 327 5998</a></span>
+      </div>
     </div>
   </div>
 
