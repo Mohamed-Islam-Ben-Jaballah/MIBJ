@@ -37,10 +37,10 @@ export default {
     }
 
     // Extract model from body (client sends it), then remove before forwarding
-    const model = body.model || 'gemini-2.5-flash';
+    const model = body.model || 'gemini-1.5-flash';
     delete body.model;
 
-    const geminiUrl = `${GEMINI_BASE}${model}:generateContent?key=${env.GEMINI_API_KEY}`;
+    const geminiUrl = `${GEMINI_BASE}${model}:generateContent?key=${env.mibj}`;
 
     const geminiRes = await fetch(geminiUrl, {
       method:  'POST',
