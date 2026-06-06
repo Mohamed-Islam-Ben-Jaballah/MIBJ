@@ -12,7 +12,7 @@
   // ── Configuration ────────────────────────────────────────────────────
   var CONFIG = {
     proxyUrl: 'https://mibj-proxy.mibj.workers.dev',
-    model:    'gemini-1.5-flash-latest',
+    model:    'gemini-1.5-flash',
   };
 
   // ── Base system prompt (language instruction prepended per request) ──
