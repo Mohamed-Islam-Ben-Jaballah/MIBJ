@@ -50,7 +50,7 @@
       statusOnline: 'Online',
       placeholder:  'Ask me anything…',
       welcome:      'Hi! I\'m Islam\'s assistant 👋\nAsk me anything about his services, projects, or how to get in touch.',
-      error:        'Having trouble connecting right now. Try again in a moment, or reach out directly at **medislambenjaballah@gmail.com** or **+971 54 327 5998**.',
+        error:        'Having trouble connecting right now. Try again in a moment, or reach out directly at **medislambenjaballah1@gmail.com** or **+971 54 327 5998**.',
       langName:     'English',
       quickReplies: [
         { label: '🚀 Services',    text: 'What services do you offer?' },
@@ -66,7 +66,7 @@
       statusOnline: 'En ligne',
       placeholder:  'Posez-moi une question…',
       welcome:      'Salut ! Je suis l\'assistant d\'Islam 👋\nPosez-moi vos questions sur ses services, ses projets ou comment le contacter.',
-      error:        'Problème de connexion en ce moment. Réessayez dans un instant, ou contactez directement : **medislambenjaballah@gmail.com** ou **+971 54 327 5998**.',
+        error:        'Problème de connexion en ce moment. Réessayez dans un instant, ou contactez directement : **medislambenjaballah1@gmail.com** ou **+971 54 327 5998**.',
       langName:     'French',
       quickReplies: [
         { label: '🚀 Services',      text: 'Quels services proposez-vous ?' },
@@ -82,7 +82,7 @@
       statusOnline: 'متصل',
       placeholder:  'اسألني أي شيء…',
       welcome:      'مرحباً! أنا مساعد إسلام 👋\nاسألني عن خدماته ومشاريعه أو كيفية التواصل معه.',
-      error:        'يوجد مشكلة في الاتصال حالياً. حاول مرة أخرى بعد قليل، أو تواصل مباشرةً على **medislambenjaballah@gmail.com** أو **+971 54 327 5998**.',
+        error:        'يوجد مشكلة في الاتصال حالياً. حاول مرة أخرى بعد قليل، أو تواصل مباشرةً على **medislambenjaballah1@gmail.com** أو **+971 54 327 5998**.',
       langName:     'Arabic',
       quickReplies: [
         { label: '🚀 الخدمات',    text: 'ما هي الخدمات التي تقدمها؟' },
@@ -98,7 +98,7 @@
       statusOnline: 'En línea',
       placeholder:  'Pregúntame lo que quieras…',
       welcome:      '¡Hola! Soy el asistente de Islam 👋\nPregúntame sobre sus servicios, proyectos o cómo contactarlo.',
-      error:        'Problemas de conexión ahora mismo. Inténtalo de nuevo en un momento, o contacta directamente: **medislambenjaballah@gmail.com** o **+971 54 327 5998**.',
+        error:        'Problemas de conexión ahora mismo. Inténtalo de nuevo en un momento, o contacta directamente: **medislambenjaballah1@gmail.com** o **+971 54 327 5998**.',
       langName:     'Spanish',
       quickReplies: [
         { label: '🚀 Servicios',    text: '¿Qué servicios ofreces?' },
@@ -114,7 +114,7 @@
       statusOnline: '在线',
       placeholder:  '随时提问…',
       welcome:      '你好！我是 Islam 的助手 👋\n欢迎询问他的服务、项目或联系方式。',
-      error:        '目前连接出现问题。请稍后再试，或直接联系：**medislambenjaballah@gmail.com** 或 **+971 54 327 5998**。',
+        error:        '目前连接出现问题。请稍后再试，或直接联系：**medislambenjaballah1@gmail.com** 或 **+971 54 327 5998**。',
       langName:     'Chinese',
       quickReplies: [
         { label: '🚀 服务',    text: '你们提供哪些服务？' },
@@ -130,7 +130,7 @@
       statusOnline: 'Онлайн',
       placeholder:  'Задайте любой вопрос…',
       welcome:      'Привет! Я ассистент Ислама 👋\nСпрашивайте про его услуги, проекты или как с ним связаться.',
-      error:        'Проблемы с подключением. Попробуйте чуть позже или напишите напрямую: **medislambenjaballah@gmail.com** или **+971 54 327 5998**.',
+        error:        'Проблемы с подключением. Попробуйте чуть позже или напишите напрямую: **medislambenjaballah1@gmail.com** или **+971 54 327 5998**.',
       langName:     'Russian',
       quickReplies: [
         { label: '🚀 Услуги',      text: 'Какие услуги вы предлагаете?' },
@@ -188,7 +188,7 @@
     'Jose Vargas (Project Manager, ICONIK): Sharp technical skills, great team player, would work with again without hesitation.',
     '',
     '## Contact',
-    'Email: medislambenjaballah@gmail.com',
+    'Email: medislambenjaballah1@gmail.com',
     'Phone / WhatsApp: +971 54 327 5998 (UAE)',
     'GitHub: https://github.com/Mohamed-Islam-Ben-Jaballah',
     'Portfolio: https://mohamed-islam-ben-jaballah.github.io/MIBJ/',

@@ -121,8 +121,7 @@ const TRANSLATIONS = {
     'contact.label': '06 Contact',
     'contact.title': "Let's Build Something Great",
     'contact.desc':  "Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.",
-    'contact.hello': 'Say Hello',
-    'contact.call':  'Call Me',
+    'contact.send':  'Send Message',
 
     'footer.text': '© 2026 MIBJ. Crafted with precision.',
 
@@ -248,8 +247,7 @@ const TRANSLATIONS = {
     'contact.label': '06 Contact',
     'contact.title': 'Construisons Quelque Chose de Grand',
     'contact.desc':  "Vous avez un projet en tête ? Vous cherchez un partenaire technique fiable qui livre des résultats ? Je serais ravi d'entendre parler de votre défi et d'explorer comment nous pourrions le résoudre ensemble.",
-    'contact.hello': 'Dire Bonjour',
-    'contact.call':  "M'Appeler",
+    'contact.send':  'Envoyer le Message',
 
     'footer.text': '© 2026 MIBJ. Conçu avec précision.',
 
@@ -375,8 +373,7 @@ const TRANSLATIONS = {
     'contact.label': '06 تواصل',
     'contact.title': 'لنبنِ شيئاً عظيماً',
     'contact.desc':  'هل لديك مشروع في ذهنك؟ هل تبحث عن شريك تقني موثوق يحقق النتائج؟ يسعدني سماع تحديك واستكشاف كيف يمكننا حله معاً.',
-    'contact.hello': 'قل مرحباً',
-    'contact.call':  'اتصل بي',
+    'contact.send':  'أرسل الرسالة',
 
     'footer.text': '© 2026 MIBJ. صُنع بإتقان.',
 
@@ -502,8 +499,7 @@ const TRANSLATIONS = {
     'contact.label': '06 Contacto',
     'contact.title': 'Construyamos Algo Grande',
     'contact.desc':  '¿Tienes un proyecto en mente? ¿Buscas un socio técnico confiable que entregue resultados? Me encantaría escuchar sobre tu desafío y explorar cómo podemos resolverlo juntos.',
-    'contact.hello': 'Saludar',
-    'contact.call':  'Llamarme',
+    'contact.send':  'Enviar Mensaje',
 
     'footer.text': '© 2026 MIBJ. Elaborado con precisión.',
 
@@ -629,8 +625,7 @@ const TRANSLATIONS = {
     'contact.label': '06 联系',
     'contact.title': '让我们共同创造精彩',
     'contact.desc':  '有项目想法？正在寻找可靠的技术合作伙伴？我很乐意了解您的挑战，探索我们如何共同解决它。',
-    'contact.hello': '打个招呼',
-    'contact.call':  '致电我',
+    'contact.send':  '发送消息',
 
     'footer.text': '© 2026 MIBJ. 精心打造。',
 
@@ -756,8 +751,7 @@ const TRANSLATIONS = {
     'contact.label': '06 Контакт',
     'contact.title': 'Давайте Создадим Что-то Великое',
     'contact.desc':  'Есть проект на уме? Ищете надёжного технического партнёра, который добивается результатов? Я был бы рад услышать о вашем вызове и изучить, как мы можем решить его вместе.',
-    'contact.hello': 'Поздороваться',
-    'contact.call':  'Позвонить',
+    'contact.send':  'Отправить Сообщение',
 
     'footer.text': '© 2026 MIBJ. Создано с точностью.',
 

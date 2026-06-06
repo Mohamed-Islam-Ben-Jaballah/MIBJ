@@ -3,11 +3,24 @@
 // Deploy with: wrangler deploy
 // Set secret:  wrangler secret put GEMINI_API_KEY
 
-const ALLOWED_ORIGIN = 'https://mohamed-islam-ben-jaballah.github.io';
+function isAllowedOrigin(origin) {
+  if (!origin) return false;
+  try {
+    const url = new URL(origin);
+    return (
+      url.hostname === 'mohamed-islam-ben-jaballah.github.io' ||
+      url.hostname === 'localhost' ||
+      url.hostname === '127.0.0.1' ||
+      url.hostname.endsWith('.local') ||
+      url.protocol === 'file:'
+    );
+  } catch {
+    return false;
+  }
+}
 const GEMINI_BASE    = 'https://generativelanguage.googleapis.com/v1beta/models/';
 
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin':  ALLOWED_ORIGIN,
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
@@ -18,14 +31,13 @@ export default {
 
     // CORS preflight
     if (request.method === 'OPTIONS') {
-      if (origin === ALLOWED_ORIGIN) {
-        return new Response(null, { status: 204, headers: CORS_HEADERS });
+      if (isAllowedOrigin(origin)) {
+        return new Response(null, { status: 204, headers: { ...CORS_HEADERS, 'Access-Control-Allow-Origin': origin } });
       }
       return new Response('Forbidden', { status: 403 });
     }
 
-    // Only accept POST from the portfolio origin
-    if (request.method !== 'POST' || origin !== ALLOWED_ORIGIN) {
+    if (request.method !== 'POST' || !isAllowedOrigin(origin)) {
       return new Response('Forbidden', { status: 403 });
     }
 
@@ -58,7 +70,7 @@ export default {
     
     return new Response(JSON.stringify(data), {
       status:  geminiRes.status,
-      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': origin },
     });
   },
 };

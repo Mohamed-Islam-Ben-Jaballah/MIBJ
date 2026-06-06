@@ -212,6 +212,156 @@
 })();
 
 
+// ---- Scroll-to-Top Button ----
+(function () {
+  const btn = document.getElementById('scrollTop');
+  if (!btn) return;
+
+  let visible = false;
+  window.addEventListener('scroll', function () {
+    const shouldShow = window.scrollY > 400;
+    if (shouldShow !== visible) {
+      visible = shouldShow;
+      btn.classList.toggle('visible', visible);
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+
+// ---- Contact Form ----
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const nameEl     = document.getElementById('formName');
+  const emailEl    = document.getElementById('formEmail');
+  const msgEl      = document.getElementById('formMessage');
+  const timelineEl = document.getElementById('formTimeline');
+  const valEl      = document.getElementById('formTimelineVal');
+  const charCount  = document.getElementById('formCharCount');
+  const submitBtn  = document.getElementById('formSubmit');
+
+  const timelineLabels = ['1–3 months', '3–6 months', '6–12 months', '12+ months'];
+
+  // Timeline slider
+  if (timelineEl && valEl) {
+    function updateTimeline() {
+      const idx = parseInt(timelineEl.value, 10) - 1;
+      valEl.textContent = timelineLabels[idx] || '';
+      document.querySelectorAll('.timeline-labels span').forEach(function (s) {
+        s.classList.toggle('active', parseInt(s.dataset.val, 10) === parseInt(timelineEl.value, 10));
+      });
+    }
+    timelineEl.addEventListener('input', updateTimeline);
+    updateTimeline();
+  }
+
+  // Character count
+  if (msgEl && charCount) {
+    msgEl.addEventListener('input', function () {
+      charCount.textContent = msgEl.value.length;
+    });
+  }
+
+  // Validation helper
+  function setError(el, msg) {
+    el.classList.add('error');
+    var existing = el.parentNode.querySelector('.form-error-msg');
+    if (!existing) {
+      var err = document.createElement('div');
+      err.className = 'form-error-msg';
+      el.parentNode.appendChild(err);
+    }
+    el.parentNode.querySelector('.form-error-msg').textContent = msg;
+  }
+
+  function clearError(el) {
+    el.classList.remove('error');
+    var err = el.parentNode.querySelector('.form-error-msg');
+    if (err) err.remove();
+  }
+
+  function validateField(el) {
+    if (el.hasAttribute('required')) {
+      if (!el.value.trim()) {
+        setError(el, 'This field is required');
+        return false;
+      }
+      if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())) {
+        setError(el, 'Please enter a valid email');
+        return false;
+      }
+    }
+    clearError(el);
+    return true;
+  }
+
+  [nameEl, emailEl, msgEl].forEach(function (el) {
+    if (!el) return;
+    el.addEventListener('blur', function () { validateField(el); });
+    el.addEventListener('input', function () { if (el.classList.contains('error')) validateField(el); });
+  });
+
+  // Submit
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var valid = [nameEl, emailEl, msgEl].every(function (el) {
+      return el ? validateField(el) : true;
+    });
+    if (!valid) return;
+
+    // Gather data
+    var projectType = form.querySelector('input[name="projectType"]:checked');
+    var industry = document.getElementById('formIndustry');
+    var budget = document.getElementById('formBudget');
+
+    var subject = 'New Project Inquiry from ' + (nameEl.value.trim() || 'Anonymous');
+    var body = [
+      'Name: ' + nameEl.value.trim(),
+      'Email: ' + emailEl.value.trim(),
+      'Project Type: ' + (projectType ? projectType.value : 'N/A'),
+      'Industry: ' + (industry ? (industry.value || 'N/A') : 'N/A'),
+      'Budget: ' + (budget ? (budget.options[budget.selectedIndex] ? budget.options[budget.selectedIndex].text : 'N/A') : 'N/A'),
+      'Timeline: ' + (valEl ? valEl.textContent : 'N/A'),
+      '',
+      'Message:',
+      msgEl.value.trim()
+    ].join('\n');
+
+    // Show sending state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    // Attempt mailto with a small delay for UX
+    setTimeout(function () {
+      var mailto = 'mailto:medislambenjaballah1@gmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+
+      submitBtn.classList.remove('loading');
+      submitBtn.classList.add('success');
+      submitBtn.disabled = false;
+
+      // Reset after delay
+      setTimeout(function () {
+        submitBtn.classList.remove('success');
+        form.reset();
+        if (charCount) charCount.textContent = '0';
+        if (valEl) valEl.textContent = '3–6 months';
+        document.querySelectorAll('.timeline-labels span').forEach(function (s) {
+          s.classList.toggle('active', s.dataset.val === '2');
+        });
+      }, 3000);
+    }, 600);
+  });
+})();
+
+
 // ---- Lightbox / Modal ----
 (function () {
   const overlay = document.getElementById('lightbox');
