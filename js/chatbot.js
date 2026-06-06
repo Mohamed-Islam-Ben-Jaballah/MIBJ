@@ -285,15 +285,22 @@
       ]
     };
 
+    console.log('[Chatbot] Sending request to', CONFIG.proxyUrl, 'with model:', CONFIG.model);
+    console.log('[Chatbot] Request body:', JSON.stringify(body, null, 2));
+
     return fetch(CONFIG.proxyUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     })
     .then(function (res) {
+      console.log('[Chatbot] Response status:', res.status);
       return res.json().then(function (data) {
+        console.log('[Chatbot] Response data:', JSON.stringify(data, null, 2));
         if (!res.ok) {
-          throw new Error((data.error && data.error.message) || 'API error ' + res.status);
+          var errorMsg = (data.error && data.error.message) || 'API error ' + res.status;
+          console.error('[Chatbot] API error:', errorMsg);
+          throw new Error(errorMsg);
         }
         return data;
       });
@@ -307,6 +314,7 @@
         && data.candidates[0].content.parts[0].text)
         || 'Sorry, I could not generate a response.';
 
+      console.log('[Chatbot] Extracted reply:', reply);
       conversationHistory.push({ role: 'model', parts: [{ text: reply }] });
       return reply;
     });

@@ -42,6 +42,10 @@ export default {
 
     const geminiUrl = `${GEMINI_BASE}${model}:generateContent?key=${env.mibj}`;
 
+    console.log('[Worker] Model:', model);
+    console.log('[Worker] Gemini URL:', geminiUrl);
+    console.log('[Worker] Request body keys:', Object.keys(body));
+
     const geminiRes = await fetch(geminiUrl, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -49,6 +53,9 @@ export default {
     });
 
     const data = await geminiRes.json();
+    console.log('[Worker] Gemini response status:', geminiRes.status);
+    console.log('[Worker] Gemini response:', JSON.stringify(data, null, 2));
+    
     return new Response(JSON.stringify(data), {
       status:  geminiRes.status,
       headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
