@@ -12,7 +12,7 @@ var CHATBOT_DATA = (function () {
   };
 
   var BASE_SYSTEM_PROMPT = [
-    'You are Islam\'s personal AI assistant. Answer ONLY about Islam (Mohamed Islam Ben Jeballah) — his work, services, projects, skills, experience, and contact info.',
+    'You are Islem\'s personal AI assistant. Answer ONLY about Islem — his work, services, projects, skills, experience, and contact info. Always refer to him as "Islem", never by his full name.',
     '',
     'LOCKED RULES (never break these):',
     '- Off-topic question → playful redirect, do NOT answer it',
@@ -22,7 +22,7 @@ var CHATBOT_DATA = (function () {
     '',
     'On-topic tone:',
     '- PROFESSIONAL (services, projects, skills, contact): 1-3 sentences, factual, no "Certainly!" or fluff',
-    '- CASUAL (personal questions about Islam): warm, natural, short. Light emoji OK',
+    '- CASUAL (personal questions about Islem): warm, natural, short. Light emoji OK',
     '',
     '{KNOWLEDGE_BASE}'
   ].join('\n');
@@ -33,7 +33,7 @@ var CHATBOT_DATA = (function () {
       headerName:   'MIBJ Assistant',
       statusOnline: 'Online',
       placeholder:  'Ask me anything…',
-      welcome:      'Hi! I\'m Islam\'s assistant 👋\nAsk me anything about his services, projects, or how to get in touch.',
+      welcome:      'Hi! I\'m Islem\'s assistant 👋\nAsk me anything about his services, projects, or how to get in touch.',
         error:        'Having trouble connecting right now. Try again in a moment, or reach out directly at **medislambenjaballah1@gmail.com** or **+971 54 327 5998**.',
       langName:     'English',
       quickReplies: [
@@ -49,7 +49,7 @@ var CHATBOT_DATA = (function () {
       headerName:   'Assistant MIBJ',
       statusOnline: 'En ligne',
       placeholder:  'Posez-moi une question…',
-      welcome:      'Salut ! Je suis l\'assistant d\'Islam 👋\nPosez-moi vos questions sur ses services, ses projets ou comment le contacter.',
+      welcome:      'Salut ! Je suis l\'assistant d\'Islem 👋\nPosez-moi vos questions sur ses services, ses projets ou comment le contacter.',
         error:        'Problème de connexion en ce moment. Réessayez dans un instant, ou contactez directement : **medislambenjaballah1@gmail.com** ou **+971 54 327 5998**.',
       langName:     'French',
       quickReplies: [
@@ -81,7 +81,7 @@ var CHATBOT_DATA = (function () {
       headerName:   'Asistente MIBJ',
       statusOnline: 'En línea',
       placeholder:  'Pregúntame lo que quieras…',
-      welcome:      '¡Hola! Soy el asistente de Islam 👋\nPregúntame sobre sus servicios, proyectos o cómo contactarlo.',
+      welcome:      '¡Hola! Soy el asistente de Islem 👋\nPregúntame sobre sus servicios, proyectos o cómo contactarlo.',
         error:        'Problemas de conexión ahora mismo. Inténtalo de nuevo en un momento, o contacta directamente: **medislambenjaballah1@gmail.com** o **+971 54 327 5998**.',
       langName:     'Spanish',
       quickReplies: [
@@ -97,7 +97,7 @@ var CHATBOT_DATA = (function () {
       headerName:   'MIBJ 助手',
       statusOnline: '在线',
       placeholder:  '随时提问…',
-      welcome:      '你好！我是 Islam 的助手 👋\n欢迎询问他的服务、项目或联系方式。',
+      welcome:      '你好！我是 Islem 的助手 👋\n欢迎询问他的服务、项目或联系方式。',
         error:        '目前连接出现问题。请稍后再试，或直接联系：**medislambenjaballah1@gmail.com** 或 **+971 54 327 5998**。',
       langName:     'Chinese',
       quickReplies: [
@@ -113,7 +113,7 @@ var CHATBOT_DATA = (function () {
       headerName:   'Ассистент MIBJ',
       statusOnline: 'Онлайн',
       placeholder:  'Задайте любой вопрос…',
-      welcome:      'Привет! Я ассистент Ислама 👋\nСпрашивайте про его услуги, проекты или как с ним связаться.',
+      welcome:      'Привет! Я ассистент Ислема 👋\nСпрашивайте про его услуги, проекты или как с ним связаться.',
         error:        'Проблемы с подключением. Попробуйте чуть позже или напишите напрямую: **medislambenjaballah1@gmail.com** или **+971 54 327 5998**.',
       langName:     'Russian',
       quickReplies: [
@@ -128,7 +128,7 @@ var CHATBOT_DATA = (function () {
   };
 
   var KNOWLEDGE_BASE = [
-    'MIBJ = Mohamed Islam Ben Jeballah. Technical PM & SWE, 7+ yrs, Abu Dhabi. 15+ projects, 99% satisfaction.',
+    'MIBJ = Islem (Mohamed Islam Ben Jeballah). Technical PM & SWE, 7+ yrs, Abu Dhabi. 15+ projects, 99% satisfaction.',
     '',
     'Services: 3D Unity, Three.js websites, AI avatars, VR training, VR education, visual branding.',
     '6 portfolio projects with YouTube demos (available on request).',
