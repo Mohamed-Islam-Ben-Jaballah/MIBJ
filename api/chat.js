@@ -9,45 +9,38 @@ module.exports = async (req, res) => {
   }
 
   try {
-    var key = process.env.GEMINI_API_KEY;
+    var key = process.env.DEEPSEEK_API_KEY;
     if (!key) {
-      return res.status(500).json({ error: { message: 'GEMINI_API_KEY not set in Vercel env vars.' } });
+      return res.status(500).json({ error: { message: 'DEEPSEEK_API_KEY not set in Vercel env vars.' } });
     }
 
     if (!req.body || typeof req.body !== 'object') {
       return res.status(400).json({ error: { message: 'Request body is required.' } });
     }
 
-    var model = req.body.model || 'gemini-3.5-flash';
-
-    var body = {};
-    Object.keys(req.body).forEach(function (k) {
-      if (k !== 'model') body[k] = req.body[k];
-    });
-
     var controller = new AbortController();
     var timeoutId = setTimeout(function () { controller.abort(); }, 9500);
 
-    var geminiRes;
+    var dsRes;
     try {
-      geminiRes = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
-          signal: controller.signal,
-        }
-      );
+      dsRes = await fetch('https://api.deepseek.com/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + key,
+        },
+        body: JSON.stringify(req.body),
+        signal: controller.signal,
+      });
     } finally {
       clearTimeout(timeoutId);
     }
 
-    var data = await geminiRes.json();
+    var data = await dsRes.json();
 
-    if (!geminiRes.ok) {
-      var msg = (data.error && data.error.message) || 'Gemini API error ' + geminiRes.status;
-      console.error('[chat] Gemini error:', msg);
+    if (!dsRes.ok) {
+      var msg = (data.error && data.error.message) || 'DeepSeek API error ' + dsRes.status;
+      console.error('[chat] DeepSeek error:', msg);
       return res.status(502).json({ error: { message: msg } });
     }
 

@@ -8,7 +8,7 @@ var CHATBOT_DATA = (function () {
   // ── Configuration ──────────────────────────────────────────────────
   var CONFIG = {
     proxyUrl: '/api/chat',
-    model:    'gemini-3.5-flash',
+    model:    'deepseek-v4-flash',
   };
 
   var BASE_SYSTEM_PROMPT = [

@@ -71,26 +71,13 @@
         D.BASE_SYSTEM_PROMPT.replace('{KNOWLEDGE_BASE}', D.KNOWLEDGE_BASE);
     }
 
-    conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
-
-    var contents = [
-      { role: 'user', parts: [{ text: cachedSystemText[lang] }] },
-      { role: 'model', parts: [{ text: 'Understood.' }] },
-    ].concat(conversationHistory.slice(-8));
+    conversationHistory.push({ role: 'user', content: userMessage });
 
     var body = {
       model: D.CONFIG.model,
-      contents: contents,
-      generationConfig: {
-        temperature: 0.5,
-        maxOutputTokens: 512
-      },
-      safetySettings: [
-        { category: 'HARM_CATEGORY_HARASSMENT',        threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_HATE_SPEECH',       threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-      ]
+      messages: [{ role: 'system', content: cachedSystemText[lang] }].concat(conversationHistory.slice(-8)),
+      temperature: 0.5,
+      max_tokens: 512
     };
 
     console.log('[Chatbot] Sending request to', D.CONFIG.proxyUrl, 'with model:', D.CONFIG.model);
@@ -114,16 +101,14 @@
       });
     })
     .then(function (data) {
-      var reply = (data.candidates
-        && data.candidates[0]
-        && data.candidates[0].content
-        && data.candidates[0].content.parts
-        && data.candidates[0].content.parts[0]
-        && data.candidates[0].content.parts[0].text)
+      var reply = (data.choices
+        && data.choices[0]
+        && data.choices[0].message
+        && data.choices[0].message.content)
         || 'Sorry, I could not generate a response.';
 
       console.log('[Chatbot] Extracted reply:', reply);
-      conversationHistory.push({ role: 'model', parts: [{ text: reply }] });
+      conversationHistory.push({ role: 'assistant', content: reply });
       return reply;
     });
   }
