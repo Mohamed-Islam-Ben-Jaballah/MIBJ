@@ -25,6 +25,12 @@ function copyDir(src, dest) {
 }
 copyDir(path.join(__dirname, 'assets'), path.join(DIST, 'assets'));
 
+// Copy SEO files
+['robots.txt', 'sitemap.xml'].forEach(function (f) {
+  var src = path.join(__dirname, f);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
+});
+
 // Minify CSS
 log('Minifying CSS...');
 run('npx cleancss -o "' + path.join(DIST, 'css/styles.css') + '" "' + path.join(__dirname, 'css/styles.css') + '"');
