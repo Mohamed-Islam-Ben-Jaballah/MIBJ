@@ -61,6 +61,29 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// POST /api/chat — Gemini proxy (replaces the Cloudflare Worker)
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { model, ...body } = req.body;
+    const geminiModel = model || 'gemini-1.5-flash';
+
+    const geminiRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }
+    );
+
+    const data = await geminiRes.json();
+    res.status(geminiRes.status).json(data);
+  } catch (err) {
+    console.error('Gemini proxy error:', err);
+    res.status(500).json({ error: { message: 'Internal server error' } });
+  }
+});
+
 // SPA fallback
 app.get('*', (req, res) => {
   const index = path.join(distPath, 'index.html');

@@ -1,17 +1,13 @@
 // ========================================
 //  MIBJ Portfolio — AI Chatbot
-//  Powered by Google Gemini
-//
-//  NOTE: The API key below is intentionally
-//  embedded for this client-side portfolio.
-//  Do not reuse this key in server applications.
+//  Powered by Google Gemini (proxied through the server, no key exposed)
 // ========================================
 
 (function () {
 
   // ── Configuration ────────────────────────────────────────────────────
   var CONFIG = {
-    proxyUrl: 'https://mibj-proxy.mibj.workers.dev',
+    proxyUrl: '/api/chat',
     model:    'gemini-1.5-flash',
   };
 

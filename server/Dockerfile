@@ -1,17 +1,27 @@
+# Stage 1: Build frontend
+FROM node:20-alpine AS builder
+
+WORKDIR /build
+
+COPY package*.json build.js ./
+COPY index.html ./
+COPY css/ ./css/
+COPY js/ ./js/
+COPY i18n/ ./i18n/
+COPY assets/ ./assets/
+
+RUN npm ci && node build.js
+
+# Stage 2: Production server
 FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy and install server dependencies
 COPY server/package*.json ./
 RUN npm ci --only=production
 
-# Copy server code into /app/server/
 COPY server/ ./server/
-
-# Copy built frontend
-COPY dist/ ./dist/
+COPY --from=builder /build/dist/ ./dist/
 
 EXPOSE 3000
-
 CMD ["node", "server/index.js"]
