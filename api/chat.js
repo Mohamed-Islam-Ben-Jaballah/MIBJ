@@ -1,3 +1,7 @@
+var rateLimitMap = {};
+var RATE_LIMIT = 30;
+var RATE_WINDOW = 60000;
+
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -6,6 +10,16 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(204).end();
   if (req.method !== 'POST') {
     return res.status(405).json({ error: { message: 'Send a POST request.' } });
+  }
+
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+  var now = Date.now();
+  if (!rateLimitMap[ip] || now - rateLimitMap[ip].start > RATE_WINDOW) {
+    rateLimitMap[ip] = { start: now, count: 0 };
+  }
+  rateLimitMap[ip].count++;
+  if (rateLimitMap[ip].count > RATE_LIMIT) {
+    return res.status(429).json({ error: { message: 'Too many requests. Please wait a moment before trying again.' } });
   }
 
   try {
