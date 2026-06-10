@@ -4,23 +4,29 @@ module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(204).end();
-  if (req.method === 'GET') {
-    return res.json({ status: 'ok', note: 'Send a POST with the Gemini request body.' });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: { message: 'Send a POST request.' } });
   }
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
     var key = process.env.GEMINI_API_KEY;
     if (!key) {
-      console.error('Missing GEMINI_API_KEY env var');
-      return res.status(500).json({ error: { message: 'Server misconfiguration: GEMINI_API_KEY not set' } });
+      return res.status(500).json({ error: { message: 'GEMINI_API_KEY not set in Vercel env vars.' } });
     }
 
-    var { model, ...body } = req.body;
-    var geminiModel = model || 'gemini-1.5-flash';
+    if (!req.body || typeof req.body !== 'object') {
+      return res.status(400).json({ error: { message: 'Request body is required.' } });
+    }
+
+    var model = req.body.model || 'gemini-1.5-flash';
+
+    var body = {};
+    Object.keys(req.body).forEach(function (k) {
+      if (k !== 'model') body[k] = req.body[k];
+    });
 
     var geminiRes = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + geminiModel + ':generateContent?key=' + key,
+      'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -29,9 +35,16 @@ module.exports = async (req, res) => {
     );
 
     var data = await geminiRes.json();
-    res.status(geminiRes.status).json(data);
+
+    if (!geminiRes.ok) {
+      var msg = (data.error && data.error.message) || 'Gemini API error ' + geminiRes.status;
+      console.error('[chat] Gemini error:', msg);
+      return res.status(502).json({ error: { message: msg } });
+    }
+
+    res.json(data);
   } catch (err) {
-    console.error('Gemini proxy error:', err);
-    res.status(500).json({ error: { message: 'Internal server error: ' + (err.message || '') } });
+    console.error('[chat] Unexpected error:', err);
+    res.status(500).json({ error: { message: err.message || 'Internal error' } });
   }
 };
