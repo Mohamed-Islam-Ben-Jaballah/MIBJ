@@ -12,4 +12,3 @@ dist/
 
 # Environment secrets
 .env
-server/.env
