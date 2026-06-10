@@ -73,10 +73,14 @@
 
     conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
+    var contents = [
+      { role: 'user', parts: [{ text: cachedSystemText[lang] }] },
+      { role: 'model', parts: [{ text: 'Understood.' }] },
+    ].concat(conversationHistory.slice(-8));
+
     var body = {
       model: D.CONFIG.model,
-      systemInstruction: { parts: [{ text: cachedSystemText[lang] }] },
-      contents: conversationHistory.slice(-8),
+      contents: contents,
       generationConfig: {
         temperature: 0.5,
         maxOutputTokens: 512
