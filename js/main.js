@@ -367,36 +367,39 @@
     var industry = document.getElementById('formIndustry');
     var budget = document.getElementById('formBudget');
 
-    var subject = 'New Project Inquiry from ' + (nameEl.value.trim() || 'Anonymous');
-    var body = [
-      'Name: ' + nameEl.value.trim(),
-      'Email: ' + emailEl.value.trim(),
-      'Project Type: ' + (projectType ? projectType.value : 'N/A'),
-      'Industry: ' + (industry ? (industry.value || 'N/A') : 'N/A'),
-      'Budget: ' + (budget ? (budget.options[budget.selectedIndex] ? budget.options[budget.selectedIndex].text : 'N/A') : 'N/A'),
-      'Timeline: ' + (valEl ? valEl.textContent : 'N/A'),
-      '',
-      'Message:',
-      msgEl.value.trim()
-    ].join('\n');
+    var payload = {
+      name: nameEl.value.trim(),
+      email: emailEl.value.trim(),
+      projectType: projectType ? projectType.value : '',
+      industry: industry ? industry.value : '',
+      budget: budget ? budget.options[budget.selectedIndex].text : '',
+      timeline: valEl ? valEl.textContent : '',
+      message: msgEl.value.trim(),
+    };
 
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    setTimeout(function () {
-      var mailto = 'mailto:medislambenjaballah1@gmail.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      window.location.href = mailto;
-
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.error) throw new Error(data.error);
       submitBtn.classList.remove('loading');
       submitBtn.classList.add('success');
-      submitBtn.disabled = false;
-
       setTimeout(function () {
         resetForm();
         closeModal();
       }, 2000);
-    }, 600);
+    })
+    .catch(function (err) {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+      alert('Failed to send: ' + err.message);
+    });
   });
 })();
 

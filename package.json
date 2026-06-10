@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "node build.js",
+    "dev": "npx serve . --listen 3000",
     "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
