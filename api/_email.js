@@ -18,7 +18,7 @@ function mailHTML(opts) {
             opts.body +
           '</td></tr>' +
           '<tr><td style="padding:25px 0 0;text-align:center;color:' + dim + ';font-size:13px">' +
-            '<p style="margin:0 0 5px">Mohamed Islam Ben Jeballah &mdash; mibj.tech</p>' +
+            '<p style="margin:0 0 5px">Mohamed Islem Ben Jaballah &mdash; mibj.tech</p>' +
             '<p style="margin:0">' + esc(opts.footer || '') + '</p>' +
           '</td></tr>' +
         '</table>' +
@@ -79,7 +79,7 @@ function confirmationBody(data) {
       '<tr><td style="padding:0 0 6px;color:' + text + ';font-size:15px;line-height:1.6">' + esc(data.message) + '</td></tr>' +
     '</table>' +
     '<p style="margin:0 0 6px;color:' + text + ';font-size:15px;line-height:1.7">Best regards,</p>' +
-    '<p style="margin:0;color:' + accent + ';font-size:16px;font-weight:600">Mohamed Islam Ben Jeballah</p>' +
+    '<p style="margin:0;color:' + accent + ';font-size:16px;font-weight:600">Mohamed Islem Ben Jaballah</p>' +
     '<p style="margin:6px 0 0;color:' + dim + ';font-size:13px">Technical Project Manager &amp; Software Engineer</p>' +
     '<p style="margin:2px 0 0;color:' + dim + ';font-size:13px"><a href="https://mibj.tech" style="color:' + accent + ';text-decoration:none">mibj.tech</a> &nbsp;·&nbsp; medislambenjaballah1@gmail.com &nbsp;·&nbsp; +971 54 327 5998</p>';
 }
@@ -98,7 +98,7 @@ module.exports = {
       heading: 'Thank you for reaching out!',
       subheading: 'I\'ll get back to you within 24 hours',
       body: confirmationBody(data),
-      footer: 'This is an automated confirmation. Replies to this email go directly to Islam.',
+      footer: 'This is an automated confirmation. Replies to this email go directly to Islem.',
       rtl: data.lang === 'ar'
     });
   }

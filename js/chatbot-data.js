@@ -42,7 +42,7 @@ var CHATBOT_DATA = (function () {
         { label: '⚙️ Process',    text: 'How does the work process look?' },
         { label: '🛠️ Tech Stack', text: 'What technologies do you use?' },
         { label: '⏱️ Timeline',   text: 'How long does a project typically take?' },
-        { label: '📞 Contact',    text: 'How can I contact Islam?' },
+        { label: '📞 Contact',    text: 'How can I contact Islem?' },
       ],
     },
     fr: {
@@ -58,7 +58,7 @@ var CHATBOT_DATA = (function () {
         { label: '⚙️ Processus',    text: 'Comment se déroule le processus ?' },
         { label: '🛠️ Technologies', text: 'Quelles technologies utilisez-vous ?' },
         { label: '⏱️ Délais',       text: 'Combien de temps dure un projet ?' },
-        { label: '📞 Contact',      text: 'Comment contacter Islam ?' },
+        { label: '📞 Contact',      text: 'Comment contacter Islem ?' },
       ],
     },
     ar: {
@@ -90,7 +90,7 @@ var CHATBOT_DATA = (function () {
         { label: '⚙️ Proceso',     text: '¿Cómo es el proceso de trabajo?' },
         { label: '🛠️ Tecnologías', text: '¿Qué tecnologías usas?' },
         { label: '⏱️ Tiempo',      text: '¿Cuánto tarda un proyecto?' },
-        { label: '📞 Contacto',    text: '¿Cómo puedo contactar a Islam?' },
+        { label: '📞 Contacto',    text: '¿Cómo puedo contactar a Islem?' },
       ],
     },
     zh: {
@@ -106,7 +106,7 @@ var CHATBOT_DATA = (function () {
         { label: '⚙️ 流程',   text: '工作流程是怎样的？' },
         { label: '🛠️ 技术栈', text: '你使用哪些技术？' },
         { label: '⏱️ 周期',   text: '一个项目通常需要多长时间？' },
-        { label: '📞 联系',   text: '如何联系 Islam？' },
+        { label: '📞 联系',   text: '如何联系 Islem？' },
       ],
     },
     ru: {
@@ -128,7 +128,7 @@ var CHATBOT_DATA = (function () {
   };
 
   var KNOWLEDGE_BASE = [
-    'MIBJ = Islem (Mohamed Islam Ben Jeballah). Technical PM & SWE, 7+ yrs, Abu Dhabi. 15+ projects, 99% satisfaction.',
+    'MIBJ = Islem (Mohamed Islem Ben Jaballah). Technical PM & SWE, 7+ yrs, Abu Dhabi. 15+ projects, 99% satisfaction.',
     '',
     'Services: 3D Unity, Three.js websites, AI avatars, VR training, VR education, visual branding.',
     '6 portfolio projects with YouTube demos (available on request).',

@@ -17,7 +17,7 @@ const TRANSLATIONS = {
     'nav.logo':      '<MIBJ />',
 
     'hero.greeting':    'Hi, my name is',
-    'hero.name':        'Mohamed Islam<br/>Ben Jeballah',
+    'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
     'hero.tagline':     'I build immersive digital experiences.',
     'hero.description': 'Technical Project Manager &amp; Software Engineer with <strong class="accent">7 years of experience</strong> crafting 3D solutions, VR simulations, AI-powered interfaces, and interactive web experiences that captivate and deliver results.',
     'hero.cta':         'Explore My Services',
@@ -88,7 +88,7 @@ const TRANSLATIONS = {
 
     'docs.heading':       '// Documents & Resources',
     'doc.resume.label':   '📄 Resume / CV',
-    'doc.resume.title':   'Mohamed Islam Ben Jaballah',
+    'doc.resume.title':   'Mohamed Islem Ben Jaballah',
     'doc.resume.desc':    'Technical Project Manager &amp; Software Engineer — Full CV',
     'doc.resume.btn':     'View Resume',
     'doc.projects.label': '📎 Project Documentation',
@@ -106,17 +106,17 @@ const TRANSLATIONS = {
     'testimonial.hamami.name': 'Dr. Mohamed Ali Hamami',
     'testimonial.hamami.role': 'AI & XR Strategy and Research Specialist',
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
-    'testimonial.hamami.text': 'Islam first stood out to me as a brilliant student under my supervision, and it has been genuinely rewarding to watch him grow into a sharp, dependable business partner. Across three hardware and software projects, he consistently delivered outstanding results, combining deep technical mastery with real creative initiative. His grasp of AI and XR is exceptional, and when he is handling things, I know the work is in very capable hands.',
+    'testimonial.hamami.text': 'Islem first stood out to me as a brilliant student under my supervision, and it has been genuinely rewarding to watch him grow into a sharp, dependable business partner. Across three hardware and software projects, he consistently delivered outstanding results, combining deep technical mastery with real creative initiative. His grasp of AI and XR is exceptional, and when he is handling things, I know the work is in very capable hands.',
 
     'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Chief Operating Officer',
     'testimonial.farzaneh.org':  'Millennium Abu Dhabi',
-    'testimonial.farzaneh.text': 'What impressed me most about Islam was how calmly he handled real pressure. Deadlines were tight, requirements kept shifting, and expectations changed constantly, yet he adapted quickly, kept moving, and never let quality slip. He took every curveball in stride and kept delivering. Millennium couldn\'t have asked for a more resilient or dependable technical manager.',
+    'testimonial.farzaneh.text': 'What impressed me most about Islem was how calmly he handled real pressure. Deadlines were tight, requirements kept shifting, and expectations changed constantly, yet he adapted quickly, kept moving, and never let quality slip. He took every curveball in stride and kept delivering. Millennium couldn\'t have asked for a more resilient or dependable technical manager.',
 
     'testimonial.jose.name': 'Jose Vargas',
     'testimonial.jose.role': 'Project Manager',
     'testimonial.jose.org':  'ICONIK',
-    'testimonial.jose.text': 'Working with Islam at ICONIK was a genuine pleasure. Beyond his sharp technical skills, he\'s the kind of person who makes the whole team better: supportive, fully present, and always ready to go the extra mile. Every meeting was better with him in it, and every project felt more enjoyable because of his presence. I\'d gladly work with him again anytime.',
+    'testimonial.jose.text': 'Working with Islem at ICONIK was a genuine pleasure. Beyond his sharp technical skills, he\'s the kind of person who makes the whole team better: supportive, fully present, and always ready to go the extra mile. Every meeting was better with him in it, and every project felt more enjoyable because of his presence. I\'d gladly work with him again anytime.',
 
     'contact.label': '06 Contact',
     'contact.title': "Let's Build Something Great",
@@ -144,7 +144,7 @@ const TRANSLATIONS = {
     'nav.logo':      '<MIBJ />',
 
     'hero.greeting':    'Bonjour, je suis',
-    'hero.name':        'Mohamed Islam<br/>Ben Jeballah',
+    'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
     'hero.tagline':     'Je crée des expériences numériques immersives.',
     'hero.description': 'Directeur de Projet Technique &amp; Ingénieur Logiciel avec <strong class="accent">7 ans d\'expérience</strong> dans la création de solutions 3D, simulations VR, interfaces alimentées par l\'IA et expériences web interactives captivantes qui livrent des résultats.',
     'hero.cta':         'Découvrir Mes Services',
@@ -215,7 +215,7 @@ const TRANSLATIONS = {
 
     'docs.heading':       '// Documents & Ressources',
     'doc.resume.label':   '📄 CV / Curriculum Vitae',
-    'doc.resume.title':   'Mohamed Islam Ben Jaballah',
+    'doc.resume.title':   'Mohamed Islem Ben Jaballah',
     'doc.resume.desc':    'Directeur de Projet Technique &amp; Ingénieur Logiciel — CV Complet',
     'doc.resume.btn':     'Voir le CV',
     'doc.projects.label': '📎 Documentation Projet',
@@ -233,17 +233,17 @@ const TRANSLATIONS = {
     'testimonial.hamami.name': 'Dr. Mohamed Ali Hamami',
     'testimonial.hamami.role': 'Spécialiste en Stratégie IA & XR',
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
-    'testimonial.hamami.text': 'Islam s\'est d\'abord distingué à mes yeux comme un étudiant brillant sous ma supervision, et cela a été vraiment gratifiant de le voir évoluer en un partenaire de confiance, solide et fiable. À travers trois projets mêlant matériel et logiciel, il a constamment livré d\'excellents résultats, avec une vraie maîtrise technique et une belle initiative créative. Sa compréhension de l\'IA et du XR est exceptionnelle, et lorsqu\'il prend les choses en main, je sais que le travail est entre de très bonnes mains.',
+    'testimonial.hamami.text': 'Islem s\'est d\'abord distingué à mes yeux comme un étudiant brillant sous ma supervision, et cela a été vraiment gratifiant de le voir évoluer en un partenaire de confiance, solide et fiable. À travers trois projets mêlant matériel et logiciel, il a constamment livré d\'excellents résultats, avec une vraie maîtrise technique et une belle initiative créative. Sa compréhension de l\'IA et du XR est exceptionnelle, et lorsqu\'il prend les choses en main, je sais que le travail est entre de très bonnes mains.',
 
     'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Directrice des Opérations',
     'testimonial.farzaneh.org':  'SSC Abou Dhabi',
-    'testimonial.farzaneh.text': 'Ce qui m\'a le plus marquée chez Islam, c\'est la façon très calme avec laquelle il gérait la vraie pression. Les délais étaient serrés, les besoins changeaient sans cesse, les attentes évoluaient constamment, et pourtant il s\'adaptait vite, avançait sans perdre de temps et ne laissait jamais la qualité baisser. Il a encaissé chaque imprévu avec sang-froid et a continué à livrer. SSC n\'aurait pas pu demander un responsable technique plus solide et plus fiable.',
+    'testimonial.farzaneh.text': 'Ce qui m\'a le plus marquée chez Islem, c\'est la façon très calme avec laquelle il gérait la vraie pression. Les délais étaient serrés, les besoins changeaient sans cesse, les attentes évoluaient constamment, et pourtant il s\'adaptait vite, avançait sans perdre de temps et ne laissait jamais la qualité baisser. Il a encaissé chaque imprévu avec sang-froid et a continué à livrer. SSC n\'aurait pas pu demander un responsable technique plus solide et plus fiable.',
 
     'testimonial.jose.name': 'Jose Vargas',
     'testimonial.jose.role': 'Chef de Projet',
     'testimonial.jose.org':  'Pompiers Sans Frontières, France',
-    'testimonial.jose.text': 'Travailler avec Islam a été un vrai plaisir. Au-delà de ses solides compétences techniques, c\'est le genre de personne qui rend toute l\'équipe meilleure : présent, bienveillant et toujours prêt à faire un effort de plus. Chaque réunion se passait mieux quand il était là, et chaque projet était plus agréable grâce à sa présence. Je retravaillerais avec lui avec grand plaisir, n\'importe quand.',
+    'testimonial.jose.text': 'Travailler avec Islem a été un vrai plaisir. Au-delà de ses solides compétences techniques, c\'est le genre de personne qui rend toute l\'équipe meilleure : présent, bienveillant et toujours prêt à faire un effort de plus. Chaque réunion se passait mieux quand il était là, et chaque projet était plus agréable grâce à sa présence. Je retravaillerais avec lui avec grand plaisir, n\'importe quand.',
 
     'contact.label': '06 Contact',
     'contact.title': 'Construisons Quelque Chose de Grand',
@@ -398,7 +398,7 @@ const TRANSLATIONS = {
     'nav.logo':      '<MIBJ />',
 
     'hero.greeting':    'Hola, mi nombre es',
-    'hero.name':        'Mohamed Islam<br/>Ben Jeballah',
+    'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
     'hero.tagline':     'Creo experiencias digitales inmersivas.',
     'hero.description': 'Director de Proyectos Técnicos e Ingeniero de Software con <strong class="accent">7 años de experiencia</strong> desarrollando soluciones 3D, simulaciones de VR, interfaces con IA y experiencias web interactivas que cautivan y generan resultados.',
     'hero.cta':         'Explorar Mis Servicios',
@@ -469,7 +469,7 @@ const TRANSLATIONS = {
 
     'docs.heading':       '// Documentos y Recursos',
     'doc.resume.label':   '📄 Currículum / CV',
-    'doc.resume.title':   'Mohamed Islam Ben Jaballah',
+    'doc.resume.title':   'Mohamed Islem Ben Jaballah',
     'doc.resume.desc':    'Director de Proyectos Técnicos e Ingeniero de Software — CV Completo',
     'doc.resume.btn':     'Ver Currículum',
     'doc.projects.label': '📎 Documentación de Proyectos',
@@ -487,17 +487,17 @@ const TRANSLATIONS = {
     'testimonial.hamami.name': 'Dr. Mohamed Ali Hamami',
     'testimonial.hamami.role': 'Especialista en Estrategia IA & XR',
     'testimonial.hamami.org':  'Weill Cornell Medicine University',
-    'testimonial.hamami.text': 'Islam me llamó la atención desde el principio como un estudiante brillante bajo mi supervisión, y ha sido realmente gratificante verlo crecer hasta convertirse en un socio de trabajo sólido y confiable. A lo largo de tres proyectos de hardware y software, entregó resultados excelentes de forma constante, combinando una gran profundidad técnica con una iniciativa creativa muy valiosa. Su dominio de la IA y el XR es excepcional, y cuando él está al frente, sé que el trabajo está en muy buenas manos.',
+    'testimonial.hamami.text': 'Islem me llamó la atención desde el principio como un estudiante brillante bajo mi supervisión, y ha sido realmente gratificante verlo crecer hasta convertirse en un socio de trabajo sólido y confiable. A lo largo de tres proyectos de hardware y software, entregó resultados excelentes de forma constante, combinando una gran profundidad técnica con una iniciativa creativa muy valiosa. Su dominio de la IA y el XR es excepcional, y cuando él está al frente, sé que el trabajo está en muy buenas manos.',
 
     'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': 'Directora de Operaciones',
     'testimonial.farzaneh.org':  'SSC Abu Dhabi',
-    'testimonial.farzaneh.text': 'Lo que más me impresionó de Islam fue la calma con la que manejaba la presión real. Los plazos eran ajustados, los requisitos cambiaban constantemente y las expectativas no dejaban de moverse, pero aun así se adaptaba rápido, seguía avanzando y nunca dejó que la calidad bajara. Supo absorber cada giro inesperado y siguió entregando. SSC no podría haber pedido un gerente técnico más resistente ni más confiable.',
+    'testimonial.farzaneh.text': 'Lo que más me impresionó de Islem fue la calma con la que manejaba la presión real. Los plazos eran ajustados, los requisitos cambiaban constantemente y las expectativas no dejaban de moverse, pero aun así se adaptaba rápido, seguía avanzando y nunca dejó que la calidad bajara. Supo absorber cada giro inesperado y siguió entregando. SSC no podría haber pedido un gerente técnico más resistente ni más confiable.',
 
     'testimonial.jose.name': 'Jose Vargas',
     'testimonial.jose.role': 'Jefe de Proyecto',
     'testimonial.jose.org':  'Pompiers Sans Frontières, Francia',
-    'testimonial.jose.text': 'Trabajar con Islam fue un verdadero gusto. Más allá de sus sólidas habilidades técnicas, es de esas personas que hacen mejor a todo el equipo: cercano, presente y siempre dispuesto a dar un poco más. Cada reunión salía mejor con él, y cada proyecto se sentía más llevadero y más humano gracias a su presencia. Volvería a trabajar con él encantado, en cualquier momento.',
+    'testimonial.jose.text': 'Trabajar con Islem fue un verdadero gusto. Más allá de sus sólidas habilidades técnicas, es de esas personas que hacen mejor a todo el equipo: cercano, presente y siempre dispuesto a dar un poco más. Cada reunión salía mejor con él, y cada proyecto se sentía más llevadero y más humano gracias a su presencia. Volvería a trabajar con él encantado, en cualquier momento.',
 
     'contact.label': '06 Contacto',
     'contact.title': 'Construyamos Algo Grande',
@@ -525,7 +525,7 @@ const TRANSLATIONS = {
     'nav.logo':      '<MIBJ />',
 
     'hero.greeting':    '你好，我叫',
-    'hero.name':        'Mohamed Islam<br/>Ben Jeballah',
+    'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
     'hero.tagline':     '我打造沉浸式数字体验。',
     'hero.description': '技术项目经理兼软件工程师，拥有<strong class="accent">7年经验</strong>，专注于3D解决方案、VR仿真、AI驱动界面及互动网页体验的开发。',
     'hero.cta':         '探索我的服务',
@@ -596,7 +596,7 @@ const TRANSLATIONS = {
 
     'docs.heading':       '// 文档与资源',
     'doc.resume.label':   '📄 简历',
-    'doc.resume.title':   'Mohamed Islam Ben Jaballah',
+    'doc.resume.title':   'Mohamed Islem Ben Jaballah',
     'doc.resume.desc':    '技术项目经理兼软件工程师 — 完整简历',
     'doc.resume.btn':     '查看简历',
     'doc.projects.label': '📎 项目文档',
@@ -614,17 +614,17 @@ const TRANSLATIONS = {
     'testimonial.hamami.name': 'Dr. Mohamed Ali Hamami',
     'testimonial.hamami.role': 'AI与XR战略与研究专家',
     'testimonial.hamami.org':  '威尔康奈尔医学院',
-    'testimonial.hamami.text': 'Islam最初以一名非常出色的学生身份进入我的视野，而后来看到他成长为一位敏锐、可靠的合作伙伴，这件事让我由衷感到欣慰。在三个涵盖硬件与软件的项目中，他始终稳定地交出优秀成果，把扎实的技术能力和真实的创造力很好地结合在一起。他对AI和XR的理解非常出色，而当事情交到他手上时，我知道这项工作一定会被处理得很稳妥。',
+    'testimonial.hamami.text': 'Islem最初以一名非常出色的学生身份进入我的视野，而后来看到他成长为一位敏锐、可靠的合作伙伴，这件事让我由衷感到欣慰。在三个涵盖硬件与软件的项目中，他始终稳定地交出优秀成果，把扎实的技术能力和真实的创造力很好地结合在一起。他对AI和XR的理解非常出色，而当事情交到他手上时，我知道这项工作一定会被处理得很稳妥。',
 
     'testimonial.farzaneh.name': 'Farzaneh Shiri',
     'testimonial.farzaneh.role': '首席运营官',
     'testimonial.farzaneh.org':  'SSC 阿布扎比',
-    'testimonial.farzaneh.text': 'Islam最打动我的，是他面对真实压力时那种很稳的状态。截止时间很紧，需求不断变化，预期也一直在调整，但他总能很快适应，持续推进，而且从不让质量打折。他把每一次突发情况都处理得很从容，并且一直稳定交付。SSC不可能找到比他更有韧性、更值得信赖的技术经理。',
+    'testimonial.farzaneh.text': 'Islem最打动我的，是他面对真实压力时那种很稳的状态。截止时间很紧，需求不断变化，预期也一直在调整，但他总能很快适应，持续推进，而且从不让质量打折。他把每一次突发情况都处理得很从容，并且一直稳定交付。SSC不可能找到比他更有韧性、更值得信赖的技术经理。',
 
     'testimonial.jose.name': 'Jose Vargas',
     'testimonial.jose.role': '项目经理',
     'testimonial.jose.org':  '无国界消防员，法国',
-    'testimonial.jose.text': '和Islam一起工作真的很愉快。除了扎实的技术能力之外，他还是那种能让整个团队都变得更好的同事：支持别人、真正投入，而且总愿意多走一步。有他在的每一次会议都会更顺，每一个项目也都会因为他的存在而变得更轻松、更舒服。如果还有机会，我任何时候都愿意再和他合作。',
+    'testimonial.jose.text': '和Islem一起工作真的很愉快。除了扎实的技术能力之外，他还是那种能让整个团队都变得更好的同事：支持别人、真正投入，而且总愿意多走一步。有他在的每一次会议都会更顺，每一个项目也都会因为他的存在而变得更轻松、更舒服。如果还有机会，我任何时候都愿意再和他合作。',
 
     'contact.label': '06 联系',
     'contact.title': '让我们共同创造精彩',
@@ -652,7 +652,7 @@ const TRANSLATIONS = {
     'nav.logo':      '<MIBJ />',
 
     'hero.greeting':    'Привет, меня зовут',
-    'hero.name':        'Mohamed Islam<br/>Ben Jeballah',
+    'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
     'hero.tagline':     'Я создаю захватывающие цифровые опыты.',
     'hero.description': 'Технический руководитель проектов и инженер-программист с <strong class="accent">7-летним опытом</strong> разработки 3D-решений, VR-симуляций, интерфейсов на основе ИИ и интерактивных веб-опытов, которые привлекают и доставляют результаты.',
     'hero.cta':         'Изучить Мои Услуги',
@@ -723,7 +723,7 @@ const TRANSLATIONS = {
 
     'docs.heading':       '// Документы и Ресурсы',
     'doc.resume.label':   '📄 Резюме / CV',
-    'doc.resume.title':   'Mohamed Islam Ben Jaballah',
+    'doc.resume.title':   'Mohamed Islem Ben Jaballah',
     'doc.resume.desc':    'Технический руководитель проектов и инженер-программист — Полное CV',
     'doc.resume.btn':     'Просмотреть Резюме',
     'doc.projects.label': '📎 Документация по Проектам',
