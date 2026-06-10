@@ -1,0 +1,17 @@
+{
+  "name": "mibj-portfolio",
+  "version": "1.0.0",
+  "description": "MIBJ Portfolio with Gemini Chatbot",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npx serve . --listen 3000",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.36.0",
+    "wrangler": "^4.98.0"
+  }
+}

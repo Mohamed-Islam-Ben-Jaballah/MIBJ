@@ -212,6 +212,198 @@
 })();
 
 
+// ---- Scroll-to-Top Button ----
+(function () {
+  const btn = document.getElementById('scrollTop');
+  if (!btn) return;
+
+  let visible = false;
+  window.addEventListener('scroll', function () {
+    const shouldShow = window.scrollY > 400;
+    if (shouldShow !== visible) {
+      visible = shouldShow;
+      btn.classList.toggle('visible', visible);
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+
+// ---- Contact Modal ----
+(function () {
+  const overlay   = document.getElementById('contactOverlay');
+  const closeBtn  = document.getElementById('contactModalClose');
+  const form      = document.getElementById('contactForm');
+  const triggers  = document.querySelectorAll('.contact-trigger');
+
+  if (!overlay || !form) return;
+
+  const nameEl     = document.getElementById('formName');
+  const emailEl    = document.getElementById('formEmail');
+  const msgEl      = document.getElementById('formMessage');
+  const timelineEl = document.getElementById('formTimeline');
+  const valEl      = document.getElementById('formTimelineVal');
+  const charCount  = document.getElementById('formCharCount');
+  const submitBtn  = document.getElementById('formSubmit');
+
+  const timelineLabels = ['1–3 months', '3–6 months', '6–12 months', '12+ months'];
+
+  function openModal() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { if (nameEl) nameEl.focus(); }, 400);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Triggers: nav "Get In Touch", contact section button
+  triggers.forEach(function (t) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Close handlers
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+  });
+
+  // Close on successful submit, reset form
+  function resetForm() {
+    form.reset();
+    if (charCount) charCount.textContent = '0';
+    if (valEl) valEl.textContent = '3–6 months';
+    document.querySelectorAll('.timeline-labels span').forEach(function (s) {
+      s.classList.toggle('active', s.dataset.val === '2');
+    });
+    // Clear errors
+    form.querySelectorAll('.form-error-msg').forEach(function (e) { e.remove(); });
+    form.querySelectorAll('.error').forEach(function (e) { e.classList.remove('error'); });
+    submitBtn.classList.remove('success');
+    submitBtn.disabled = false;
+  }
+
+  // --- Form logic ---
+
+  // Timeline slider
+  if (timelineEl && valEl) {
+    function updateTimeline() {
+      var idx = parseInt(timelineEl.value, 10) - 1;
+      valEl.textContent = timelineLabels[idx] || '';
+      document.querySelectorAll('.timeline-labels span').forEach(function (s) {
+        s.classList.toggle('active', parseInt(s.dataset.val, 10) === parseInt(timelineEl.value, 10));
+      });
+    }
+    timelineEl.addEventListener('input', updateTimeline);
+    updateTimeline();
+  }
+
+  // Character count
+  if (msgEl && charCount) {
+    msgEl.addEventListener('input', function () {
+      charCount.textContent = msgEl.value.length;
+    });
+  }
+
+  function setError(el, msg) {
+    el.classList.add('error');
+    var existing = el.parentNode.querySelector('.form-error-msg');
+    if (!existing) {
+      var err = document.createElement('div');
+      err.className = 'form-error-msg';
+      el.parentNode.appendChild(err);
+    }
+    el.parentNode.querySelector('.form-error-msg').textContent = msg;
+  }
+
+  function clearError(el) {
+    el.classList.remove('error');
+    var err = el.parentNode.querySelector('.form-error-msg');
+    if (err) err.remove();
+  }
+
+  function validateField(el) {
+    if (el.hasAttribute('required') && el.required) {
+      if (!el.value.trim()) {
+        setError(el, 'This field is required');
+        return false;
+      }
+      if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())) {
+        setError(el, 'Please enter a valid email');
+        return false;
+      }
+    }
+    clearError(el);
+    return true;
+  }
+
+  [nameEl, emailEl, msgEl].forEach(function (el) {
+    if (!el) return;
+    el.addEventListener('blur', function () { validateField(el); });
+    el.addEventListener('input', function () { if (el.classList.contains('error')) validateField(el); });
+  });
+
+  // Submit
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var valid = [nameEl, emailEl, msgEl].every(function (el) {
+      return el ? validateField(el) : true;
+    });
+    if (!valid) return;
+
+    var projectType = form.querySelector('input[name="projectType"]:checked');
+    var industry = document.getElementById('formIndustry');
+    var budget = document.getElementById('formBudget');
+
+    var payload = {
+      name: nameEl.value.trim(),
+      email: emailEl.value.trim(),
+      projectType: projectType ? projectType.value : '',
+      industry: industry ? industry.value : '',
+      budget: budget ? budget.options[budget.selectedIndex].text : '',
+      timeline: valEl ? valEl.textContent : '',
+      message: msgEl.value.trim(),
+    };
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.error) throw new Error(data.error);
+      submitBtn.classList.remove('loading');
+      submitBtn.classList.add('success');
+      setTimeout(function () {
+        resetForm();
+        closeModal();
+      }, 2000);
+    })
+    .catch(function (err) {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+      alert('Failed to send: ' + err.message);
+    });
+  });
+})();
+
+
 // ---- Lightbox / Modal ----
 (function () {
   const overlay = document.getElementById('lightbox');

@@ -3,3 +3,13 @@
 *.mov
 *.avi
 *.mkv
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment secrets
+.env
+server/.env
