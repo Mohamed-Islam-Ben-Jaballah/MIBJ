@@ -26,12 +26,12 @@ module.exports = async (req, res) => {
     });
 
     var controller = new AbortController();
-    var timeoutId = setTimeout(function () { controller.abort(); }, 8000);
+    var timeoutId = setTimeout(function () { controller.abort(); }, 9500);
 
     var geminiRes;
     try {
       geminiRes = await fetch(
-        'https://generativelanguage.googleapis.com/v1/models/' + model + ':generateContent?key=' + key,
+        'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
