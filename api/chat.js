@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: { message: 'Request body is required.' } });
     }
 
-    var model = req.body.model || 'gemini-1.5-flash';
+    var model = req.body.model || 'gemini-3.5-flash';
 
     var body = {};
     Object.keys(req.body).forEach(function (k) {
@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
     });
 
     var geminiRes = await fetch(
-      'https://generativelanguage.googleapis.com/v1/models/' + model + ':generateContent?key=' + key,
+      'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
