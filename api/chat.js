@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: { message: 'Request body is required.' } });
     }
 
-    var model = req.body.model || 'gemini-1.5-flash';
+    var model = req.body.model || 'gemini-2.5-flash-preview';
 
     var body = {};
     Object.keys(req.body).forEach(function (k) {
