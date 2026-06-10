@@ -25,14 +25,23 @@ module.exports = async (req, res) => {
       if (k !== 'model') body[k] = req.body[k];
     });
 
-    var geminiRes = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      }
-    );
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function () { controller.abort(); }, 8000);
+
+    var geminiRes;
+    try {
+      geminiRes = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + key,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+          signal: controller.signal,
+        }
+      );
+    } finally {
+      clearTimeout(timeoutId);
+    }
 
     var data = await geminiRes.json();
 
