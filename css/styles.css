@@ -548,8 +548,10 @@ iframe { max-width: 100%; }
 }
 .doc-card__inner {
   background: rgba(100,255,218,.03); border: 1px solid rgba(100,255,218,.1);
-  border-radius: var(--radius); padding: 16px;
+  border-radius: var(--radius); padding: 20px;
+  display: flex; flex-direction: column; min-height: 260px;
 }
+.doc-card__inner .pdf-trigger { margin-top: auto; }
 .doc-card__label { color: var(--accent); font-size: .8rem; margin-bottom: 16px; }
 .doc-card__title { margin: 0 0 6px; font-size: 1rem; font-weight: 600; color: var(--white); }
 .doc-card__desc { margin: 0 0 12px; font-size: .88rem; color: var(--text-dim); }
