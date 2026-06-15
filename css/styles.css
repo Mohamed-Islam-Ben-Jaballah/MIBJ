@@ -1158,7 +1158,7 @@ iframe { max-width: 100%; }
   content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
 }
 
-[dir="rtl"] .hero-inner { text-align: right; margin-right: 0; margin-left: clamp(0px, 18vw, 240px); }
+[dir="rtl"] .hero-inner { text-align: right; margin-left: 0; margin-right: clamp(0px, 18vw, 260px); }
 [dir="rtl"] .hero p { margin-left: 0; margin-right: 0; }
 
 [dir="rtl"] .about-grid { direction: rtl; }
