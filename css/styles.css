@@ -171,9 +171,13 @@ iframe { max-width: 100%; }
 
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  padding-top: var(--nav-h);
+  padding-top: var(--nav-h); overflow: hidden;
 }
-.hero-inner { max-width: 740px; }
+.hero-layout {
+  position: relative; display: flex; justify-content: center;
+  width: 100%;
+}
+.hero-inner { max-width: 740px; position: relative; z-index: 2; }
 .hero .greeting {
   font-family: var(--mono); color: var(--accent); font-size: 1rem;
   margin-bottom: 20px; opacity: 0; animation: fadeUp .6s .2s forwards;
@@ -205,24 +209,21 @@ iframe { max-width: 100%; }
 
 /* ========== HERO VISUAL (profile + orbits + icons) ========== */
 
-.hero-split {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-  align-items: center; width: 100%;
-}
 .hero-visual {
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
+  position: absolute; right: -20px; top: 50%;
+  transform: translateY(-50%);
+  overflow: visible; z-index: 1;
 }
 .profile-orbit {
-  position: relative; width: 340px; height: 340px;
+  position: relative; width: 500px; height: 500px;
   display: flex; align-items: center; justify-content: center;
   will-change: transform;
 }
 .profile-img {
-  width: 180px; height: 180px; border-radius: 50%;
+  width: 240px; height: 240px; border-radius: 50%;
   object-fit: cover; position: relative; z-index: 2;
   border: 3px solid var(--accent-mid);
-  box-shadow: 0 0 30px rgba(100,255,218,.15), 0 0 60px rgba(100,255,218,.06);
+  box-shadow: 0 0 40px rgba(100,255,218,.2), 0 0 80px rgba(100,255,218,.08);
   pointer-events: none;
   animation: profileFadeIn .8s .5s both;
 }
@@ -233,27 +234,33 @@ iframe { max-width: 100%; }
 .orbit-svg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   z-index: 1; pointer-events: none;
-  animation: orbitSpin 30s linear infinite;
 }
 .orbit-ring {
   fill: none; stroke: var(--accent);
   transform-origin: center;
 }
-.orbit-ring--outer {
-  stroke-width: 2.5; stroke-dasharray: 12 18;
-  opacity: .25; animation: orbitSpin 20s linear infinite reverse;
+.orbit-ring--a {
+  stroke-width: 2.5; stroke-dasharray: 8 24 4 16;
+  opacity: .2; animation: spinCW 22s linear infinite;
 }
-.orbit-ring--inner {
-  stroke-width: 1.5; stroke-dasharray: 6 20;
-  opacity: .35; animation: orbitSpin 25s linear infinite;
+.orbit-ring--b {
+  stroke-width: 10; stroke-dasharray: 1 37;
+  opacity: .15; animation: spinCCW 30s linear infinite;
 }
-@keyframes orbitSpin {
-  to { transform: rotate(360deg); }
+.orbit-ring--c {
+  stroke-width: 1.5; stroke-dasharray: 25 12;
+  opacity: .25; animation: spinCW 18s linear infinite;
 }
+.orbit-ring--d {
+  stroke-width: 1; stroke-dasharray: 3 25;
+  opacity: .4; animation: spinCCW 14s linear infinite;
+}
+@keyframes spinCW  { to { transform: rotate(360deg); } }
+@keyframes spinCCW { to { transform: rotate(-360deg); } }
 
-/* Floating IT icons */
+/* Floating IT icons — orbit ring outside tech circles */
 .float-icon {
-  position: absolute; width: 34px; height: 34px;
+  position: absolute; width: 38px; height: 38px;
   transform: translate(-50%, -50%);
   z-index: 3; pointer-events: none;
   color: var(--accent);
@@ -272,38 +279,43 @@ iframe { max-width: 100%; }
 
 @keyframes floatItem {
   0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-14px); }
+  50% { transform: translate(-50%, -50%) translateY(-16px); }
 }
 @keyframes wobbleItem {
   0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(8deg); }
-  75% { transform: rotate(-8deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
 }
 @keyframes orbitDrift {
   0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(30deg); }
+  50% { filter: hue-rotate(40deg); }
   100% { filter: hue-rotate(0deg); }
 }
 @keyframes glitchItem {
   0%, 92%, 100% { opacity: .6; transform: scaleX(1) translateX(0); clip-path: inset(0); }
-  93% { opacity: .15; transform: scaleX(-1) translateX(-2px); clip-path: inset(0 0 70% 0); }
-  94% { opacity: .6; transform: scaleX(1) translateX(1px); clip-path: inset(30% 0 40% 0); }
-  95% { opacity: .1; transform: scaleX(-1) translateX(-1px); clip-path: inset(60% 0 0 0); }
+  93% { opacity: .12; transform: scaleX(-1) translateX(-3px); clip-path: inset(0 0 70% 0); }
+  94% { opacity: .6; transform: scaleX(1) translateX(2px); clip-path: inset(30% 0 40% 0); }
+  95% { opacity: .08; transform: scaleX(-1) translateX(-2px); clip-path: inset(60% 0 0 0); }
   96% { opacity: .6; transform: scaleX(1) translateX(0); clip-path: inset(0); }
 }
 
 /* Hero responsive */
-@media (max-width: 900px) {
-  .hero-split { grid-template-columns: 1fr; gap: 32px; }
-  .hero-visual { order: -1; }
-  .profile-orbit { width: 240px; height: 240px; }
-  .profile-img { width: 130px; height: 130px; }
-  .float-icon { width: 26px; height: 26px; }
+@media (max-width: 1100px) {
+  .hero-visual { right: -80px; }
+  .profile-orbit { width: 420px; height: 420px; }
+  .profile-img { width: 200px; height: 200px; }
 }
-@media (max-width: 480px) {
-  .profile-orbit { width: 200px; height: 200px; }
-  .profile-img { width: 110px; height: 110px; }
-  .float-icon { width: 22px; height: 22px; }
+@media (max-width: 900px) {
+  .hero-visual { right: -100px; }
+  .profile-orbit { width: 340px; height: 340px; }
+  .profile-img { width: 160px; height: 160px; }
+  .float-icon { width: 30px; height: 30px; }
+}
+@media (max-width: 600px) {
+  .hero-visual { right: 50%; transform: translateY(-50%) translateX(50%); opacity: .15; }
+  .profile-orbit { width: 260px; height: 260px; }
+  .profile-img { width: 120px; height: 120px; }
+  .float-icon { display: none; }
 }
 
 /* ========== ABOUT ========== */
@@ -1213,7 +1225,7 @@ iframe { max-width: 100%; }
   #particles { display: none; }
   .chat-fab__ping { display: none; }
   .typing-dots span { animation: none; }
-  .orbit-svg, .orbit-ring { animation: none; }
+  .orbit-svg, .orbit-ring, .orbit-ring--a, .orbit-ring--b, .orbit-ring--c, .orbit-ring--d { animation: none; }
   .float-icon, .float-icon__inner { animation: none; opacity: .6; }
 }
 
