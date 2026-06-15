@@ -573,3 +573,115 @@
     if (!rafId) rafId = requestAnimationFrame(tick);
   }, { passive: true });
 })();
+
+
+// ---- Hero Typewriter + Letter Glitch ----
+(function () {
+  var greeting = document.querySelector('.greeting');
+  var h1 = document.querySelector('.hero h1');
+  var h2 = document.querySelector('.hero h2');
+  if (!greeting || !h1 || !h2) return;
+
+  var TYPING_SPEED = 45;
+
+  // Hide until typed
+  greeting.classList.add('typing');
+  h1.classList.add('typing');
+  h2.classList.add('typing');
+
+  function typeText(el, cb) {
+    var html = el.innerHTML;
+    var text = html.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>/g, '');
+    el.innerHTML = '';
+    el.style.visibility = 'visible';
+    el.classList.add('typing-cursor');
+    var i = 0;
+    function type() {
+      if (i < text.length) {
+        el.innerHTML = text.substring(0, i + 1).replace(/\n/g, '<br>');
+        i++;
+        setTimeout(type, TYPING_SPEED);
+      } else {
+        el.innerHTML = html;
+        el.classList.remove('typing-cursor');
+        if (cb) cb();
+      }
+    }
+    type();
+  }
+
+  function startTypewriter() {
+    if (greeting.getAttribute('data-typed') === 'true') return;
+    greeting.setAttribute('data-typed', 'true');
+    typeText(greeting, function () {
+      setTimeout(function () {
+        typeText(h1, function () {
+          setTimeout(function () {
+            typeText(h2, function () {
+              startLetterGlitch();
+            });
+          }, 200);
+        });
+      }, 200);
+    });
+  }
+
+  // Wait for i18n then start
+  function waitForLang() {
+    if (document.documentElement.getAttribute('data-lang')) {
+      startTypewriter();
+    } else {
+      setTimeout(waitForLang, 50);
+    }
+  }
+  waitForLang();
+
+  // ── Letter glitch on h1 ──────────────────────────────────
+  function startLetterGlitch() {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`';
+    var originalHTML = h1.innerHTML;
+    var originalText = h1.textContent;
+    var glitchInterval = null;
+
+    function glitchOnce() {
+      var textNodes = getTextNodes(h1);
+      if (!textNodes.length) return;
+      var node = textNodes[Math.floor(Math.random() * textNodes.length)];
+      var original = node.textContent;
+      var pos = Math.floor(Math.random() * original.length);
+      var origChar = original[pos];
+      if (origChar === ' ' || origChar === '\n') return;
+      var glitchChar = chars[Math.floor(Math.random() * chars.length)];
+      node.textContent = original.substring(0, pos) + glitchChar + original.substring(pos + 1);
+      var wrap = h1;
+      wrap.classList.remove('letter-glitch');
+      void wrap.offsetWidth;
+      wrap.classList.add('letter-glitch');
+      setTimeout(function () {
+        node.textContent = original;
+        wrap.classList.remove('letter-glitch');
+      }, 120);
+    }
+
+    function scheduleGlitch() {
+      var delay = 1500 + Math.random() * 4000;
+      glitchInterval = setTimeout(function () {
+        glitchOnce();
+        var extra = Math.random() > 0.65;
+        if (extra) setTimeout(glitchOnce, 50);
+        scheduleGlitch();
+      }, delay);
+    }
+    scheduleGlitch();
+  }
+
+  function getTextNodes(el) {
+    var nodes = [];
+    var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    while (walk.nextNode()) {
+      var t = walk.currentNode;
+      if (t.textContent.trim()) nodes.push(t);
+    }
+    return nodes;
+  }
+})();
