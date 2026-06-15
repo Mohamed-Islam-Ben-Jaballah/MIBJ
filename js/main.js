@@ -467,7 +467,7 @@
 
       case 'pdf': {
         const isMobile = window.innerWidth <= 768;
-        const base = 'https://mohamed-islam-ben-jaballah.github.io/MIBJ/';
+        const base = window.location.origin + '/';
         const absUrl = src.startsWith('http') ? src : base + encodeURIComponent(src).replace(/%2F/g, '/');
         el = document.createElement('iframe');
         el.src = isMobile

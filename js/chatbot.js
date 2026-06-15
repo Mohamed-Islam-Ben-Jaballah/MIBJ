@@ -1,6 +1,6 @@
 // ========================================
 //  MIBJ Portfolio — AI Chatbot
-//  Powered by Google Gemini (proxied through server)
+//  Powered by DeepSeek V4 Flash (proxied through Vercel)
 //  Data (prompts, translations, SVGs) lives in chatbot-data.js
 // ========================================
 
@@ -57,10 +57,10 @@
     }
   }
 
-  // ── Call Gemini API ──────────────────────────────────────────────
+  // ── Call AI API ──────────────────────────────────────────────────
   var cachedSystemText = {};
 
-  function callGemini(userMessage) {
+  function callAI(userMessage) {
     var lang = getCurrentLang();
 
     if (!cachedSystemText[lang]) {
@@ -187,7 +187,7 @@
     inputEl.disabled = true;
     showTyping();
 
-    callGemini(message)
+    callAI(message)
       .then(function (reply) {
         hideTyping();
         appendMessage(reply, 'bot');
