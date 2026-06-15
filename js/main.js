@@ -662,7 +662,7 @@
     }
 
     function scheduleGlitch() {
-      var delay = 500 + Math.random() * 1200;
+      var delay = 300 + Math.random() * 800;
       glitchInterval = setTimeout(function () {
         glitchOnce();
         scheduleGlitch();
