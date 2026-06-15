@@ -647,28 +647,24 @@
       var textNodes = getTextNodes(h1);
       if (!textNodes.length) return;
       var node = textNodes[Math.floor(Math.random() * textNodes.length)];
-      var original = node.textContent;
-      var pos = Math.floor(Math.random() * original.length);
-      var origChar = original[pos];
-      if (origChar === ' ' || origChar === '\n') return;
+      var pos = Math.floor(Math.random() * node.textContent.length);
+      if (node.textContent[pos] === ' ' || node.textContent[pos] === '\n') return;
       var glitchChar = chars[Math.floor(Math.random() * chars.length)];
-      node.textContent = original.substring(0, pos) + glitchChar + original.substring(pos + 1);
+      node.textContent = node.textContent.substring(0, pos) + glitchChar + node.textContent.substring(pos + 1);
       var wrap = h1;
       wrap.classList.remove('letter-glitch');
       void wrap.offsetWidth;
       wrap.classList.add('letter-glitch');
       setTimeout(function () {
-        node.textContent = original;
+        h1.innerHTML = originalHTML;
         wrap.classList.remove('letter-glitch');
       }, 120);
     }
 
     function scheduleGlitch() {
-      var delay = 1500 + Math.random() * 4000;
+      var delay = 2000 + Math.random() * 5000;
       glitchInterval = setTimeout(function () {
         glitchOnce();
-        var extra = Math.random() > 0.65;
-        if (extra) setTimeout(glitchOnce, 50);
         scheduleGlitch();
       }, delay);
     }
