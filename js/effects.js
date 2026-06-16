@@ -104,7 +104,7 @@
       var pos = chosen[i];
       el.style.top = pos[0] + '%';
       el.style.left = pos[1] + '%';
-      el.textContent = '💎';
+      el.textContent = '🪙';
       document.body.appendChild(el);
       emojis.push(el);
       setupEmoji(el);
@@ -219,8 +219,7 @@
         hasSeenBubble = true;
         showBubble(t.first_bubble || 'Find these hidden elements and get a secret gift from me');
       } else {
-        var remaining = MAX_TOKENS - tokensFound;
-        var msg = (t.tokens_left || 'Have you found all hidden tokens? You still have {X} tokens left.').replace('{X}', remaining);
+        var msg = (t.tokens_left || 'Nice work! You\'ve collected {X} of 7 tokens so far. Keep your eyes peeled — the tokens are hiding in plain sight!').replace('{X}', tokensFound);
         showBubble(msg);
       }
     });
