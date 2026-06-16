@@ -1663,3 +1663,176 @@ iframe { max-width: 100%; }
   .chat-panel.open { transform: translateY(0) scale(1); }
   [dir="rtl"] .chat-panel { right: 0; left: 0; }
 }
+
+/* ===================================================================
+   INTERACTIVE EFFECTS — Ripple, Emojis, Token Counter, Bubble, Booking
+   =================================================================== */
+
+/* ---- Ripple Canvas ---- */
+#rippleCanvas {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 9998;
+}
+
+/* ---- Hidden Emojis ---- */
+.hidden-emoji {
+  position: absolute; z-index: 5; cursor: pointer;
+  font-size: 20px; opacity: 0.25; user-select: none;
+  transition: opacity .4s ease, transform .3s ease, text-shadow .3s ease;
+  transform: scale(1);
+}
+.hidden-emoji:hover { opacity: 1; transform: scale(1.3); text-shadow: 0 0 20px #64ffda, 0 0 40px #64ffda; }
+.hidden-emoji.found { opacity: 0; pointer-events: none; transform: scale(0); }
+
+/* ---- Token Counter ---- */
+.token-counter {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  display: none; align-items: center; gap: 8px;
+  background: var(--bg-light); border: 1px solid var(--accent-mid);
+  border-radius: 30px; padding: 8px 18px 8px 14px;
+  font-family: var(--mono); font-size: .85rem; color: var(--accent);
+  box-shadow: 0 0 20px rgba(100,255,218,.12);
+  backdrop-filter: blur(10px);
+  animation: tokenPulse 2s infinite;
+}
+.token-counter.visible { display: flex; }
+.token-counter.complete { border-color: var(--accent); box-shadow: 0 0 30px rgba(100,255,218,.25); }
+.token-icon { font-size: 1rem; }
+.token-count { font-weight: 600; letter-spacing: 1px; }
+@keyframes tokenPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(100,255,218,.12); }
+  50% { box-shadow: 0 0 30px rgba(100,255,218,.25); }
+}
+
+/* ---- Profile Hover Glow ---- */
+.profile-img {
+  transition: transform .4s ease, box-shadow .4s ease, filter .4s ease;
+}
+.profile-img.hover-glow {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(100,255,218,.3), 0 0 80px rgba(100,255,218,.15);
+  filter: brightness(1.1);
+}
+
+/* ---- Profile Text Bubble ---- */
+.profile-bubble {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  z-index: 10000; max-width: 440px; width: 90%;
+  background: #0d1b2e; border: 1px solid var(--accent);
+  border-radius: 12px; padding: 28px 32px 24px;
+  box-shadow: 0 0 40px rgba(100,255,218,.2), 0 0 80px rgba(100,255,218,.1),
+              inset 0 0 30px rgba(100,255,218,.04);
+  display: none; font-family: var(--mono);
+}
+.profile-bubble.visible { display: block; animation: bubbleIn .35s ease; }
+@keyframes bubbleIn {
+  0% { opacity: 0; transform: translate(-50%,-50%) scale(.92); }
+  100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+}
+.bubble-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; color: var(--text-dim);
+  font-size: 1.5rem; cursor: pointer; line-height: 1;
+  transition: color .2s;
+}
+.bubble-close:hover { color: var(--accent); }
+.bubble-content {
+  color: var(--text); font-size: .9rem; line-height: 1.7;
+  min-height: 60px; max-height: 260px; overflow-y: auto;
+  padding-right: 4px;
+}
+.bubble-content::-webkit-scrollbar { width: 3px; }
+.bubble-content::-webkit-scrollbar-track { background: transparent; }
+.bubble-content::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
+
+.bubble-char { animation: charFade .15s ease; }
+@keyframes charFade { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+.congrats-bubble { border-color: gold; box-shadow: 0 0 50px rgba(255,215,0,.2), 0 0 100px rgba(255,215,0,.1); }
+.congrats-bubble .bubble-content { color: var(--white); }
+.bubble-click {
+  color: var(--accent); cursor: pointer; text-decoration: underline;
+  transition: opacity .2s;
+}
+.bubble-click:hover { opacity: .8; }
+
+/* ---- Booking Modal ---- */
+.booking-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10001; background: rgba(10,25,47,.85);
+  backdrop-filter: blur(6px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.booking-overlay.active { display: flex; }
+.booking-modal {
+  background: var(--bg-light); border: 1px solid var(--accent-mid);
+  border-radius: 14px; max-width: 700px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 0 50px rgba(100,255,218,.12);
+}
+.booking-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 28px 32px 16px; border-bottom: 1px solid rgba(100,255,218,.1);
+}
+.booking-title { font-size: 1.3rem; font-weight: 700; color: var(--white); margin: 0; }
+.booking-subtitle { font-size: .85rem; color: var(--text-dim); margin: 4px 0 0; }
+.booking-close {
+  background: none; border: none; color: var(--text-dim);
+  font-size: 1.8rem; cursor: pointer; padding: 0; line-height: 1;
+  transition: color .2s;
+}
+.booking-close:hover { color: var(--accent); }
+.booking-body { padding: 24px 32px 32px; }
+.booking-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+@media (max-width: 600px) { .booking-columns { grid-template-columns: 1fr; gap: 20px; } }
+
+.booking-col--form { display: flex; flex-direction: column; gap: 16px; }
+.booking-col--picker { display: flex; flex-direction: column; gap: 16px; }
+
+.book-form-group { display: flex; flex-direction: column; gap: 6px; }
+.book-label { font-size: .82rem; color: var(--text-dim); font-weight: 500; letter-spacing: .3px; }
+.book-input {
+  background: #1a2f4e; border: 1px solid rgba(100,255,218,.15);
+  border-radius: 6px; padding: 10px 14px;
+  font-family: var(--font); font-size: .9rem; color: var(--text);
+  transition: border-color .25s, box-shadow .25s;
+}
+.book-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(100,255,218,.1); }
+.book-input.error { border-color: #ff6b6b; }
+.book-textarea { resize: vertical; min-height: 70px; }
+.book-select { cursor: pointer; }
+.book-select option { background: var(--bg); color: var(--text); }
+
+.book-error-msg { font-size: .78rem; color: #ff6b6b; margin-top: 2px; }
+
+.book-form-group--submit { margin-top: 8px; }
+.book-submit {
+  width: 100%; padding: 12px 20px;
+  background: var(--accent); color: var(--bg); border: none; border-radius: 6px;
+  font-family: var(--font); font-size: .95rem; font-weight: 600;
+  cursor: pointer; transition: opacity .25s, transform .2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.book-submit:hover { opacity: .9; transform: translateY(-1px); }
+.book-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.book-submit.loading .book-submit__text { visibility: hidden; }
+.book-submit.loading .book-submit__spinner { display: block; }
+.book-submit.success { background: #2ecc71; }
+.book-submit__spinner {
+  display: none; width: 18px; height: 18px;
+  border: 2px solid rgba(10,25,47,.3); border-top-color: var(--bg);
+  border-radius: 50%; animation: bookSpin .6s linear infinite;
+  position: absolute;
+}
+@keyframes bookSpin { to { transform: rotate(360deg); } }
+.book-note { font-size: .78rem; color: var(--text-dim); text-align: center; margin: 8px 0 0; }
+
+/* prefers-reduced-motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  #rippleCanvas { display: none; }
+  .hidden-emoji { display: none; }
+  .token-counter { animation: none; }
+  .profile-bubble { animation: none; }
+  .profile-img.hover-glow { transform: none; box-shadow: none; filter: none; }
+}

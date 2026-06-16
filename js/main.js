@@ -534,44 +534,12 @@
 })();
 
 
-// ---- Hero Mouse Parallax (avoidance effect) ----
+// ---- Profile hover glow (CSS handles size, JS adds class for glow trigger) ----
 (function () {
-  var visual = document.getElementById('heroVisual');
-  var orbit = document.getElementById('profileOrbit');
-  if (!visual || !orbit) return;
-
-  var strength = 12;
-  var rafId = null;
-  var targetX = 0, targetY = 0, currentX = 0, currentY = 0;
-
-  function onMove(e) {
-    var rect = visual.getBoundingClientRect();
-    var cx = rect.left + rect.width / 2;
-    var cy = rect.top + rect.height / 2;
-    targetX = ((e.clientX - cx) / rect.width) * -strength;
-    targetY = ((e.clientY - cy) / rect.height) * -strength;
-  }
-
-  function tick() {
-    currentX += (targetX - currentX) * 0.1;
-    currentY += (targetY - currentY) * 0.1;
-    orbit.style.transform = 'translate(' + currentX.toFixed(2) + 'px, ' + currentY.toFixed(2) + 'px)';
-    if (Math.abs(currentX - targetX) > 0.01 || Math.abs(currentY - targetY) > 0.01) {
-      rafId = requestAnimationFrame(tick);
-    } else {
-      rafId = null;
-    }
-  }
-
-  visual.addEventListener('mousemove', function (e) {
-    onMove(e);
-    if (!rafId) rafId = requestAnimationFrame(tick);
-  }, { passive: true });
-
-  visual.addEventListener('mouseleave', function () {
-    targetX = 0; targetY = 0;
-    if (!rafId) rafId = requestAnimationFrame(tick);
-  }, { passive: true });
+  var img = document.getElementById('profileImg');
+  if (!img) return;
+  img.addEventListener('mouseenter', function () { img.classList.add('hover-glow'); });
+  img.addEventListener('mouseleave', function () { img.classList.remove('hover-glow'); });
 })();
 
 

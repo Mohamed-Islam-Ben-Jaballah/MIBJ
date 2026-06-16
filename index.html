@@ -80,6 +80,9 @@
   <!-- Particle Background -->
   <canvas id="particles"></canvas>
 
+  <!-- Ripple Canvas -->
+  <canvas id="rippleCanvas" aria-hidden="true"></canvas>
+
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <a href="#" class="logo" data-i18n="nav.logo">&lt;MIBJ /&gt;</a>
@@ -105,6 +108,27 @@
       </div>
     </div>
   </nav>
+
+  <!-- Hidden Emojis (collectible tokens) -->
+  <span class="hidden-emoji" style="top:18%;left:8%;">💻</span>
+  <span class="hidden-emoji" style="top:45%;left:92%;">⚡</span>
+  <span class="hidden-emoji" style="top:75%;left:5%;">🔮</span>
+  <span class="hidden-emoji" style="top:110%;left:88%;">🚀</span>
+  <span class="hidden-emoji" style="top:150%;left:12%;">🧩</span>
+  <span class="hidden-emoji" style="top:200%;left:85%;">💎</span>
+  <span class="hidden-emoji" style="top:260%;left:50%;">🎯</span>
+
+  <!-- Token Counter -->
+  <div class="token-counter" id="tokenCounter">
+    <span class="token-icon">💎</span>
+    <span class="token-count"><span id="tokenCount">0</span>/7</span>
+  </div>
+
+  <!-- Profile Text Bubble -->
+  <div class="profile-bubble" id="profileBubble">
+    <button class="bubble-close" id="bubbleClose" aria-label="Close">&times;</button>
+    <div class="bubble-content" id="bubbleText"></div>
+  </div>
 
   <!-- ===================== MAIN CONTENT ===================== -->
   <main>
@@ -714,6 +738,80 @@
     </div>
   </div>
 
+  <!-- ===================== BOOKING MODAL ===================== -->
+  <div class="booking-overlay" id="bookingOverlay" role="dialog" aria-modal="true" aria-label="Book a consultation">
+    <div class="booking-modal">
+      <div class="booking-header">
+        <div>
+          <h3 class="booking-title" data-i18n="booking.title">Schedule a Free Consultation</h3>
+          <p class="booking-subtitle" data-i18n="booking.subtitle">Pick a date and time that works for you</p>
+        </div>
+        <button class="booking-close" id="bookingClose" aria-label="Close booking form">&times;</button>
+      </div>
+      <div class="booking-body">
+        <div class="booking-columns">
+          <!-- Left: Contact form -->
+          <div class="booking-col booking-col--form">
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="book-form-group">
+                <label for="bookName" class="book-label" data-i18n="booking.name">Your Name *</label>
+                <input type="text" id="bookName" class="book-input" required placeholder="John Doe" maxlength="100" autocomplete="name" />
+              </div>
+              <div class="book-form-group">
+                <label for="bookEmail" class="book-label" data-i18n="booking.email">Your Email *</label>
+                <input type="email" id="bookEmail" class="book-input" required placeholder="john@example.com" maxlength="200" autocomplete="email" />
+              </div>
+              <div class="book-form-group">
+                <label for="bookPhone" class="book-label" data-i18n="booking.phone">Your Phone</label>
+                <input type="tel" id="bookPhone" class="book-input" placeholder="+1 234 567 890" maxlength="30" autocomplete="tel" />
+              </div>
+              <div class="book-form-group">
+                <label for="bookMessage" class="book-label" data-i18n="booking.message">Tell me about your project (optional)</label>
+                <textarea id="bookMessage" class="book-input book-textarea" placeholder="Brief description..." maxlength="1000" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <!-- Right: Date & Time -->
+          <div class="booking-col booking-col--picker">
+            <div class="book-form-group">
+              <label for="bookDate" class="book-label" data-i18n="booking.date">Pick a Date</label>
+              <input type="date" id="bookDate" class="book-input" />
+            </div>
+            <div class="book-form-group">
+              <label for="bookTime" class="book-label" data-i18n="booking.time">Pick a Time</label>
+              <select id="bookTime" class="book-input book-select">
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </div>
+            <div class="book-form-group book-form-group--submit">
+              <button type="submit" class="book-submit" id="bookSubmit" form="bookingForm">
+                <span class="book-submit__text" data-i18n="booking.submit">Book Appointment</span>
+                <span class="book-submit__spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="book-note">I'll confirm within 24 hours. Your info stays private.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== SCROLL TO TOP ===================== -->
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
@@ -738,6 +836,7 @@
   <!-- ===================== JAVASCRIPT ===================== -->
   <script src="js/main.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/effects.js"></script>
   <script>
     (function(){
       function loadIframe(container){
@@ -797,6 +896,9 @@
   <!-- AI Chatbot — powered by DeepSeek V4 Flash -->
   <script src="js/chatbot-data.js"></script>
   <script src="js/chatbot.js?v=3"></script>
+
+  <!-- Booking appointment -->
+  <script src="js/booking.js"></script>
 
   <!-- Sound effects + ambient -->
   <script src="js/sound.js"></script>

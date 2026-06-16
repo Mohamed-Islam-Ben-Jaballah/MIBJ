@@ -84,6 +84,25 @@ function confirmationBody(data) {
     '<p style="margin:2px 0 0;color:' + dim + ';font-size:13px"><a href="https://mibj.tech" style="color:' + accent + ';text-decoration:none">mibj.tech</a> &nbsp;·&nbsp; medislambenjaballah1@gmail.com &nbsp;·&nbsp; +971 54 327 5998</p>';
 }
 
+function bookingBody(data, isConfirmation) {
+  var accent = '#64ffda';
+  var dim = '#8892b0';
+  var text = '#ccd6f6';
+  var card = '#1a2f4e';
+  var rows = '';
+  var fields = [
+    ['Appointment Date', data.date],
+    ['Appointment Time', data.time]
+  ];
+  fields.forEach(function (f) { rows += fieldRow(f[0], f[1]); });
+  if (!isConfirmation) {
+    rows += fieldRow('Phone', data.phone);
+  }
+  rows += '<tr><td style="padding:10px 0 4px;color:' + accent + ';font-size:12px;text-transform:uppercase;letter-spacing:0.5px">Message</td></tr>' +
+    '<tr><td style="padding:0 0 6px;color:' + text + ';font-size:15px;line-height:1.6;background:' + card + ';border-radius:6px;padding:14px 16px">' + esc(data.message) + '</td></tr>';
+  return '<table width="100%" cellpadding="0" cellspacing="0">' + rows + '</table>';
+}
+
 module.exports = {
   notificationHTML: function (data) {
     return mailHTML({
@@ -100,6 +119,27 @@ module.exports = {
       body: confirmationBody(data),
       footer: 'This is an automated confirmation. Replies to this email go directly to Islem.',
       rtl: data.lang === 'ar'
+    });
+  },
+  bookingNotificationHTML: function (data) {
+    return mailHTML({
+      heading: 'New Booking Request',
+      subheading: 'From ' + data.name + ' (' + data.email + ')',
+      body: bookingBody(data, false),
+      footer: 'Booking request from mibj.tech'
+    });
+  },
+  bookingConfirmationHTML: function (data) {
+    return mailHTML({
+      heading: 'Your Appointment is Booked!',
+      subheading: 'Here\'s what I\'ve scheduled for you, ' + esc(data.name),
+      body: '' +
+        '<p style="margin:0 0 20px;color:#ccd6f6;font-size:15px;line-height:1.7">Hi <strong>' + esc(data.name) + '</strong>,</p>' +
+        '<p style="margin:0 0 20px;color:#ccd6f6;font-size:15px;line-height:1.7">Your appointment has been booked successfully! I look forward to our conversation.</p>' +
+        bookingBody(data, true) +
+        '<p style="margin:0 0 6px;color:#ccd6f6;font-size:15px;line-height:1.7">Best regards,</p>' +
+        '<p style="margin:0;color:#64ffda;font-size:16px;font-weight:600">Mohamed Islem Ben Jaballah</p>',
+      footer: 'This is an automated confirmation. Replies go directly to Islem.'
     });
   }
 };

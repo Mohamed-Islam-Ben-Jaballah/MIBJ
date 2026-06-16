@@ -126,6 +126,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  PDF Document',
     'lb.presentation': '📊  Presentation',
     'lb.iframe':       '🌐  External Content',
+
+    'hidden.first_bubble': 'Find these hidden elements and get a secret gift from me',
+    'hidden.tokens_left': 'Have you found all hidden tokens? You still have {X} tokens left.',
+    'hidden.congrats': 'CONGRATS! You sure got a keen eye for hidden gems — makes sense why you found this website. Click here and schedule a free 1 hour face to face consultation with me.',
+    'booking.title': 'Schedule a Free Consultation',
+    'booking.subtitle': 'Pick a date and time that works for you',
+    'booking.name': 'Your Name',
+    'booking.email': 'Your Email',
+    'booking.phone': 'Your Phone',
+    'booking.message': 'Tell me about your project (optional)',
+    'booking.date': 'Pick a Date',
+    'booking.time': 'Pick a Time',
+    'booking.submit': 'Book Appointment',
   },
 
   /* ─────────────────── FRENCH ─────────────────── */
@@ -248,6 +261,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  Document PDF',
     'lb.presentation': '📊  Présentation',
     'lb.iframe':       '🌐  Contenu Externe',
+
+    'hidden.first_bubble': 'Trouvez ces éléments cachés et recevez un cadeau secret de ma part',
+    'hidden.tokens_left': 'Avez-vous trouvé tous les jetons cachés ? Il vous reste encore {X} jetons.',
+    'hidden.congrats': 'FÉLICITATIONS ! Vous avez vraiment l\'œil pour les pépites cachées — ce qui explique pourquoi vous avez trouvé ce site. Cliquez ici et planifiez une consultation gratuite de 1 heure en face à face avec moi.',
+    'booking.title': 'Planifiez une Consultation Gratuite',
+    'booking.subtitle': 'Choisissez une date et une heure qui vous conviennent',
+    'booking.name': 'Votre Nom',
+    'booking.email': 'Votre Email',
+    'booking.phone': 'Votre Téléphone',
+    'booking.message': 'Parlez-moi de votre projet (optionnel)',
+    'booking.date': 'Choisissez une Date',
+    'booking.time': 'Choisissez une Heure',
+    'booking.submit': 'Réserver le Rendez-vous',
   },
 
   /* ─────────────────── ARABIC ─────────────────── */
@@ -370,6 +396,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  ملف PDF',
     'lb.presentation': '📊  عرض تقديمي',
     'lb.iframe':       '🌐  محتوى خارجي',
+
+    'hidden.first_bubble': 'ابحث عن هذه العناصر المخفية واحصل على هدية سرية مني',
+    'hidden.tokens_left': 'هل وجدت جميع الرموز المخفية؟ لا يزال لديك {X} رموز متبقية.',
+    'hidden.congrats': 'تهانينا! لديك حقاً عين ثاقبة للجواهر المخفية — وهذا منطقي لأنك وجدت هذا الموقع. اضغط هنا واحجز استشارة مجانية لمدة ساعة وجهاً لوجه معي.',
+    'booking.title': 'احجز استشارة مجانية',
+    'booking.subtitle': 'اختر تاريخاً ووقتاً يناسبك',
+    'booking.name': 'اسمك',
+    'booking.email': 'بريدك الإلكتروني',
+    'booking.phone': 'رقم هاتفك',
+    'booking.message': 'أخبرني عن مشروعك (اختياري)',
+    'booking.date': 'اختر تاريخاً',
+    'booking.time': 'اختر وقتاً',
+    'booking.submit': 'احجز الموعد',
   },
 
   /* ─────────────────── SPANISH ─────────────────── */
@@ -492,6 +531,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  Documento PDF',
     'lb.presentation': '📊  Presentación',
     'lb.iframe':       '🌐  Contenido Externo',
+
+    'hidden.first_bubble': 'Encuentra estos elementos ocultos y recibe un regalo secreto de mi parte',
+    'hidden.tokens_left': '¿Has encontrado todos los tokens ocultos? Aún te quedan {X} tokens.',
+    'hidden.congrats': '¡FELICIDADES! Tienes muy buen ojo para las gemas ocultas — tiene sentido que hayas encontrado este sitio web. Haz clic aquí y programa una consulta gratuita de 1 hora cara a cara conmigo.',
+    'booking.title': 'Programa una Consulta Gratuita',
+    'booking.subtitle': 'Elige una fecha y hora que te funcione',
+    'booking.name': 'Tu Nombre',
+    'booking.email': 'Tu Email',
+    'booking.phone': 'Tu Teléfono',
+    'booking.message': 'Cuéntame sobre tu proyecto (opcional)',
+    'booking.date': 'Elige una Fecha',
+    'booking.time': 'Elige una Hora',
+    'booking.submit': 'Reservar Cita',
   },
 
   /* ─────────────────── CHINESE ─────────────────── */
@@ -614,6 +666,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  PDF 文档',
     'lb.presentation': '📊  演示文稿',
     'lb.iframe':       '🌐  外部内容',
+
+    'hidden.first_bubble': '找到这些隐藏元素，从我这里获得一份秘密礼物',
+    'hidden.tokens_left': '你找到所有隐藏代币了吗？你还有 {X} 个代币没找到。',
+    'hidden.congrats': '恭喜！你真有发现隐藏宝藏的慧眼 — 难怪你会找到这个网站。点击这里，预约与我进行一次1小时的免费面对面咨询。',
+    'booking.title': '预约免费咨询',
+    'booking.subtitle': '选择适合你的日期和时间',
+    'booking.name': '你的姓名',
+    'booking.email': '你的邮箱',
+    'booking.phone': '你的电话',
+    'booking.message': '告诉我你的项目（选填）',
+    'booking.date': '选择日期',
+    'booking.time': '选择时间',
+    'booking.submit': '预约',
   },
 
   /* ─────────────────── RUSSIAN ─────────────────── */
@@ -736,6 +801,19 @@ const TRANSLATIONS = {
     'lb.pdf':          '📄  PDF-документ',
     'lb.presentation': '📊  Презентация',
     'lb.iframe':       '🌐  Внешний Контент',
+
+    'hidden.first_bubble': 'Найдите эти скрытые элементы и получите от меня секретный подарок',
+    'hidden.tokens_left': 'Вы нашли все скрытые токены? У вас осталось {X} токенов.',
+    'hidden.congrats': 'ПОЗДРАВЛЯЮ! У вас действительно острый глаз на скрытые сокровища — логично, что вы нашли этот сайт. Нажмите здесь, чтобы записаться на бесплатную 1-часовую личную консультацию со мной.',
+    'booking.title': 'Записаться на Бесплатную Консультацию',
+    'booking.subtitle': 'Выберите удобные дату и время',
+    'booking.name': 'Ваше Имя',
+    'booking.email': 'Ваш Email',
+    'booking.phone': 'Ваш Телефон',
+    'booking.message': 'Расскажите о вашем проекте (необязательно)',
+    'booking.date': 'Выберите Дату',
+    'booking.time': 'Выберите Время',
+    'booking.submit': 'Записаться',
   },
 };
 
@@ -806,6 +884,24 @@ const TRANSLATIONS = {
       window.__i18nTypeLabels.presentation = t['lb.presentation'] || '📊  Presentation';
       window.__i18nTypeLabels.iframe       = t['lb.iframe']       || '🌐  External Content';
     }
+
+    // Expose hidden-emoji & booking strings (used in effects.js and booking.js)
+    window.__i18nHidden = {
+      first_bubble: t['hidden.first_bubble'] || 'Find these hidden elements and get a secret gift from me',
+      tokens_left:  t['hidden.tokens_left']  || 'Have you found all hidden tokens? You still have {X} tokens left.',
+      congrats:     t['hidden.congrats']     || 'CONGRATS! You sure got a keen eye for hidden gems — makes sense why you found this website. Click here and schedule a free 1 hour face to face consultation with me.',
+    };
+    window.__i18nBooking = {
+      title:    t['booking.title']    || 'Schedule a Free Consultation',
+      subtitle: t['booking.subtitle'] || 'Pick a date and time that works for you',
+      name:     t['booking.name']     || 'Your Name',
+      email:    t['booking.email']    || 'Your Email',
+      phone:    t['booking.phone']    || 'Your Phone',
+      message:  t['booking.message']  || 'Tell me about your project (optional)',
+      date:     t['booking.date']     || 'Pick a Date',
+      time:     t['booking.time']     || 'Pick a Time',
+      submit:   t['booking.submit']   || 'Book Appointment',
+    };
   }
 
   // Wire up language switcher buttons

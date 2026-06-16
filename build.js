@@ -37,7 +37,7 @@ run('npx cleancss -o "' + path.join(DIST, 'css/styles.css') + '" "' + path.join(
 
 // Minify JS
 log('Minifying JS...');
-['main.js', 'i18n.js', 'chatbot-data.js', 'chatbot.js'].forEach(function (file) {
+['main.js', 'i18n.js', 'effects.js', 'booking.js', 'chatbot-data.js', 'chatbot.js'].forEach(function (file) {
   run('npx terser "' + path.join(__dirname, 'js', file) + '" -o "' + path.join(DIST, 'js', file) + '" --compress --mangle');
 });
 
