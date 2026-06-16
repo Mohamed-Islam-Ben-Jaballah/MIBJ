@@ -57,7 +57,7 @@
 })();
 
 
-// ---- Hidden Emojis + Token Counter + Profile Bubble ----
+// ---- Hidden Emojis (40 preset positions, 7 random per load) + Token Counter + Profile Bubble ----
 (function () {
   var profileImg = document.getElementById('profileImg');
   var bubble = document.getElementById('profileBubble');
@@ -66,15 +66,49 @@
   var tokenCounter = document.getElementById('tokenCounter');
   var tokenCountEl = document.getElementById('tokenCount');
   var MAX_TOKENS = 7;
+  var EMOJI_CHARS = ['💻', '⚡', '🔮', '🚀', '🧩', '💎', '🎯'];
 
   var tokensFound = 0;
-  var hasSeenBubble = false;  // tracks if first-time bubble was shown
+  var hasSeenBubble = false;
   var emojis = [];
   var allUnlocked = false;
 
-  // Collect hidden emoji elements
-  document.querySelectorAll('.hidden-emoji').forEach(function (el) {
-    emojis.push(el);
+  // 40 preset positions (top%, left%)
+  var POSITIONS = [
+    [8,15], [12,78], [18,5], [25,92], [32,48], [40,10], [45,85], [50,55],
+    [58,8], [62,90], [70,35], [75,70], [82,3], [88,95], [95,20], [98,65],
+    [105,50], [112,12], [120,80], [128,42], [135,7], [142,88], [150,30], [158,72],
+    [165,18], [172,93], [180,48], [185,5], [192,82], [200,25], [210,75], [218,38],
+    [225,60], [232,15], [240,88], [248,45], [255,10], [262,95], [270,55], [278,30]
+  ];
+
+  // Randomly pick 7 unique positions
+  function pickPositions(count) {
+    var shuffled = POSITIONS.slice();
+    for (var i = shuffled.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+    }
+    return shuffled.slice(0, count);
+  }
+
+  // Create hidden emoji elements
+  function createEmojis() {
+    var chosen = pickPositions(MAX_TOKENS);
+    for (var i = 0; i < MAX_TOKENS; i++) {
+      var el = document.createElement('span');
+      el.className = 'hidden-emoji';
+      var pos = chosen[i];
+      el.style.top = pos[0] + '%';
+      el.style.left = pos[1] + '%';
+      el.textContent = EMOJI_CHARS[i];
+      document.body.appendChild(el);
+      emojis.push(el);
+      setupEmoji(el);
+    }
+  }
+
+  function setupEmoji(el) {
     el.addEventListener('click', function () {
       if (el.classList.contains('found')) return;
       el.classList.add('found');
@@ -85,7 +119,6 @@
         showCongrats();
       }
     });
-    // Hover glow
     el.addEventListener('mouseenter', function () {
       el.style.opacity = '1';
       el.style.textShadow = '0 0 20px #64ffda, 0 0 40px #64ffda';
@@ -96,7 +129,9 @@
         el.style.textShadow = 'none';
       }
     });
-  });
+  }
+
+  createEmojis();
 
   function updateCounter() {
     if (tokenCountEl) tokenCountEl.textContent = tokensFound;
@@ -158,6 +193,12 @@
   }
 
   if (bubbleClose) bubbleClose.addEventListener('click', closeBubble);
+
+  // Close bubble when language changes
+  var langObserver = new MutationObserver(function () {
+    if (bubble && bubble.classList.contains('visible')) closeBubble();
+  });
+  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
 
   // ---- Profile click handler ----
   if (profileImg) {
