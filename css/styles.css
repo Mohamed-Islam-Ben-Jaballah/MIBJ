@@ -1843,7 +1843,7 @@ iframe { max-width: 100%; }
 @media (max-width: 700px) {
   .profile-bubble {
     position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); max-width: 97vw; min-width: unset; width: 97vw;
+    transform: translate(-50%, -50%); max-width: 83vw; min-width: unset; width: 75vw;
     background: rgba(13,27,46,.82);
   }
   .profile-bubble .bubble-arrow { background: rgba(13,27,46,.82); }
