@@ -4,6 +4,22 @@
 //  emoji hunt, text bubble, token counter
 // ========================================
 
+// ---- Randomize float icon positions on each load ----
+(function () {
+  var icons = document.querySelectorAll('.float-icon');
+  if (!icons.length) return;
+  var angles = [0, 60, 120, 180, 240, 300];
+  icons.forEach(function (el, i) {
+    var angle = ((angles[i] !== undefined ? angles[i] : i * 60) + (Math.random() - 0.5) * 30) * Math.PI / 180;
+    var r = 38 + Math.random() * 10;
+    var left = 50 + r * Math.sin(angle);
+    var top = 50 - r * Math.cos(angle);
+    el.style.left = left + '%';
+    el.style.top = top + '%';
+  });
+})();
+
+
 // ---- Profile Follows Mouse ----
 (function () {
   var orbit = document.getElementById('profileOrbit');

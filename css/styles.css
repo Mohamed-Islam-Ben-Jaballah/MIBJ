@@ -295,7 +295,7 @@ iframe { max-width: 100%; }
   width: 100%; height: 100%;
   animation: wobbleItem 3s ease-in-out calc(var(--delay, 0s) + 0.5s) infinite,
              glitchItem 7s ease calc(var(--delay, 0s) + 1s) infinite;
-  opacity: .6;
+  opacity: .6; filter: saturate(0.35);
   transition: opacity .3s;
 }
 .float-icon__inner svg { display: block; width: 100%; height: 100%; }
@@ -315,8 +315,8 @@ iframe { max-width: 100%; }
   100% { filter: hue-rotate(0deg); }
 }
 @keyframes glitchItem {
-  0%, 92%, 100% { opacity: .6; transform: scaleX(1) translateX(0); clip-path: inset(0); filter: drop-shadow(0 0 0 transparent); }
-  93% { opacity: .15; transform: scaleX(-1) translateX(-3px); clip-path: inset(0 0 70% 0); filter: drop-shadow(-2px 0 rgba(255,50,50,.5)) drop-shadow(2px 0 rgba(50,100,255,.5)); }
+  0%, 92%, 100% { opacity: .6; transform: scaleX(1) translateX(0); clip-path: inset(0); filter: saturate(0.35) drop-shadow(0 0 0 transparent); }
+  93% { opacity: .15; transform: scaleX(-1) translateX(-3px); clip-path: inset(0 0 70% 0); filter: saturate(0.35) drop-shadow(-2px 0 rgba(255,50,50,.5)) drop-shadow(2px 0 rgba(50,100,255,.5)); }
   94% { opacity: .6; transform: scaleX(1) translateX(2px); clip-path: inset(30% 0 40% 0); filter: drop-shadow(0 0 0 transparent); }
   95% { opacity: .1; transform: scaleX(-1) translateX(-2px); clip-path: inset(60% 0 0 0); filter: drop-shadow(-2px 0 rgba(255,50,50,.5)) drop-shadow(2px 0 rgba(50,100,255,.5)); }
   96% { opacity: .6; transform: scaleX(1) translateX(0); clip-path: inset(0); filter: drop-shadow(0 0 0 transparent); }
@@ -1711,15 +1711,16 @@ iframe { max-width: 100%; }
 
 /* ---- Profile Text Bubble (anchored above profile image) ---- */
 .profile-bubble {
-  position: absolute; left: 50%; top: -12px;
+  position: absolute; left: 50%; top: -4px;
   transform: translateX(-60%) translateY(-100%);
-  z-index: 100; max-width: 380px; width: max-content; min-width: 280px;
-  background: #0d1b2e; border: 1px solid var(--accent);
+  z-index: 100; max-width: 420px; width: max-content; min-width: 300px;
+  background: rgba(13,27,46,.92); border: 1px solid var(--accent);
   border-radius: 10px; padding: 20px 24px 16px;
   box-shadow: 0 0 30px rgba(100,255,218,.2), 0 0 60px rgba(100,255,218,.1),
               inset 0 0 20px rgba(100,255,218,.04);
   display: none; font-family: var(--mono);
   outline: none;
+  backdrop-filter: blur(6px);
 }
 .profile-bubble.visible { display: block; animation: bubbleInAttach .35s ease; }
 @keyframes bubbleInAttach {
@@ -1730,7 +1731,7 @@ iframe { max-width: 100%; }
 .bubble-arrow {
   position: absolute; bottom: -8px; left: 60%; transform: translateX(-50%) rotate(45deg);
   width: 14px; height: 14px;
-  background: #0d1b2e; border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
+  background: rgba(13,27,46,.92); border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
 }
 .bubble-close {
   position: absolute; top: 6px; right: 10px;
