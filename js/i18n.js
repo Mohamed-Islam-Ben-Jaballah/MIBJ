@@ -127,9 +127,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  Presentation',
     'lb.iframe':       '🌐  External Content',
 
-    'hidden.first_bubble': 'Find these hidden elements and get a secret gift from me',
-    'hidden.tokens_left': 'Have you found all hidden tokens? You still have {X} tokens left.',
-    'hidden.congrats': 'CONGRATS! You sure got a keen eye for hidden gems — makes sense why you found this website. Click here and schedule a free 1 hour face to face consultation with me.',
+    'hidden.first_bubble': 'Ah, you found me! 💎 Now hunt down the 6 hidden tokens scattered across the site. Find them all and unlock a secret reward.',
+    'hidden.tokens_left': 'Nice work! You\'ve collected {X} of 7 tokens so far. Keep your eyes peeled — the gems are hiding in plain sight!',
+    'hidden.congrats': 'INCREDIBLE! 🎉 You tracked down every single hidden token. That kind of attention to detail is exactly why you\'re here. Ready to put that sharp eye to work? Click here and grab a free 1-hour face-to-face consultation with me.',
     'booking.title': 'Schedule a Free Consultation',
     'booking.subtitle': 'Pick a date and time that works for you',
     'booking.name': 'Your Name',
@@ -262,9 +262,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  Présentation',
     'lb.iframe':       '🌐  Contenu Externe',
 
-    'hidden.first_bubble': 'Trouvez ces éléments cachés et recevez un cadeau secret de ma part',
-    'hidden.tokens_left': 'Avez-vous trouvé tous les jetons cachés ? Il vous reste encore {X} jetons.',
-    'hidden.congrats': 'FÉLICITATIONS ! Vous avez vraiment l\'œil pour les pépites cachées — ce qui explique pourquoi vous avez trouvé ce site. Cliquez ici et planifiez une consultation gratuite de 1 heure en face à face avec moi.',
+    'hidden.first_bubble': 'Ah, tu m\'as trouvé ! 💎 Maintenant traque les 6 jetons cachés disséminés sur le site. Trouve-les tous et débloque une récompense secrète.',
+    'hidden.tokens_left': 'Bon travail ! Tu as collecté {X} jetons sur 7 jusqu\'à présent. Reste aux aguets — les pépites se cachent à la vue de tous !',
+    'hidden.congrats': 'INCROYABLE ! 🎉 Tu as déniché tous les jetons cachés. Ce sens du détail explique pourquoi tu es ici. Prêt à mettre cet œil aiguisé au service de ton projet ? Clique ici et réserve une consultation gratuite de 1 heure en face à face avec moi.',
     'booking.title': 'Planifiez une Consultation Gratuite',
     'booking.subtitle': 'Choisissez une date et une heure qui vous conviennent',
     'booking.name': 'Votre Nom',
@@ -397,9 +397,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  عرض تقديمي',
     'lb.iframe':       '🌐  محتوى خارجي',
 
-    'hidden.first_bubble': 'ابحث عن هذه العناصر المخفية واحصل على هدية سرية مني',
-    'hidden.tokens_left': 'هل وجدت جميع الرموز المخفية؟ لا يزال لديك {X} رموز متبقية.',
-    'hidden.congrats': 'تهانينا! لديك حقاً عين ثاقبة للجواهر المخفية — وهذا منطقي لأنك وجدت هذا الموقع. اضغط هنا واحجز استشارة مجانية لمدة ساعة وجهاً لوجه معي.',
+    'hidden.first_bubble': 'آه، لقد وجدتني! 💎 الآن ابحث عن الرموز الـ 6 المخفية في جميع أنحاء الموقع. اعثر عليها جميعاً وافتح مكافأة سرية.',
+    'hidden.tokens_left': 'عمل رائع! لقد جمعت {X} من 7 رموز حتى الآن. ابقَ متيقظاً — الجواهر مخبأة في مرأى من الجميع!',
+    'hidden.congrats': 'رائع! 🎉 لقد عثرت على كل رمز مخفي. هذا الاهتمام بالتفاصيل هو بالضبط سبب وجودك هنا. مستعد لوضع هذه العين الثاقبة في العمل؟ اضغط هنا واحصل على استشارة مجانية لمدة ساعة وجهاً لوجه معي.',
     'booking.title': 'احجز استشارة مجانية',
     'booking.subtitle': 'اختر تاريخاً ووقتاً يناسبك',
     'booking.name': 'اسمك',
@@ -532,9 +532,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  Presentación',
     'lb.iframe':       '🌐  Contenido Externo',
 
-    'hidden.first_bubble': 'Encuentra estos elementos ocultos y recibe un regalo secreto de mi parte',
-    'hidden.tokens_left': '¿Has encontrado todos los tokens ocultos? Aún te quedan {X} tokens.',
-    'hidden.congrats': '¡FELICIDADES! Tienes muy buen ojo para las gemas ocultas — tiene sentido que hayas encontrado este sitio web. Haz clic aquí y programa una consulta gratuita de 1 hora cara a cara conmigo.',
+    'hidden.first_bubble': '¡Ah, me encontraste! 💎 Ahora busca los 6 tokens ocultos repartidos por el sitio. Encuéntralos todos y desbloquea una recompensa secreta.',
+    'hidden.tokens_left': '¡Buen trabajo! Has recolectado {X} de 7 tokens hasta ahora. Mantén los ojos abiertos — las gemas están escondidas a plena vista.',
+    'hidden.congrats': '¡INCREÍBLE! 🎉 Encontraste absolutamente todos los tokens ocultos. Esa atención al detalle es exactamente por qué estás aquí. ¿Listo para poner ese ojo agudo a trabajar? Haz clic aquí y obtén una consulta gratuita de 1 hora cara a cara conmigo.',
     'booking.title': 'Programa una Consulta Gratuita',
     'booking.subtitle': 'Elige una fecha y hora que te funcione',
     'booking.name': 'Tu Nombre',
@@ -667,9 +667,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  演示文稿',
     'lb.iframe':       '🌐  外部内容',
 
-    'hidden.first_bubble': '找到这些隐藏元素，从我这里获得一份秘密礼物',
-    'hidden.tokens_left': '你找到所有隐藏代币了吗？你还有 {X} 个代币没找到。',
-    'hidden.congrats': '恭喜！你真有发现隐藏宝藏的慧眼 — 难怪你会找到这个网站。点击这里，预约与我进行一次1小时的免费面对面咨询。',
+    'hidden.first_bubble': '啊，你找到我了！💎 现在去寻找散布在网站各处的6个隐藏代币。全部找到就能解锁一份秘密奖励！',
+    'hidden.tokens_left': '干得好！你已经找到了 {X}/7 个代币。保持警惕 — 宝石就藏在显而易见的地方！',
+    'hidden.congrats': '太棒了！🎉 你找到了每一个隐藏代币。这种对细节的关注正是你来到这里的原因。准备好让那双敏锐的眼睛发挥作用了吗？点击这里，获取与我1小时免费面对面咨询的机会。',
     'booking.title': '预约免费咨询',
     'booking.subtitle': '选择适合你的日期和时间',
     'booking.name': '你的姓名',
@@ -802,9 +802,9 @@ const TRANSLATIONS = {
     'lb.presentation': '📊  Презентация',
     'lb.iframe':       '🌐  Внешний Контент',
 
-    'hidden.first_bubble': 'Найдите эти скрытые элементы и получите от меня секретный подарок',
-    'hidden.tokens_left': 'Вы нашли все скрытые токены? У вас осталось {X} токенов.',
-    'hidden.congrats': 'ПОЗДРАВЛЯЮ! У вас действительно острый глаз на скрытые сокровища — логично, что вы нашли этот сайт. Нажмите здесь, чтобы записаться на бесплатную 1-часовую личную консультацию со мной.',
+    'hidden.first_bubble': 'Ах, ты нашёл меня! 💎 Теперь отыщи 6 скрытых токенов, разбросанных по сайту. Найди их все и открой секретную награду.',
+    'hidden.tokens_left': 'Отличная работа! Ты собрал {X} из 7 токенов. Держи ухо востро — сокровища спрятаны у всех на виду!',
+    'hidden.congrats': 'НЕВЕРОЯТНО! 🎉 Ты отыскал каждый скрытый токен. Такое внимание к деталям — именно поэтому ты здесь. Готов применить свою острую наблюдательность? Нажми здесь и получи бесплатную 1-часовую личную консультацию со мной.',
     'booking.title': 'Записаться на Бесплатную Консультацию',
     'booking.subtitle': 'Выберите удобные дату и время',
     'booking.name': 'Ваше Имя',
@@ -887,9 +887,9 @@ const TRANSLATIONS = {
 
     // Expose hidden-emoji & booking strings (used in effects.js and booking.js)
     window.__i18nHidden = {
-      first_bubble: t['hidden.first_bubble'] || 'Find these hidden elements and get a secret gift from me',
-      tokens_left:  t['hidden.tokens_left']  || 'Have you found all hidden tokens? You still have {X} tokens left.',
-      congrats:     t['hidden.congrats']     || 'CONGRATS! You sure got a keen eye for hidden gems — makes sense why you found this website. Click here and schedule a free 1 hour face to face consultation with me.',
+      first_bubble: t['hidden.first_bubble'] || 'Ah, you found me! 💎 Now hunt down the 6 hidden tokens scattered across the site. Find them all and unlock a secret reward.',
+      tokens_left:  t['hidden.tokens_left']  || 'Nice work! You\'ve collected {X} of 7 tokens so far. Keep your eyes peeled — the gems are hiding in plain sight!',
+      congrats:     t['hidden.congrats']     || 'INCREDIBLE! 🎉 You tracked down every single hidden token. That kind of attention to detail is exactly why you\'re here. Ready to put that sharp eye to work? Click here and grab a free 1-hour face-to-face consultation with me.',
     };
     window.__i18nBooking = {
       title:    t['booking.title']    || 'Schedule a Free Consultation',
