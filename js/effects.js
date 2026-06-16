@@ -66,7 +66,6 @@
   var tokenCounter = document.getElementById('tokenCounter');
   var tokenCountEl = document.getElementById('tokenCount');
   var MAX_TOKENS = 7;
-  var EMOJI_CHARS = ['💎', '💎', '💎', '💎', '💎', '💎', '💎'];
 
   var tokensFound = 0;
   var hasSeenBubble = false;
@@ -105,7 +104,7 @@
       var pos = chosen[i];
       el.style.top = pos[0] + '%';
       el.style.left = pos[1] + '%';
-      el.textContent = EMOJI_CHARS[i];
+      el.textContent = '💎';
       document.body.appendChild(el);
       emojis.push(el);
       setupEmoji(el);
