@@ -242,8 +242,13 @@ iframe { max-width: 100%; }
   object-fit: cover; position: relative; z-index: 2;
   border: 3px solid var(--accent-mid);
   box-shadow: 0 0 40px rgba(100,255,218,.2), 0 0 80px rgba(100,255,218,.08);
-  pointer-events: none;
-  animation: profileFadeIn .8s .5s both;
+  cursor: pointer; animation: profileFadeIn .8s .5s both;
+  transition: transform .4s ease, box-shadow .4s ease, filter .4s ease;
+}
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 50px rgba(100,255,218,.4), 0 0 100px rgba(100,255,218,.2);
+  filter: brightness(1.12);
 }
 @keyframes profileFadeIn {
   from { opacity: 0; transform: scale(.85); }
@@ -1668,12 +1673,6 @@ iframe { max-width: 100%; }
    INTERACTIVE EFFECTS — Ripple, Emojis, Token Counter, Bubble, Booking
    =================================================================== */
 
-/* ---- Ripple Canvas ---- */
-#rippleCanvas {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none; z-index: 9998;
-}
-
 /* ---- Hidden Emojis ---- */
 .hidden-emoji {
   position: absolute; z-index: 5; cursor: pointer;
@@ -1684,9 +1683,9 @@ iframe { max-width: 100%; }
 .hidden-emoji:hover { opacity: 1; transform: scale(1.3); text-shadow: 0 0 20px #64ffda, 0 0 40px #64ffda; }
 .hidden-emoji.found { opacity: 0; pointer-events: none; transform: scale(0); }
 
-/* ---- Token Counter ---- */
+/* ---- Token Counter (bottom-left) ---- */
 .token-counter {
-  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  position: fixed; bottom: 24px; left: 24px; z-index: 9999;
   display: none; align-items: center; gap: 8px;
   background: var(--bg-light); border: 1px solid var(--accent-mid);
   border-radius: 30px; padding: 8px 18px 8px 14px;
@@ -1708,47 +1707,50 @@ iframe { max-width: 100%; }
 .profile-img {
   transition: transform .4s ease, box-shadow .4s ease, filter .4s ease;
 }
-.profile-img.hover-glow {
-  transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(100,255,218,.3), 0 0 80px rgba(100,255,218,.15);
-  filter: brightness(1.1);
-}
 
-/* ---- Profile Text Bubble ---- */
+
+/* ---- Profile Text Bubble (anchored to profile image) ---- */
 .profile-bubble {
-  position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  z-index: 10000; max-width: 440px; width: 90%;
+  position: absolute; left: 50%; bottom: -16px;
+  transform: translateX(-50%) translateY(100%);
+  z-index: 100; max-width: 380px; width: max-content; min-width: 260px;
   background: #0d1b2e; border: 1px solid var(--accent);
-  border-radius: 12px; padding: 28px 32px 24px;
-  box-shadow: 0 0 40px rgba(100,255,218,.2), 0 0 80px rgba(100,255,218,.1),
-              inset 0 0 30px rgba(100,255,218,.04);
+  border-radius: 10px; padding: 20px 24px 18px;
+  box-shadow: 0 0 30px rgba(100,255,218,.15), 0 0 60px rgba(100,255,218,.08),
+              inset 0 0 20px rgba(100,255,218,.03);
   display: none; font-family: var(--mono);
 }
-.profile-bubble.visible { display: block; animation: bubbleIn .35s ease; }
-@keyframes bubbleIn {
-  0% { opacity: 0; transform: translate(-50%,-50%) scale(.92); }
-  100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.profile-bubble.visible { display: block; animation: bubbleInAttach .35s ease; }
+@keyframes bubbleInAttach {
+  0% { opacity: 0; transform: translateX(-50%) translateY(100%) scale(.92); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(100%) scale(1); }
+}
+/* Arrow pointing up to the profile image */
+.bubble-arrow {
+  position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  width: 14px; height: 14px;
+  background: #0d1b2e; border-left: 1px solid var(--accent); border-top: 1px solid var(--accent);
 }
 .bubble-close {
-  position: absolute; top: 8px; right: 12px;
+  position: absolute; top: 6px; right: 10px;
   background: none; border: none; color: var(--text-dim);
-  font-size: 1.5rem; cursor: pointer; line-height: 1;
-  transition: color .2s;
+  font-size: 1.3rem; cursor: pointer; line-height: 1;
+  transition: color .2s; z-index: 2;
 }
 .bubble-close:hover { color: var(--accent); }
 .bubble-content {
-  color: var(--text); font-size: .9rem; line-height: 1.7;
-  min-height: 60px; max-height: 260px; overflow-y: auto;
+  color: var(--text); font-size: .85rem; line-height: 1.6;
+  min-height: 40px; max-height: 200px; overflow-y: auto;
   padding-right: 4px;
 }
 .bubble-content::-webkit-scrollbar { width: 3px; }
 .bubble-content::-webkit-scrollbar-track { background: transparent; }
 .bubble-content::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
 
-.bubble-char { animation: charFade .15s ease; }
+.bubble-char { animation: charFade .12s ease; }
 @keyframes charFade { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-.congrats-bubble { border-color: gold; box-shadow: 0 0 50px rgba(255,215,0,.2), 0 0 100px rgba(255,215,0,.1); }
+.congrats-bubble { border-color: gold; box-shadow: 0 0 40px rgba(255,215,0,.2), 0 0 80px rgba(255,215,0,.1); }
 .congrats-bubble .bubble-content { color: var(--white); }
 .bubble-click {
   color: var(--accent); cursor: pointer; text-decoration: underline;
@@ -1828,11 +1830,23 @@ iframe { max-width: 100%; }
 @keyframes bookSpin { to { transform: rotate(360deg); } }
 .book-note { font-size: .78rem; color: var(--text-dim); text-align: center; margin: 8px 0 0; }
 
+/* Mobile: bubble as fixed overlay so it doesn't overlap hero text */
+@media (max-width: 700px) {
+  .profile-bubble {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); max-width: 90vw; min-width: unset; width: 90%;
+  }
+  .profile-bubble.visible { animation: bubbleInMobile .35s ease; }
+  @keyframes bubbleInMobile {
+    0% { opacity: 0; transform: translate(-50%,-50%) scale(.92); }
+    100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  }
+  .profile-bubble .bubble-arrow { display: none; }
+}
+
 /* prefers-reduced-motion overrides */
 @media (prefers-reduced-motion: reduce) {
-  #rippleCanvas { display: none; }
   .hidden-emoji { display: none; }
   .token-counter { animation: none; }
   .profile-bubble { animation: none; }
-  .profile-img.hover-glow { transform: none; box-shadow: none; filter: none; }
 }

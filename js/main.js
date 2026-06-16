@@ -534,13 +534,7 @@
 })();
 
 
-// ---- Profile hover glow (CSS handles size, JS adds class for glow trigger) ----
-(function () {
-  var img = document.getElementById('profileImg');
-  if (!img) return;
-  img.addEventListener('mouseenter', function () { img.classList.add('hover-glow'); });
-  img.addEventListener('mouseleave', function () { img.classList.remove('hover-glow'); });
-})();
+// ---- (removed - hover handled by CSS :hover on .profile-img) ----
 
 
 // ---- Hero Typewriter + Letter Glitch ----

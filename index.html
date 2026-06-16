@@ -80,9 +80,6 @@
   <!-- Particle Background -->
   <canvas id="particles"></canvas>
 
-  <!-- Ripple Canvas -->
-  <canvas id="rippleCanvas" aria-hidden="true"></canvas>
-
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <a href="#" class="logo" data-i18n="nav.logo">&lt;MIBJ /&gt;</a>
@@ -122,12 +119,6 @@
   <div class="token-counter" id="tokenCounter">
     <span class="token-icon">💎</span>
     <span class="token-count"><span id="tokenCount">0</span>/7</span>
-  </div>
-
-  <!-- Profile Text Bubble -->
-  <div class="profile-bubble" id="profileBubble">
-    <button class="bubble-close" id="bubbleClose" aria-label="Close">&times;</button>
-    <div class="bubble-content" id="bubbleText"></div>
   </div>
 
   <!-- ===================== MAIN CONTENT ===================== -->
@@ -181,6 +172,12 @@
             <div class="float-icon__inner">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><line x1="8.5" y1="7.5" x2="15.5" y2="16.5"/><line x1="15" y1="6" x2="9" y2="6"/></svg>
             </div>
+          </div>
+          <!-- Profile Text Bubble (anchored to profile image) -->
+          <div class="profile-bubble" id="profileBubble">
+            <button class="bubble-close" id="bubbleClose" aria-label="Close">&times;</button>
+            <div class="bubble-content" id="bubbleText"></div>
+            <div class="bubble-arrow"></div>
           </div>
         </div>
       </div>

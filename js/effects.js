@@ -4,76 +4,7 @@
 //  emoji hunt, text bubble, token counter
 // ========================================
 
-// ---- Mouse Water Ripple Effect ----
-(function () {
-  var canvas = document.getElementById('rippleCanvas');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var ripples = [];
-  var w, h;
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  var mouseX = -100, mouseY = -100;
-  document.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
-
-  // Generate ripples continuously as mouse moves
-  var lastRipple = 0;
-  function spawnRipple() {
-    var now = Date.now();
-    if (now - lastRipple < 60) return;
-    lastRipple = now;
-    if (mouseX < 0) return;
-    // Check reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    ripples.push({
-      x: mouseX + (Math.random() - 0.5) * 8,
-      y: mouseY + (Math.random() - 0.5) * 8,
-      r: 2,
-      maxR: 30 + Math.random() * 25,
-      alpha: 0.5 + Math.random() * 0.3,
-      speed: 0.4 + Math.random() * 0.3
-    });
-  }
-
-  function animateRipples() {
-    ctx.clearRect(0, 0, w, h);
-    spawnRipple();
-    for (var i = ripples.length - 1; i >= 0; i--) {
-      var rip = ripples[i];
-      rip.r += rip.speed;
-      rip.alpha -= 0.008;
-      if (rip.alpha <= 0 || rip.r > rip.maxR) {
-        ripples.splice(i, 1);
-        continue;
-      }
-      ctx.beginPath();
-      ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(100, 255, 218, ' + rip.alpha.toFixed(3) + ')';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-      // Inner glow ripple
-      ctx.beginPath();
-      ctx.arc(rip.x, rip.y, rip.r * 0.6, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(100, 255, 218, ' + (rip.alpha * 0.4).toFixed(3) + ')';
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-    }
-    requestAnimationFrame(animateRipples);
-  }
-  animateRipples();
-})();
-
-
-// ---- Profile Follows Mouse (instead of avoid) ----
+// ---- Profile Follows Mouse ----
 (function () {
   var orbit = document.getElementById('profileOrbit');
   var visual = document.getElementById('heroVisual');
