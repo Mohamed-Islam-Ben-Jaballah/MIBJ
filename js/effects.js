@@ -102,57 +102,39 @@
   // ---- Text bubble logic ----
   function showBubble(text, isCongrats) {
     if (!bubble) return;
-    bubbleText.innerHTML = '';
+    bubbleText.textContent = '';
     bubble.classList.add('visible');
     bubble.classList.toggle('congrats-bubble', !!isCongrats);
 
-    // Type text in two parts with a pause
-    var mid = Math.floor(text.length / 2);
+    // Focus the bubble for keyboard accessibility
+    bubble.setAttribute('tabindex', '-1');
+    bubble.focus({ preventScroll: true });
+
     var i = 0;
-    var typing = true;
+    var mid = Math.floor(text.length / 2);
+    var clickPhrase = 'click here';
+    var ci = isCongrats ? text.toLowerCase().indexOf(clickPhrase) : -1;
 
-    function typeNext() {
-      if (!typing) return;
-      if (i < text.length) {
-        bubbleText.innerHTML += '<span class="bubble-char">' + escapeChar(text[i]) + '</span>';
-        i++;
-        // Auto scroll text area
-        bubbleText.scrollTop = bubbleText.scrollHeight;
-        var speed = 20;
-        setTimeout(typeNext, speed);
-      } else {
-        typing = false;
+    function type() {
+      if (i >= text.length) {
+        // After typing finishes, wrap "click here" in a span for congrats
+        if (isCongrats && ci >= 0) {
+          var html = bubbleText.textContent;
+          var before = html.substring(0, ci);
+          var midHtml = html.substring(ci, ci + clickPhrase.length);
+          var after = html.substring(ci + clickPhrase.length);
+          bubbleText.innerHTML = before + '<span class="bubble-click">' + midHtml + '</span>' + after;
+        }
+        return;
       }
+      var ch = text[i];
+      i++;
+      bubbleText.textContent += ch;
+      bubbleText.scrollTop = bubbleText.scrollHeight;
+      var delay = i <= mid ? 25 : 40;
+      setTimeout(type, delay);
     }
-
-    // Type first half, pause, then second half
-    function typeFirstHalf() {
-      if (i < mid) {
-        bubbleText.innerHTML += '<span class="bubble-char">' + escapeChar(text[i]) + '</span>';
-        i++;
-        setTimeout(typeFirstHalf, 20);
-      } else {
-        setTimeout(function () {
-          typeSecondHalf();
-        }, 1000);
-      }
-    }
-    function typeSecondHalf() {
-      if (i < text.length) {
-        bubbleText.innerHTML += '<span class="bubble-char">' + escapeChar(text[i]) + '</span>';
-        i++;
-        bubbleText.scrollTop = bubbleText.scrollHeight;
-        setTimeout(typeSecondHalf, 20);
-      }
-    }
-    typeFirstHalf();
-  }
-
-  function escapeChar(c) {
-    if (c === '<') return '&lt;';
-    if (c === '>') return '&gt;';
-    if (c === '&') return '&amp;';
-    return c;
+    type();
   }
 
   function closeBubble() {

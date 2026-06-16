@@ -1709,27 +1709,28 @@ iframe { max-width: 100%; }
 }
 
 
-/* ---- Profile Text Bubble (anchored to profile image) ---- */
+/* ---- Profile Text Bubble (anchored above profile image) ---- */
 .profile-bubble {
-  position: absolute; left: 50%; bottom: -16px;
-  transform: translateX(-50%) translateY(100%);
-  z-index: 100; max-width: 380px; width: max-content; min-width: 260px;
+  position: absolute; left: 50%; top: -12px;
+  transform: translateX(-60%) translateY(-100%);
+  z-index: 100; max-width: 380px; width: max-content; min-width: 280px;
   background: #0d1b2e; border: 1px solid var(--accent);
-  border-radius: 10px; padding: 20px 24px 18px;
-  box-shadow: 0 0 30px rgba(100,255,218,.15), 0 0 60px rgba(100,255,218,.08),
-              inset 0 0 20px rgba(100,255,218,.03);
+  border-radius: 10px; padding: 20px 24px 16px;
+  box-shadow: 0 0 30px rgba(100,255,218,.2), 0 0 60px rgba(100,255,218,.1),
+              inset 0 0 20px rgba(100,255,218,.04);
   display: none; font-family: var(--mono);
+  outline: none;
 }
 .profile-bubble.visible { display: block; animation: bubbleInAttach .35s ease; }
 @keyframes bubbleInAttach {
-  0% { opacity: 0; transform: translateX(-50%) translateY(100%) scale(.92); }
-  100% { opacity: 1; transform: translateX(-50%) translateY(100%) scale(1); }
+  0% { opacity: 0; transform: translateX(-60%) translateY(-100%) scale(.92); }
+  100% { opacity: 1; transform: translateX(-60%) translateY(-100%) scale(1); }
 }
-/* Arrow pointing up to the profile image */
+/* Arrow pointing down to the profile image */
 .bubble-arrow {
-  position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  position: absolute; bottom: -8px; left: 60%; transform: translateX(-50%) rotate(45deg);
   width: 14px; height: 14px;
-  background: #0d1b2e; border-left: 1px solid var(--accent); border-top: 1px solid var(--accent);
+  background: #0d1b2e; border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
 }
 .bubble-close {
   position: absolute; top: 6px; right: 10px;
@@ -1740,23 +1741,30 @@ iframe { max-width: 100%; }
 .bubble-close:hover { color: var(--accent); }
 .bubble-content {
   color: var(--text); font-size: .85rem; line-height: 1.6;
-  min-height: 40px; max-height: 200px; overflow-y: auto;
+  min-height: 28px; max-height: 200px; overflow-y: auto;
   padding-right: 4px;
 }
 .bubble-content::-webkit-scrollbar { width: 3px; }
 .bubble-content::-webkit-scrollbar-track { background: transparent; }
 .bubble-content::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
 
-.bubble-char { animation: charFade .12s ease; }
-@keyframes charFade { 0% { opacity: 0; } 100% { opacity: 1; } }
-
-.congrats-bubble { border-color: gold; box-shadow: 0 0 40px rgba(255,215,0,.2), 0 0 80px rgba(255,215,0,.1); }
+.congrats-bubble {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(100,255,218,.25), 0 0 80px rgba(100,255,218,.12),
+              inset 0 0 20px rgba(100,255,218,.05);
+}
 .congrats-bubble .bubble-content { color: var(--white); }
 .bubble-click {
-  color: var(--accent); cursor: pointer; text-decoration: underline;
-  transition: opacity .2s;
+  color: var(--bg); background: var(--accent);
+  padding: 2px 10px; border-radius: 4px; font-weight: 600;
+  cursor: pointer; display: inline-block;
+  transition: box-shadow .25s, transform .2s, filter .2s;
+  letter-spacing: .3px;
 }
-.bubble-click:hover { opacity: .8; }
+.bubble-click:hover {
+  box-shadow: 0 0 20px rgba(100,255,218,.5), 0 0 40px rgba(100,255,218,.2);
+  transform: scale(1.04); filter: brightness(1.15);
+}
 
 /* ---- Booking Modal ---- */
 .booking-overlay {
@@ -1830,7 +1838,7 @@ iframe { max-width: 100%; }
 @keyframes bookSpin { to { transform: rotate(360deg); } }
 .book-note { font-size: .78rem; color: var(--text-dim); text-align: center; margin: 8px 0 0; }
 
-/* Mobile: bubble as fixed overlay so it doesn't overlap hero text */
+/* Mobile: bubble as fixed overlay */
 @media (max-width: 700px) {
   .profile-bubble {
     position: fixed; top: 50%; left: 50%;
