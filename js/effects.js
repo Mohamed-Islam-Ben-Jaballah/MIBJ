@@ -66,7 +66,7 @@
   var tokenCounter = document.getElementById('tokenCounter');
   var tokenCountEl = document.getElementById('tokenCount');
   var MAX_TOKENS = 7;
-  var EMOJI_CHARS = ['💻', '⚡', '🔮', '🚀', '🧩', '💎', '🎯'];
+  var EMOJI_CHARS = ['💎', '💎', '💎', '💎', '💎', '💎', '💎'];
 
   var tokensFound = 0;
   var hasSeenBubble = false;
