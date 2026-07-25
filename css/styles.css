@@ -76,6 +76,7 @@ iframe { max-width: 100%; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .section { padding: 100px 0; }
 .section--alt { background: var(--bg-light); }
+#testimonials.section { padding-top: 50px; }
 .accent { color: var(--accent); }
 .mono { font-family: var(--mono); font-size: .85rem; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
@@ -470,12 +471,7 @@ iframe { max-width: 100%; }
 .portfolio-body h3 {
   font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 8px;
 }
-.portfolio-body p {
-  color: var(--text-dim); font-size: .88rem;
-  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.portfolio-body p strong { color: var(--accent); font-weight: 600; }
+.portfolio-body p { color: var(--text-dim); font-size: .88rem; }
 .portfolio-tech {
   display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; list-style: none;
 }
@@ -1715,7 +1711,7 @@ iframe { max-width: 100%; }
 
 /* ---- Token Counter (bottom-left) ---- */
 .token-counter {
-  position: fixed; bottom: 104px; right: 32px; z-index: 1550;
+  position: fixed; bottom: 24px; left: 24px; z-index: 1550;
   display: none; align-items: center; gap: 8px;
   background: var(--bg-light); border: 1px solid var(--accent-mid);
   border-radius: 30px; padding: 8px 18px 8px 14px;
@@ -1727,6 +1723,12 @@ iframe { max-width: 100%; }
 .token-counter.visible { display: flex; }
 .token-counter.complete { border-color: var(--accent); box-shadow: 0 0 30px rgba(100,255,218,.25); }
 .token-icon { font-size: 1rem; }
+.coin-icon {
+  display: inline-block; width: 1em; height: 1em; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffd700, #b8860b);
+  border: 1px solid #8b6914; box-shadow: 0 0 4px rgba(255,215,0,.4);
+  vertical-align: middle;
+}
 .token-count { font-weight: 600; letter-spacing: 1px; }
 @keyframes tokenPulse {
   0%, 100% { box-shadow: 0 0 20px rgba(100,255,218,.12); }

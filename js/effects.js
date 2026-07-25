@@ -104,7 +104,7 @@
       var pos = chosen[i];
       el.style.top = pos[0] + '%';
       el.style.left = pos[1] + '%';
-      el.textContent = '🪙';
+      el.innerHTML = '<span class="coin-icon"></span>';
       document.body.appendChild(el);
       emojis.push(el);
       setupEmoji(el);
