@@ -407,7 +407,8 @@
 // ---- Lightbox / Modal ----
 (function () {
   const overlay = document.getElementById('lightbox');
-  const content = document.getElementById('lightboxContent');
+  const mediaEl = document.getElementById('lightboxMedia');
+  const descEl  = document.getElementById('lightboxDesc');
   const titleEl = document.getElementById('lightboxTitle');
   const typeEl  = document.getElementById('lightboxType');
   const closeBtn = document.getElementById('lightboxClose');
@@ -425,10 +426,15 @@
     const type = card.dataset.mediaType;
     const src  = card.dataset.mediaSrc;
     const title = card.dataset.mediaTitle || '';
+    const project = card.dataset.project;
 
-    content.innerHTML = '';
+    mediaEl.innerHTML = '';
     titleEl.textContent = title;
     typeEl.textContent = typeLabels[type] || type;
+
+    // Populate project description
+    var descText = project ? window.__i18nLightbox[project + '_desc'] : '';
+    descEl.textContent = descText || '';
 
     // Helper: extract YouTube video ID
     function getYouTubeId(url) {
@@ -491,7 +497,7 @@
         break;
     }
 
-    content.appendChild(el);
+    mediaEl.appendChild(el);
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -500,7 +506,7 @@
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     // Stop media playback
-    setTimeout(() => { content.innerHTML = ''; }, 350);
+    setTimeout(() => { mediaEl.innerHTML = ''; }, 350);
   }
 
   // Click handlers on portfolio cards
