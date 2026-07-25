@@ -434,7 +434,7 @@
 
     // Populate project description
     var descText = project ? window.__i18nLightbox[project + '_desc'] : '';
-    descEl.textContent = descText || '';
+    descEl.innerHTML = descText || '';
 
     // Helper: extract YouTube video ID
     function getYouTubeId(url) {

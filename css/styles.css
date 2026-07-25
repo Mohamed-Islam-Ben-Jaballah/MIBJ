@@ -612,6 +612,7 @@ iframe { max-width: 100%; }
   color: var(--text);
   white-space: pre-wrap;
 }
+.lightbox-desc strong { color: var(--accent); font-weight: 600; }
 
 /* PDF preview thumbnail in cards */
 .pdf-preview-thumb {
