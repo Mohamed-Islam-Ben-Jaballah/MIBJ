@@ -1339,12 +1339,12 @@ iframe { max-width: 100%; }
 
   .lightbox-container {
     width: 96vw;
-    height: 80vw;
-    max-height: 85vh;
+    height: 90vh;
+    max-height: 90vh;
   }
   .lightbox-body { flex-direction: column; }
-  .lightbox-media { flex: 1 1 55%; }
-  .lightbox-details { flex: 0 0 auto; width: auto; border-left: none; border-top: 1px solid rgba(100,255,218,.08); padding: 20px; }
+  .lightbox-media { flex: 1 1 60%; min-height: 0; }
+  .lightbox-details { flex: 0 0 40%; width: auto; border-left: none; border-top: 1px solid rgba(100,255,218,.08); padding: 16px 20px; overflow-y: auto; }
   .lightbox-caption { padding: 12px 16px; }
   .lightbox-caption h4 { font-size: .9rem; }
 }
@@ -1397,7 +1397,10 @@ iframe { max-width: 100%; }
 
   .footer p { font-size: .7rem; }
 
-  .lightbox-container { width: 98vw; height: 75vw; max-height: 80vh; border-radius: 4px; }
+  .lightbox-container { width: 98vw; height: 92vh; max-height: 92vh; border-radius: 4px; }
+  .lightbox-body { flex-direction: column; }
+  .lightbox-media { flex: 1 1 55%; min-height: 0; }
+  .lightbox-details { flex: 0 0 45%; width: auto; border-left: none; border-top: 1px solid rgba(100,255,218,.08); padding: 14px 16px; overflow-y: auto; }
   .lightbox-close { width: 34px; height: 34px; font-size: 1.2rem; }
 
   .testimonial-card { padding: 24px 20px; }
@@ -1702,11 +1705,11 @@ iframe { max-width: 100%; }
 /* ---- Hidden Emojis ---- */
 .hidden-emoji {
   position: absolute; z-index: 5; cursor: pointer;
-  font-size: 20px; opacity: 0.25; user-select: none;
-  transition: opacity .4s ease, transform .3s ease, text-shadow .3s ease;
+  font-size: 22px; opacity: 0.25; user-select: none;
+  transition: opacity .4s ease, transform .3s ease, filter .3s ease;
   transform: scale(1);
 }
-.hidden-emoji:hover { opacity: 1; transform: scale(1.3); text-shadow: 0 0 20px #64ffda, 0 0 40px #64ffda; }
+.hidden-emoji:hover { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 8px #64ffda) drop-shadow(0 0 20px #64ffda); }
 .hidden-emoji.found { opacity: 0; pointer-events: none; transform: scale(0); }
 
 /* ---- Token Counter (bottom-left) ---- */
@@ -1729,6 +1732,7 @@ iframe { max-width: 100%; }
   border: 1px solid #8b6914; box-shadow: 0 0 4px rgba(255,215,0,.4);
   vertical-align: middle;
 }
+.hidden-emoji .coin-icon { width: 22px; height: 22px; display: block; }
 .token-count { font-weight: 600; letter-spacing: 1px; }
 @keyframes tokenPulse {
   0%, 100% { box-shadow: 0 0 20px rgba(100,255,218,.12); }
