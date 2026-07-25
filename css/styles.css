@@ -470,7 +470,12 @@ iframe { max-width: 100%; }
 .portfolio-body h3 {
   font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 8px;
 }
-.portfolio-body p { color: var(--text-dim); font-size: .88rem; }
+.portfolio-body p {
+  color: var(--text-dim); font-size: .88rem;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.portfolio-body p strong { color: var(--accent); font-weight: 600; }
 .portfolio-tech {
   display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; list-style: none;
 }
