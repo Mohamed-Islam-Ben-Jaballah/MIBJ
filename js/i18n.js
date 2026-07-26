@@ -18,7 +18,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Hi, my name is',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'I build immersive digital experiences.',
+    'hero.tagline':     'Technical Project Manager &amp; VR Software Engineer with 7 years of experience crafting 3D solutions, VR simulations, AI-powered interfaces, and interactive web experiences.',
     'hero.description': 'Technical Project Manager &amp; Software Engineer with <strong class="accent">7 years of experience</strong> crafting 3D solutions, VR simulations, AI-powered interfaces, and interactive web experiences that captivate and deliver results.',
     'hero.cta':         'Explore My Services',
 
@@ -153,7 +153,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Bonjour, je suis',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Je crée des expériences numériques immersives.',
+    'hero.tagline':     'Chef de Projet Technique &amp; Ingénieur VR avec 7 ans d\'expérience à créer des solutions 3D, simulations VR, interfaces IA et expériences web interactives.',
     'hero.description': 'Directeur de Projet Technique &amp; Ingénieur Logiciel avec <strong class="accent">7 ans d\'expérience</strong> dans la création de solutions 3D, simulations VR, interfaces alimentées par l\'IA et expériences web interactives captivantes qui livrent des résultats.',
     'hero.cta':         'Découvrir Mes Services',
 
@@ -288,7 +288,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'مرحباً، اسمي',
     'hero.name':        'محمد إسلام<br/>بن جاب الله',
-    'hero.tagline':     'أبني تجارب رقمية غامرة.',
+    'hero.tagline':     'مدير مشاريع تقنية ومهندس برمجيات VR مع 7 سنوات من الخبرة في صياغة حلول ثلاثية الأبعاد ومحاكاة VR وواجهات ذكاء اصطناعي وتجارب ويب تفاعلية.',
     'hero.description': 'مدير مشاريع تقني ومهندس برمجيات بخبرة تزيد عن <strong class="accent">7 سنوات</strong> في تطوير حلول ثلاثية الأبعاد ومحاكاة الواقع الافتراضي وواجهات الذكاء الاصطناعي وتجارب الويب التفاعلية.',
     'hero.cta':         'استكشف خدماتي',
 
@@ -423,7 +423,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Hola, mi nombre es',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Creo experiencias digitales inmersivas.',
+    'hero.tagline':     'Gerente de Proyectos Técnicos &amp; Ingeniero de Software VR con 7 años de experiencia creando soluciones 3D, simulaciones VR, interfaces con IA y experiencias web interactivas.',
     'hero.description': 'Director de Proyectos Técnicos e Ingeniero de Software con <strong class="accent">7 años de experiencia</strong> desarrollando soluciones 3D, simulaciones de VR, interfaces con IA y experiencias web interactivas que cautivan y generan resultados.',
     'hero.cta':         'Explorar Mis Servicios',
 
@@ -558,7 +558,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    '你好，我叫',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     '我打造沉浸式数字体验。',
+    'hero.tagline':     '技术项目经理 &amp; VR软件工程师，拥有7年经验，打造3D解决方案、VR模拟、AI驱动界面和交互式网页体验。',
     'hero.description': '技术项目经理兼软件工程师，拥有<strong class="accent">7年经验</strong>，专注于3D解决方案、VR仿真、AI驱动界面及互动网页体验的开发。',
     'hero.cta':         '探索我的服务',
 
@@ -693,7 +693,7 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Привет, меня зовут',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Я создаю захватывающие цифровые опыты.',
+    'hero.tagline':     'Технический руководитель проектов &amp; VR-инженер с 7-летним опытом создания 3D-решений, VR-симуляций, интерфейсов на ИИ и интерактивных веб-опытов.',
     'hero.description': 'Технический руководитель проектов и инженер-программист с <strong class="accent">7-летним опытом</strong> разработки 3D-решений, VR-симуляций, интерфейсов на основе ИИ и интерактивных веб-опытов, которые привлекают и доставляют результаты.',
     'hero.cta':         'Изучить Мои Услуги',
 
