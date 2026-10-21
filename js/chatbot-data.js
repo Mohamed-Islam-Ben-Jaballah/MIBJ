@@ -134,6 +134,8 @@ var CHATBOT_DATA = (function () {
     '6 portfolio projects with YouTube demos (available on request).',
     'Process: Discovery -> Design -> Team Assembly (1-6) -> MVP (1-3mo) -> Iteration.',
     'Tech: Unity, Three.js, VR/AR, AI/NLP, JS/TS, Python, React, Blender.',
+    'Certifications: AWS Certified Cloud Practitioner (Foundational), AWS Certified AI Practitioner (Foundational), AWS Certified Machine Learning Engineer - Associate.',
+    'Credly: Cloud Practitioner https://www.credly.com/badges/7829d0fa-da8e-4e55-b010-34f62b889059/public_url | AI Practitioner https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url | ML Associate link pending.',
     'Contact: medislambenjaballah1@gmail.com, +971 54 327 5998. Response within 24h.',
     'Pricing: discussed during Discovery. Fixed-price or time-and-materials.',
   ].join('\n');

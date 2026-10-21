@@ -9,6 +9,12 @@ Mohamed Islam Ben Jeballah (MIBJ) is a Technical Project Manager & Software Engi
 - Team size: 1 to 6 specialists (flexible based on project scope)
 - 99% Client Satisfaction Rate
 
+## Certifications
+- AWS Certified Cloud Practitioner (Foundational) - Credly: https://www.credly.com/badges/7829d0fa-da8e-4e55-b010-34f62b889059/public_url
+- AWS Certified AI Practitioner (Foundational) - Credly: https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url
+- AWS Certified Machine Learning Engineer – Associate - Credly link pending
+- Always pursuing new certifications to stay current with emerging technologies.
+
 ## Services Offered
 
 ### 1. 3D Unity Solutions

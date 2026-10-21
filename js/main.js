@@ -649,3 +649,219 @@
     return nodes;
   }
 })();
+
+// ---- Certifications Carousel ----
+(function () {
+  const carousel = document.getElementById('certCarousel');
+  if (!carousel) return;
+
+  const viewport  = document.getElementById('certViewport');
+  const track     = document.getElementById('certTrack');
+  const prevBtn   = document.getElementById('certPrev');
+  const nextBtn   = document.getElementById('certNext');
+  const dots      = Array.prototype.slice.call(document.querySelectorAll('[data-cert-dot]'));
+  const originals = Array.prototype.slice.call(track.querySelectorAll('.cert-card'));
+  const count     = originals.length;
+  if (!count) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function cloneCard(card) {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.dataset.clone = 'true';
+    return clone;
+  }
+
+  const beforeFrag = document.createDocumentFragment();
+  originals.forEach(function (card) { beforeFrag.appendChild(cloneCard(card)); });
+  track.insertBefore(beforeFrag, track.firstChild);
+
+  const afterFrag = document.createDocumentFragment();
+  originals.forEach(function (card) { afterFrag.appendChild(cloneCard(card)); });
+  track.appendChild(afterFrag);
+
+  const allCards = Array.prototype.slice.call(track.querySelectorAll('.cert-card'));
+  let index = count;
+  let timer = null;
+  let inView = false;
+  let paused = false;
+
+  function currentDot() {
+    return ((index % count) + count) % count;
+  }
+
+  function updateDots() {
+    const active = currentDot();
+    dots.forEach(function (dot, i) {
+      const on = i === active;
+      dot.classList.toggle('is-active', on);
+      dot.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  function applyState(target) {
+    index = target;
+    allCards.forEach(function (card, i) {
+      const active = i === target;
+      card.classList.toggle('is-active', active);
+      card.tabIndex = active ? 0 : -1;
+
+      if (active) {
+        card.removeAttribute('aria-hidden');
+        card.setAttribute('aria-current', 'true');
+      } else {
+        if (card.dataset.clone === 'true') card.setAttribute('aria-hidden', 'true');
+        card.removeAttribute('aria-current');
+      }
+    });
+    updateDots();
+  }
+
+  function centerCard(card) {
+    const x = viewport.clientWidth / 2 - (card.offsetLeft + card.offsetWidth / 2);
+    track.style.transform = 'translate3d(' + x + 'px, 0, 0)';
+  }
+
+  function goTo(target) {
+    applyState(target);
+    centerCard(allCards[target]);
+  }
+
+  function jumpTo(target) {
+    track.classList.add('cert-track--jumping');
+    goTo(target);
+    void track.offsetWidth;
+    track.classList.remove('cert-track--jumping');
+  }
+
+  function normalize() {
+    if (index >= count * 2) jumpTo(index - count);
+    else if (index < count) jumpTo(index + count);
+  }
+
+  track.addEventListener('transitionend', function (e) {
+    if (e.target === track && e.propertyName === 'transform') normalize();
+  });
+
+  track.addEventListener('click', function (e) {
+    const card = e.target.closest('.cert-card');
+    if (!card) return;
+
+    const cardIndex = allCards.indexOf(card);
+    if (cardIndex === -1) return;
+
+    if (cardIndex !== index) {
+      e.preventDefault();
+      goTo(cardIndex);
+      restartTimer();
+      return;
+    }
+
+    if (!card.getAttribute('data-credly')) {
+      e.preventDefault();
+      if (!reduceMotion && card.animate) {
+        card.animate(
+          [
+            { transform: 'scale(1.04) translateX(0)' },
+            { transform: 'scale(1.04) translateX(-6px)' },
+            { transform: 'scale(1.04) translateX(6px)' },
+            { transform: 'scale(1.04) translateX(0)' }
+          ],
+          { duration: 320, easing: 'ease-in-out' }
+        );
+      }
+    }
+  });
+
+  carousel.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      goTo(index + 1);
+      restartTimer();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      goTo(index - 1);
+      restartTimer();
+    }
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      goTo(index - 1);
+      restartTimer();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      goTo(index + 1);
+      restartTimer();
+    });
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      const target = Number(dot.getAttribute('data-cert-dot'));
+      if (isNaN(target)) return;
+      goTo(count + target);
+      restartTimer();
+    });
+  });
+
+  function startTimer() {
+    if (reduceMotion || timer) return;
+    timer = window.setInterval(function () {
+      if (!inView || paused || document.hidden) return;
+      goTo(index + 1);
+    }, 4600);
+  }
+
+  function stopTimer() {
+    if (timer) {
+      window.clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function restartTimer() {
+    stopTimer();
+    startTimer();
+  }
+
+  carousel.addEventListener('mouseenter', function () { paused = true; });
+  carousel.addEventListener('mouseleave', function () { paused = false; });
+  carousel.addEventListener('focusin', function () { paused = true; });
+  carousel.addEventListener('focusout', function (e) {
+    if (!carousel.contains(e.relatedTarget)) paused = false;
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        inView = entry.isIntersecting;
+        if (inView) startTimer();
+        else stopTimer();
+      });
+    }, { threshold: 0.25 }).observe(carousel);
+  } else {
+    inView = true;
+    startTimer();
+  }
+
+  let resizeTimer = null;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      jumpTo(index);
+    }, 100);
+  });
+
+  track.classList.add('cert-track--jumping');
+  goTo(index);
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () {
+      track.classList.remove('cert-track--jumping');
+    });
+  });
+})();

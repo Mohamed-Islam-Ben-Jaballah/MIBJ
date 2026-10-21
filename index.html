@@ -58,7 +58,26 @@
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "AE"
-    }
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "AWS Certified Cloud Practitioner",
+        "credentialCategory": "certification",
+        "url": "https://www.credly.com/badges/7829d0fa-da8e-4e55-b010-34f62b889059/public_url"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "AWS Certified AI Practitioner",
+        "credentialCategory": "certification",
+        "url": "https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "AWS Certified Machine Learning Engineer – Associate",
+        "credentialCategory": "certification"
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -93,6 +112,7 @@
       <li><a href="#services" data-i18n="nav.services">Services</a></li>
       <li><a href="#process" data-i18n="nav.process">Process</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
       <li><a href="#testimonials" data-i18n="nav.reviews">Reviews</a></li>
       <li><a href="#contact" class="cta-btn contact-trigger" data-i18n="nav.contact">Get In Touch</a></li>
     </ul>
@@ -500,6 +520,19 @@
           <span class="accent mono" data-i18n="docs.heading">// Documents & Resources</span>
         </h3>
         <div class="docs-grid">
+          <!-- Resume / CV -->
+          <div class="doc-card">
+            <div class="doc-card__inner">
+              <div class="pdf-preview-thumb doc-preview">
+                <img src="assets/images/thumb-resume.jpg" alt="Resume preview" loading="lazy">
+              </div>
+              <h4 class="doc-card__title" data-i18n="doc.resume.title">Resume / CV</h4>
+              <p class="doc-card__desc" data-i18n="doc.resume.desc">Technical Project Manager &amp; Software Engineer — Full CV</p>
+              <button class="pdf-trigger" data-media-type="pdf" data-media-src="assets/docs/MIBJ-ResumeVR.pdf" data-media-title="Resume / CV — MIBJ" data-i18n="doc.resume.btn">
+                View Resume
+              </button>
+            </div>
+          </div>
           <!-- BikeVR Project -->
           <div class="doc-card">
             <div class="doc-card__inner">
@@ -531,11 +564,92 @@
     </div>
   </section>
 
+  <!-- ===================== CERTIFICATIONS ===================== -->
+  <section class="section cert-section" id="certifications">
+    <div class="container">
+      <div class="reveal cert-head">
+        <span class="section-label" data-i18n="cert.label">05 Certifications</span>
+        <h2 class="section-title" data-i18n="cert.title">Certifications</h2>
+        <p class="cert-subtitle" data-i18n="cert.subtitle">Always seeking to keep track of new innovations — and getting certified in the technologies shaping where the industry is going.</p>
+      </div>
+    </div>
+
+    <div class="cert-carousel reveal" id="certCarousel" aria-roledescription="carousel" aria-label="AWS certifications">
+      <div class="cert-viewport" id="certViewport">
+        <div class="cert-track" id="certTrack">
+
+          <!-- Cloud Practitioner -->
+          <a class="cert-card" href="https://www.credly.com/badges/7829d0fa-da8e-4e55-b010-34f62b889059/public_url" target="_blank" rel="noopener noreferrer" data-credly="https://www.credly.com/badges/7829d0fa-da8e-4e55-b010-34f62b889059/public_url" aria-label="AWS Certified Cloud Practitioner — view badge on Credly">
+            <span class="cert-card__index" aria-hidden="true">01</span>
+            <div class="cert-card__badge">
+              <span class="cert-card__glow" aria-hidden="true"></span>
+              <img src="assets/images/cloud.png" alt="AWS Certified Cloud Practitioner badge" loading="lazy" />
+            </div>
+            <div class="cert-card__body">
+              <span class="cert-card__issuer" data-i18n="cert.issuer">Amazon Web Services</span>
+              <h3 data-i18n="cert.cloud.title">AWS Certified Cloud Practitioner</h3>
+              <span class="cert-card__level" data-i18n="cert.level.foundational">Foundational</span>
+              <p data-i18n="cert.cloud.desc">Foundational understanding of AWS cloud concepts, core services, security, architecture, and pricing.</p>
+              <span class="cert-card__cta"><span data-i18n="cert.cta">View on Credly</span><span class="cert-card__arrow" aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <!-- AI Practitioner -->
+          <a class="cert-card" href="https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url" target="_blank" rel="noopener noreferrer" data-credly="https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url" aria-label="AWS Certified AI Practitioner — view badge on Credly">
+            <span class="cert-card__index" aria-hidden="true">02</span>
+            <div class="cert-card__badge">
+              <span class="cert-card__glow" aria-hidden="true"></span>
+              <img src="assets/images/ai.png" alt="AWS Certified AI Practitioner badge" loading="lazy" />
+            </div>
+            <div class="cert-card__body">
+              <span class="cert-card__issuer" data-i18n="cert.issuer">Amazon Web Services</span>
+              <h3 data-i18n="cert.ai.title">AWS Certified AI Practitioner</h3>
+              <span class="cert-card__level" data-i18n="cert.level.foundational">Foundational</span>
+              <p data-i18n="cert.ai.desc">Foundational expertise in generative AI, foundation models, and responsible AI on AWS.</p>
+              <span class="cert-card__cta"><span data-i18n="cert.cta">View on Credly</span><span class="cert-card__arrow" aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <!-- Machine Learning Engineer Associate -->
+          <a class="cert-card" href="https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url" target="_blank" rel="noopener noreferrer" data-credly="https://www.credly.com/badges/f72899a0-cfd9-40f3-88a8-9321c36aed74/public_url" aria-label="AWS Certified Machine Learning Engineer – Associate — view credential on Credly">
+            <span class="cert-card__index" aria-hidden="true">03</span>
+            <div class="cert-card__badge">
+              <span class="cert-card__glow" aria-hidden="true"></span>
+              <img src="assets/images/ml.png" alt="AWS Certified Machine Learning Engineer – Associate badge" loading="lazy" />
+            </div>
+            <div class="cert-card__body">
+              <span class="cert-card__issuer" data-i18n="cert.issuer">Amazon Web Services</span>
+              <h3 data-i18n="cert.ml.title">AWS Certified Machine Learning Engineer – Associate</h3>
+              <span class="cert-card__level" data-i18n="cert.level.associate">Associate</span>
+              <p data-i18n="cert.ml.desc">Building, deploying, and operationalizing secure machine learning workloads on AWS.</p>
+              <span class="cert-card__cta"><span data-i18n="cert.cta">View on Credly</span><span class="cert-card__arrow" aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="cert-controls">
+        <button class="cert-nav" id="certPrev" type="button" aria-label="Previous certification">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="cert-dots" id="certDots" role="tablist" aria-label="Choose certification">
+          <button class="cert-dot is-active" type="button" data-cert-dot="0" role="tab" aria-selected="true" aria-label="Show Cloud Practitioner certification"></button>
+          <button class="cert-dot" type="button" data-cert-dot="1" role="tab" aria-selected="false" aria-label="Show AI Practitioner certification"></button>
+          <button class="cert-dot" type="button" data-cert-dot="2" role="tab" aria-selected="false" aria-label="Show Machine Learning Engineer Associate certification"></button>
+        </div>
+        <button class="cert-nav" id="certNext" type="button" aria-label="Next certification">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== TESTIMONIALS ===================== -->
   <section class="section section--alt" id="testimonials">
     <div class="container">
       <div class="reveal">
-        <span class="section-label" data-i18n="testimonials.label">05 Reviews</span>
+        <span class="section-label" data-i18n="testimonials.label">06 Reviews</span>
         <h2 class="section-title" data-i18n="testimonials.title">What Clients Say</h2>
         <p class="testimonials-subtitle" data-i18n="testimonials.subtitle">Real words from the people I've had the privilege to build with.</p>
       </div>
@@ -591,7 +705,7 @@
   <section class="section contact-section" id="contact">
     <div class="container">
       <div class="reveal">
-        <span class="section-label" data-i18n="contact.label">06 Contact</span>
+        <span class="section-label" data-i18n="contact.label">07 Contact</span>
         <h2 class="section-title" data-i18n="contact.title">Let's Build Something Great</h2>
         <p data-i18n="contact.desc">Have a project in mind? Looking for a reliable technical partner who delivers results? I'd love to hear about your challenge and explore how we can solve it together.</p>
         <button class="contact-btn contact-trigger" data-i18n="contact.cta">Start Your Project</button>
