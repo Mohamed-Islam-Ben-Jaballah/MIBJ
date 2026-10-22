@@ -19,9 +19,16 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Hi, my name is',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'I build immersive digital experiences.',
+    'hero.tagline':     'I build immersive experiences.',
     'hero.description': 'Technical Project Manager &amp; VR Software Engineer with <strong class="accent">7 years of experience</strong> crafting 3D solutions, VR simulations, AI-powered interfaces, and interactive web experiences that captivate clients and deliver tangible results.',
     'hero.cta':         'Explore My Services',
+    'hero.tagline.1':   'I build immersive experiences.',
+    'hero.tagline.2':   'I build AI solutions',
+    'hero.tagline.3':   'I make your vision come true',
+    'hero.tagline.4':   'I build 3D Simulations',
+    'hero.tagline.5':   'I build your games',
+    'hero.tagline.6':   'I help you build your team',
+    'hero.tagline.7':   'I accelerate your growth',
 
     'about.label': '01 About',
     'about.title': 'Who I Am',
@@ -173,9 +180,16 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Bonjour, je suis',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Je crée des expériences numériques immersives.',
+    'hero.tagline':     'Je crée des expériences immersives.',
     'hero.description': 'Chef de Projet Technique &amp; Ingénieur VR avec <strong class="accent">7 ans d\'expérience</strong> à créer des solutions 3D, simulations VR, interfaces IA et expériences web interactives qui captivent les clients et offrent des résultats tangibles.',
     'hero.cta':         'Découvrir Mes Services',
+    'hero.tagline.1':   'Je crée des expériences immersives.',
+    'hero.tagline.2':   'Je crée des solutions d\'IA',
+    'hero.tagline.3':   'Je concrétise votre vision',
+    'hero.tagline.4':   'Je crée des simulations 3D',
+    'hero.tagline.5':   'Je crée vos jeux',
+    'hero.tagline.6':   'Je vous aide à bâtir votre équipe',
+    'hero.tagline.7':   'J\'accélère votre croissance',
 
     'about.label': '01 À Propos',
     'about.title': 'Qui Suis-Je',
@@ -330,6 +344,13 @@ const TRANSLATIONS = {
     'hero.tagline':     'أبني تجارب رقمية غامرة.',
     'hero.description': 'مدير مشاريع تقنية ومهندس VR مع <strong class="accent">7 سنوات</strong> من الخبرة في صياغة حلول ثلاثية الأبعاد ومحاكاة VR وواجهات ذكاء اصطناعي وتجارب ويب تفاعلية تأسر العملاء وتحقق نتائج ملموسة.',
     'hero.cta':         'استكشف خدماتي',
+    'hero.tagline.1':   'أصنع تجارب رقمية غامرة.',
+    'hero.tagline.2':   'أبني حلول الذكاء الاصطناعي',
+    'hero.tagline.3':   'أحوّل رؤيتك إلى واقع',
+    'hero.tagline.4':   'أبني محاكيات ثلاثية الأبعاد',
+    'hero.tagline.5':   'أبني ألعابك',
+    'hero.tagline.6':   'أساعدك في بناء فريقك',
+    'hero.tagline.7':   'أُسرّع نموّك',
 
     'about.label': '01 عن',
     'about.title': 'من أنا',
@@ -481,9 +502,16 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Hola, mi nombre es',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Creo experiencias digitales inmersivas.',
+    'hero.tagline':     'Creo experiencias inmersivas.',
     'hero.description': 'Gerente de Proyectos Técnicos &amp; Ingeniero VR con <strong class="accent">7 años de experiencia</strong> creando soluciones 3D, simulaciones VR, interfaces con IA y experiencias web interactivas que cautivan clientes y generan resultados tangibles.',
     'hero.cta':         'Explorar Mis Servicios',
+    'hero.tagline.1':   'Creo experiencias inmersivas.',
+    'hero.tagline.2':   'Creo soluciones de IA',
+    'hero.tagline.3':   'Hago realidad tu visión',
+    'hero.tagline.4':   'Creo simulaciones 3D',
+    'hero.tagline.5':   'Creo tus videojuegos',
+    'hero.tagline.6':   'Te ayudo a construir tu equipo',
+    'hero.tagline.7':   'Acelero tu crecimiento',
 
     'about.label': '01 Sobre Mí',
     'about.title': 'Quién Soy',
@@ -638,6 +666,13 @@ const TRANSLATIONS = {
     'hero.tagline':     '我打造沉浸式数字体验。',
     'hero.description': '技术项目经理 &amp; VR软件工程师，拥有<strong class="accent">7年经验</strong>，打造3D解决方案、VR模拟、AI驱动界面和交互式网页体验，吸引客户并带来切实成果。',
     'hero.cta':         '探索我的服务',
+    'hero.tagline.1':   '我打造沉浸式数字体验。',
+    'hero.tagline.2':   '我构建 AI 解决方案',
+    'hero.tagline.3':   '我让你的愿景成真',
+    'hero.tagline.4':   '我构建 3D 仿真',
+    'hero.tagline.5':   '我打造你的游戏',
+    'hero.tagline.6':   '我帮你组建团队',
+    'hero.tagline.7':   '我加速你的成长',
 
     'about.label': '01 关于',
     'about.title': '我是谁',
@@ -789,9 +824,16 @@ const TRANSLATIONS = {
 
     'hero.greeting':    'Привет, меня зовут',
     'hero.name':        'Mohamed Islem<br/>Ben Jaballah',
-    'hero.tagline':     'Я создаю захватывающие цифровые опыты.',
+    'hero.tagline':     'Создаю цифровые впечатления.',
     'hero.description': 'Технический руководитель проектов &amp; VR-инженер с <strong class="accent">7-летним опытом</strong> создания 3D-решений, VR-симуляций, интерфейсов на ИИ и интерактивных веб-опытов, которые захватывают клиентов и приносят ощутимые результаты.',
     'hero.cta':         'Изучить Мои Услуги',
+    'hero.tagline.1':   'Создаю цифровые впечатления.',
+    'hero.tagline.2':   'Создаю решения на базе ИИ',
+    'hero.tagline.3':   'Воплощаю вашу идею в реальность',
+    'hero.tagline.4':   'Создаю 3D-симуляции',
+    'hero.tagline.5':   'Создаю ваши игры',
+    'hero.tagline.6':   'Помогаю собрать вашу команду',
+    'hero.tagline.7':   'Ускоряю ваш рост',
 
     'about.label': '01 Обо Мне',
     'about.title': 'Кто Я',
@@ -1026,6 +1068,19 @@ const TRANSLATIONS = {
       time:     t['booking.time']     || 'Pick a Time',
       submit:   t['booking.submit']   || 'Book Appointment',
     };
+
+    // Expose hero tagline variations for the rotating glitch effect in main.js
+    window.__i18nHeroTaglines = [
+      t['hero.tagline.1'],
+      t['hero.tagline.2'],
+      t['hero.tagline.3'],
+      t['hero.tagline.4'],
+      t['hero.tagline.5'],
+      t['hero.tagline.6'],
+      t['hero.tagline.7'],
+    ].filter(Boolean);
+
+    document.dispatchEvent(new CustomEvent('mibj:i18n', { detail: { lang: lang } }));
   }
 
   // Wire up language switcher buttons

@@ -587,6 +587,7 @@
           setTimeout(function () {
             typeText(h2, function () {
               startLetterGlitch();
+              startTaglineRotation();
             });
           }, 200);
         });
@@ -638,6 +639,149 @@
     }
     scheduleGlitch();
   }
+
+  // ── Rotating glitch tagline under the name ───────────────
+  var taglineTexts = [];
+  var taglineIndex = 0;
+  var taglineTimer = null;
+  var taglineFrame = null;
+  var taglineReady = false;
+  var taglineReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TAGLINE_GLITCH_MS = 380;
+  var TAGLINE_MIN_GAP = 1500;
+  var TAGLINE_MAX_GAP = 2000;
+
+  function getTaglineList() {
+    var list = window.__i18nHeroTaglines;
+    if (Object.prototype.toString.call(list) === '[object Array]' && list.length) {
+      return list.slice();
+    }
+    return [h2.textContent.trim()].filter(Boolean);
+  }
+
+  function taglinePool(text) {
+    if (/[\u0600-\u06FF]/.test(text)) return 'ابتثجحخدذرزسشصضطظعغفقكلمنهوي0123456789';
+    if (/[\u4E00-\u9FFF]/.test(text)) return '的一是不了人我在有他这为之大来以个中上们到你地说要就时0123456789';
+    if (/[\u0400-\u04FF]/.test(text)) return 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩ0123456789';
+    return 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~';
+  }
+
+  function clearTaglineTimers() {
+    if (taglineTimer) {
+      clearTimeout(taglineTimer);
+      taglineTimer = null;
+    }
+    if (taglineFrame) {
+      cancelAnimationFrame(taglineFrame);
+      taglineFrame = null;
+    }
+  }
+
+  function scheduleTagline(delay) {
+    clearTimeout(taglineTimer);
+    taglineTimer = setTimeout(function () {
+      taglineTimer = null;
+      animateTagline();
+    }, delay);
+  }
+
+  function scrambleTagline(target, progress, pool) {
+    var reveal = Math.floor(target.length * progress);
+    var out = '';
+    for (var i = 0; i < target.length; i++) {
+      var ch = target.charAt(i);
+      if (i < reveal || ch === ' ') out += ch;
+      else out += pool.charAt(Math.floor(Math.random() * pool.length));
+    }
+    return out;
+  }
+
+  function animateTagline() {
+    if (!taglineTexts.length) return;
+
+    taglineIndex = (taglineIndex + 1) % taglineTexts.length;
+    var nextText = taglineTexts[taglineIndex];
+    var pool = taglinePool(nextText);
+    var started = 0;
+
+    h2.classList.add('tagline-glitch');
+
+    function frame(now) {
+      if (!started) started = now;
+      var progress = Math.min((now - started) / TAGLINE_GLITCH_MS, 1);
+      h2.textContent = scrambleTagline(nextText, progress, pool);
+      h2.style.transform = 'translateX(' + (Math.random() * 3 - 1.5).toFixed(1) + 'px)';
+
+      if (progress < 1) {
+        taglineFrame = requestAnimationFrame(frame);
+      } else {
+        taglineFrame = null;
+        h2.textContent = nextText;
+        h2.style.transform = '';
+        h2.classList.remove('tagline-glitch');
+        var gap = TAGLINE_MIN_GAP + Math.random() * (TAGLINE_MAX_GAP - TAGLINE_MIN_GAP);
+        scheduleTagline(Math.max(900, gap - TAGLINE_GLITCH_MS));
+      }
+    }
+
+    taglineFrame = requestAnimationFrame(frame);
+  }
+
+  function fitTaglineText() {
+    if (!taglineTexts.length) return;
+
+    h2.style.fontSize = '';
+    var baseSize = parseFloat(window.getComputedStyle(h2).fontSize);
+    var available = h2.clientWidth;
+    if (!available || !baseSize) return;
+
+    var current = h2.textContent;
+    var minRatio = 1;
+
+    for (var i = 0; i < taglineTexts.length; i++) {
+      h2.textContent = taglineTexts[i];
+      var width = h2.scrollWidth;
+      if (width > available) {
+        var ratio = available / width;
+        if (ratio < minRatio) minRatio = ratio;
+      }
+    }
+
+    h2.textContent = current;
+
+    if (minRatio < 1) {
+      var fitted = Math.max(12, baseSize * minRatio * 0.98);
+      h2.style.fontSize = fitted.toFixed(2) + 'px';
+    }
+  }
+
+  function startTaglineRotation() {
+    taglineReady = true;
+    clearTaglineTimers();
+    taglineTexts = getTaglineList();
+    if (!taglineTexts.length) return;
+
+    taglineIndex = 0;
+    h2.textContent = taglineTexts[0];
+    h2.style.transform = '';
+    h2.classList.remove('tagline-glitch');
+    fitTaglineText();
+
+    if (taglineReduceMotion) return;
+    scheduleTagline(TAGLINE_MIN_GAP + Math.random() * (TAGLINE_MAX_GAP - TAGLINE_MIN_GAP));
+  }
+
+  document.addEventListener('mibj:i18n', function () {
+    if (taglineReady) startTaglineRotation();
+  });
+
+  var taglineResizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(taglineResizeTimer);
+    taglineResizeTimer = setTimeout(function () {
+      if (taglineReady) fitTaglineText();
+    }, 120);
+  });
 
   function getTextNodes(el) {
     var nodes = [];
